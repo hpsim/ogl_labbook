@@ -1,0 +1,12 @@
+[submodule "Dependencies/ogl"]
+	path = Dependencies/ogl
+	url = https://github.com/hpsim/OGL.git
+[submodule "Dependencies/obr"]
+	path = Dependencies/obr
+	url = https://github.com/hpsim/OBR.git
+[submodule "Dependencies/ogl_plot_scripts"]
+	path = Dependencies/ogl_plot_scripts
+	url = https://github.com/hpsim/plot_ogl_data.git
+[submodule "base"]
+	path = base
+	url = https://develop.openfoam.com/committees/hpc.git
