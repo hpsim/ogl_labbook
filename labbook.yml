@@ -1,0 +1,53 @@
+config:
+  type: OpenFOAM
+  case:
+    name: base
+    type: submodule
+    repo: https://develop.openfoam.com/committees/hpc.git
+
+submodules:
+  - name: ogl
+    description: The main driver of this labbook, proving linear solver and preconditioner
+    repo: https://github.com/hpsim/OGL.git
+    build: |
+      mkdir -p builds/dev
+      cmake -B builds/dev -S . -DCMAKE_BUILD_TYPE=Release ${{env.OGL_CMAKE_FLAGS}}
+      cmake --build ./builds/dev --config Release -j
+      cmake --install .
+  - name: obr
+    description: Collection of python scripts to generate parameter studies
+    repo: https://github.com/hpsim/OBR.git
+    build: |
+        python3 -m pip install
+  - name: ogl_plot_scripts
+    description: A set of scripts to import and plot the perfomance data
+    repo: https://github.com/hpsim/plot_ogl_data.git
+    build-type: no-build
+
+cases:
+  - name: problem_size
+    build: |
+      python obr_create_tree.py --parameters ${{values.file}} --folder ${{values.folder}}
+    values:
+      - file: lidDrivenCavity3D.json
+        folder: lidDrivenCavity3D
+  - name: solver_performance
+    run: python obr_create_tree.py --parameters ${{values.file}} --folder ${{values.folder}}
+    values:
+      - file: lidDrivenCavity3D.json
+        folder: lidDrivenCavity3D
+      - file: motorBike.json
+        folder: motorBike
+
+
+pipelines:
+  - name: execute_cases
+    executor: touch
+    run: |
+      foo_1/result_1234.dat
+      foo_2/result_2345.dat
+    results:
+      - results*.dat
+
+hooks:
+  - on_rebase: ["create_cases"]
