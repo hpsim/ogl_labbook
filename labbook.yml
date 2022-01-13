@@ -11,9 +11,9 @@ submodules:
     repo: https://github.com/hpsim/OGL.git
     build: |
       mkdir -p builds/dev
-      cmake -B builds/dev -S . -DCMAKE_BUILD_TYPE=Release ${{env.OGL_CMAKE_FLAGS}}
-      cmake --build ./builds/dev --config Release -j
-      cmake --install .
+      cmake -G ${{env.OGL_MAKE_GENERATOR}} -B builds/dev -S . -DCMAKE_BUILD_TYPE=Release ${{env.OGL_CMAKE_FLAGS}}
+      cmake --build ./builds/dev --config Release
+      cmake --install ./builds/dev
   - name: obr
     description: Collection of python scripts to generate parameter studies
     repo: https://github.com/hpsim/OBR.git
@@ -27,12 +27,12 @@ submodules:
 cases:
   - name: problem_size
     build: |
-      python obr_create_tree.py --parameters ${{values.file}} --folder ${{values.folder}}
+      python obr_create_tree.py --parameters assets/${{values.file}} --folder ${{values.folder}}
     values:
       - file: lidDrivenCavity3D.json
         folder: lidDrivenCavity3D
   - name: solver_performance
-    run: python obr_create_tree.py --parameters ${{values.file}} --folder ${{values.folder}}
+    run: python obr_create_tree.py --parameters assets/${{values.file}} --folder ${{values.folder}}
     values:
       - file: lidDrivenCavity3D.json
         folder: lidDrivenCavity3D
