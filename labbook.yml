@@ -18,18 +18,27 @@ submodules:
     description: Collection of python scripts to generate parameter studies
     repo: https://github.com/hpsim/OBR.git
     build: |
-        python3 -m pip install
+        pip3 install -e . --user
   - name: ogl_plot_scripts
     description: A set of scripts to import and plot the perfomance data
     repo: https://github.com/hpsim/plot_ogl_data.git
     build-type: no-build
 
 cases:
-  - name: problem_size
-    build: |
-      python obr_create_tree.py --parameters assets/${{values.file}} --folder ${{values.folder}}
+  - name: mpiRanks_vs_problemSize
+    build: obr create --parameters ~/data/code/ogl_labbook/assets/${{values.file}} --folder ${{values.folder}}
     values:
-      - file: lidDrivenCavity3D.json
+      - file: lidDrivenCavity3D_problemSize.json
+        folder: lidDrivenCavity3D
+  - name: solver_at_300cubed
+    build: obr create --parameters ~/data/code/ogl_labbook/assets/${{values.file}} --folder ${{values.folder}}
+    values:
+      - file: lidDrivenCavity3D_problemSize.json
+        folder: lidDrivenCavity3D
+  - name: momentum_vs_poisson_only
+    build: obr create --parameters ~/data/code/ogl_labbook/assets/${{values.file}} --folder ${{values.folder}}
+    values:
+      - file: lidDrivenCavity3D_problemSize.json
         folder: lidDrivenCavity3D
   - name: solver_performance
     run: python obr_create_tree.py --parameters assets/${{values.file}} --folder ${{values.folder}}
