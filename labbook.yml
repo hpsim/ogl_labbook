@@ -9,7 +9,7 @@ submodules:
   - name: ogl
     description: The main driver of this labbook, proving linear solver and preconditioner
     repo: https://github.com/hpsim/OGL.git
-    build: |
+    run: |
       mkdir -p builds/dev
       cmake -G ${{env.OGL_MAKE_GENERATOR}} -B builds/dev -S . -DCMAKE_BUILD_TYPE=Release ${{env.OGL_CMAKE_FLAGS}}
       cmake --build ./builds/dev --config Release
@@ -17,7 +17,7 @@ submodules:
   - name: obr
     description: Collection of python scripts to generate parameter studies
     repo: https://github.com/hpsim/OBR.git
-    build: |
+    run: |
         pip3 install -e . --user
   - name: ogl_plot_scripts
     description: A set of scripts to import and plot the perfomance data
@@ -26,23 +26,22 @@ submodules:
 
 cases:
   - name: mpiRanks_vs_problemSize
-    build: obr create --parameters ~/data/code/ogl_labbook/assets/${{values.file}} --folder ${{values.folder}}
-    values:
+    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.folder}}
+    matrix:
       - file: lidDrivenCavity3D_problemSize.json
         folder: lidDrivenCavity3D
-  - name: solver_at_300cubed
-    build: obr create --parameters ~/data/code/ogl_labbook/assets/${{values.file}} --folder ${{values.folder}}
-    values:
-      - file: lidDrivenCavity3D_problemSize.json
-        folder: lidDrivenCavity3D
+  - name: motorcycle_fullRun
+    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder .
+    matrix:
+      - file: motorcycle_full.json
   - name: momentum_vs_poisson_only
-    build: obr create --parameters ~/data/code/ogl_labbook/assets/${{values.file}} --folder ${{values.folder}}
-    values:
+    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.folder}}
+    matrix:
       - file: lidDrivenCavity3D_problemSize.json
         folder: lidDrivenCavity3D
   - name: solver_performance
-    run: python obr_create_tree.py --parameters assets/${{values.file}} --folder ${{values.folder}}
-    values:
+    run: python obr_create_tree.py --parameters assets/${{matrix.file}} --folder ${{matrix.folder}}
+    matrix:
       - file: lidDrivenCavity3D.json
         folder: lidDrivenCavity3D
       - file: motorBike.json
