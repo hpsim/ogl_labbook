@@ -17,8 +17,7 @@ submodules:
   - name: obr
     description: Collection of python scripts to generate parameter studies
     repo: https://github.com/hpsim/OBR.git
-    run: |
-        pip3 install -e . --user
+    run: pip3 install -e . --user
   - name: ogl_plot_scripts
     description: A set of scripts to import and plot the perfomance data
     repo: https://github.com/hpsim/plot_ogl_data.git
@@ -26,7 +25,12 @@ submodules:
 
 cases:
   - name: mpiRanks_vs_problemSize
-    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.folder}}
+    build: obr create --parameters ${{labbook.location}}/assets/${{values.file}} --folder ${{values.folder}}
+    matrix:
+      - file: lidDrivenCavity3D_problemSize.json
+        folder: lidDrivenCavity3D
+  - name: solver_at_300cubed
+    build: obr create --parameters ${{labbook.location}}/assets/${{values.file}} --folder ${{values.folder}}
     matrix:
       - file: lidDrivenCavity3D_problemSize.json
         folder: lidDrivenCavity3D
@@ -49,13 +53,12 @@ cases:
 
 
 pipelines:
-  - name: execute_cases
-    executor: touch
-    run: |
-      foo_1/result_1234.dat
-      foo_2/result_2345.dat
+  - name: decompose_case
+    run: obr decompose --folder ${{labbook.cwd}}
+  - name: run_case
+    run: obr run --folder ${{labbook.cwd}} --select=${{env.GINKGO_EXECUTOR}} --report=${{env.HOST}}_${{env.GINKGO_EXECUTOR}}.log --results_folder=results
     results:
-      - results*.dat
+      - results
 
 hooks:
   - on_rebase: ["create_cases"]
