@@ -1,3 +1,19 @@
 #+TITLE: Readme
 
+* Cases
+
+** liddriven cavity
+*** mpiRank_vs_problemSize
+Compare CG and BiCGStab (no preconditioner) for cases ranging from 100^3 to 400^3 cells for different number of decompositions
+*** machine_performance
+Same as mpiRank_vs_problemSize on different machines (nla, horeka, icl) all on 8 (mpiRanks)
+
+** motorcycle
+*** full run
+- GKOCG + GKOBiCGStab (8 Ranks) vs Foam Solvers 32Ranks
+- Best performing solvers
+
+** all cases
+- medium size cases only
+
 * Revisions
