@@ -1,0 +1,14 @@
+executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,processes,mpiRank,log_id,run_time
+#{'node_data': {'host': 'nla-gpu1.ianm.kit.edu\n', 'top': ['top - 07:32:32 up 48 days, 21:25,  1 user,  load average: 0.15, 1.30, 1.98', 'Tasks: 944 total,   1 running, 943 sleeping,   0 stopped,   0 zombie', '%Cpu(s):  0.2 us,  0.3 sy,  0.0 ni, 99.5 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st', 'MiB Mem : 515584.2 total, 450538.9 free,   5262.5 used,  59782.8 buff/cache', 'MiB Swap: 131072.0 total, 131072.0 free,      0.0 used. 506324.7 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', '1925593 greole    20   0   66248   5884   4228 R   5.9   0.0   0:00.03 top', '      1 root      20   0  258892  15552   9068 S   0.0   0.0   1:20.19 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   0:03.45 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp', '      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par+', '     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_perc+', '     11 root      20   0       0      0      0 S   0.0   0.0   0:12.04 ksoftir+', '     12 root      20   0       0      0      0 I   0.0   0.0   9:58.26 rcu_sch+'], 'uptime': ' 07:32:32 up 48 days, 21:25,  1 user,  load average: 0.15, 1.30, 1.98\n', 'libOGL.so': '4feb5a9af6888972ba40a17b378ef307  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.0', 'OBR_VERSION': '0.3.0'}
+DefaultOF,BiCGStab,DIC,Large,None,32,nla-gpu1.ianm.kit.edu,1,32,0,0
+DefaultOF,BiCGStab,DIC,Large,None,8,nla-gpu1.ianm.kit.edu,1,8,655c13a6ecb164408577f2c0fb7680b9,128.277611
+DefaultOF,CG,DIC,Large,None,32,nla-gpu1.ianm.kit.edu,1,32,988c0a1c2702acfad1ada32f8694ea3b,59.211019
+DefaultOF,CG,DIC,Large,None,8,nla-gpu1.ianm.kit.edu,1,8,722bdea0c5294efae950fe3b33490611,139.718587
+DefaultOF,BiCGStab,DIC,Small,None,32,nla-gpu1.ianm.kit.edu,1,32,564e6761d7cdd2e98f683870bdd62a36,13.344046
+DefaultOF,BiCGStab,DIC,Small,None,8,nla-gpu1.ianm.kit.edu,1,8,8c2db2afab059e042c8f0483a5e78abd,31.67003
+DefaultOF,CG,DIC,Small,None,32,nla-gpu1.ianm.kit.edu,1,32,0,0
+DefaultOF,CG,DIC,Small,None,8,nla-gpu1.ianm.kit.edu,1,8,450935cc5eaf9435e00cdb2999361768,34.476424
+DefaultOF,BiCGStab,DIC,Medium,None,32,nla-gpu1.ianm.kit.edu,1,32,143fc9b6b39daf1924d6a29b7d1caca0,27.719642
+DefaultOF,BiCGStab,DIC,Medium,None,8,nla-gpu1.ianm.kit.edu,1,8,70554e10297e22572c84915e6f8f9258,66.280932
+DefaultOF,CG,DIC,Medium,None,32,nla-gpu1.ianm.kit.edu,1,32,3293fd5c25884b1b479afdaa28e59ad3,30.159576
+DefaultOF,CG,DIC,Medium,None,8,nla-gpu1.ianm.kit.edu,1,8,956bfe8c40a4a5671e8c7f03aff2cfc9,71.177138
