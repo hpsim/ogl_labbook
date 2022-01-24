@@ -38,6 +38,16 @@ cases:
     run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder .
     matrix:
       - file: motorcycle_full.json
+  - name: motorcycle_resolution
+    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.name}}
+    matrix:
+      - file: motorcycle_resolution.json
+        name: resolution
+  - name: motorcycle_solver
+    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.name}}
+    matrix:
+      - file: motorcycle_solver.json
+        name: solver
   - name: momentum_vs_poisson_only
     run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.folder}}
     matrix:
@@ -53,10 +63,14 @@ cases:
 
 
 pipelines:
-  - name: decompose_case
-    run: obr decompose --folder ${{labbook.cwd}}
-  - name: run_case
-    run: obr run --folder ${{labbook.cwd}} --select=${{env.GINKGO_EXECUTOR}} --report=${{env.HOST}}_${{env.GINKGO_EXECUTOR}}.log --results_folder=results
+  - name: decompose
+    run: obr decompose --folder .
+  - name: run_gko
+    run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}} --filetr=40 --report=${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}.csv --results_folder=results --log_name=gko_log
+    results:
+      - results
+  - name: run_of
+    run: obr benchmark --folder . --select=DefaultOF --filter=40 --report=${{env.HOSTNAME}}_OF.csv --results_folder=results --log_name=of_log
     results:
       - results
 
