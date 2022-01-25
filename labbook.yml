@@ -24,42 +24,35 @@ submodules:
     build-type: no-build
 
 cases:
-  - name: mpiRanks_vs_problemSize
-    build: obr create --parameters ${{labbook.location}}/assets/${{values.file}} --folder ${{values.folder}}
+  - name: lidDrivenCavity3D_problemSize
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{values.file}} --folder ${{matrix.folder}}
     matrix:
       - file: lidDrivenCavity3D_problemSize.json
         folder: lidDrivenCavity3D
-  - name: solver_at_300cubed
-    build: obr create --parameters ${{labbook.location}}/assets/${{values.file}} --folder ${{values.folder}}
+  - name: lidDrivenCavity3D_solver
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
     matrix:
-      - file: lidDrivenCavity3D_problemSize.json
+      - file: lidDrivenCavity3D_solver.json
         folder: lidDrivenCavity3D
-  - name: motorcycle_fullRun
-    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder .
-    matrix:
-      - file: motorcycle_full.json
   - name: motorcycle_resolution
-    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.name}}
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
     matrix:
       - file: motorcycle_resolution.json
         name: resolution
   - name: motorcycle_solver
-    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.name}}
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
     matrix:
       - file: motorcycle_solver.json
         name: solver
   - name: momentum_vs_poisson_only
-    run: obr create --parameters ~/data/code/ogl_labbook/assets/${{matrix.file}} --folder ${{matrix.folder}}
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
     matrix:
       - file: lidDrivenCavity3D_problemSize.json
         folder: lidDrivenCavity3D
-  - name: solver_performance
-    run: python obr_create_tree.py --parameters assets/${{matrix.file}} --folder ${{matrix.folder}}
+  - name: motorcycle_fullRun
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder .
     matrix:
-      - file: lidDrivenCavity3D.json
-        folder: lidDrivenCavity3D
-      - file: motorBike.json
-        folder: motorBike
+      - file: motorcycle_full.json
 
 
 pipelines:
