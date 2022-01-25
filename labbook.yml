@@ -24,46 +24,47 @@ submodules:
     build-type: no-build
 
 cases:
-  - name: lidDrivenCavity3D_problemSize
+  - name: lidDrivenCavity3D_resolution
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{values.file}} --folder ${{matrix.folder}}
+    path: lidDrivenCavity
     matrix:
       - file: lidDrivenCavity3D_problemSize.json
         folder: lidDrivenCavity3D
   - name: lidDrivenCavity3D_solver
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
+    path: lidDrivenCavity
     matrix:
       - file: lidDrivenCavity3D_solver.json
         folder: lidDrivenCavity3D
   - name: motorcycle_resolution
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
+    path: motorcycle
     matrix:
       - file: motorcycle_resolution.json
         name: resolution
   - name: motorcycle_solver
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
+    path: motorcycle
     matrix:
       - file: motorcycle_solver.json
         name: solver
-  - name: momentum_vs_poisson_only
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
-    matrix:
-      - file: lidDrivenCavity3D_problemSize.json
-        folder: lidDrivenCavity3D
   - name: motorcycle_fullRun
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder .
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
+    path: motorcycle
     matrix:
       - file: motorcycle_full.json
+        name: fullRun
 
 
 pipelines:
   - name: decompose
     run: obr decompose --folder .
   - name: run_gko
-    run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}} --filetr=40 --report=${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}.csv --results_folder=results --log_name=gko_log
+    run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}} --report=${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}.csv --results_folder=results --log_name=gko_log
     results:
       - results
   - name: run_of
-    run: obr benchmark --folder . --select=DefaultOF --filter=40 --report=${{env.HOSTNAME}}_OF.csv --results_folder=results --log_name=of_log
+    run: obr benchmark --folder . --select=DefaultOF,${{env.NCORES}} --report=${{env.HOSTNAME}}_OF.csv --results_folder=results --log_name=of_log
     results:
       - results
 
