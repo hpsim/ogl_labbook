@@ -44,3 +44,7 @@ HIP,CG,ISAI,Large,None,16,nla-gpu2.ianm.kit.edu,1,16,92281aba533871be3b61292fd81
 HIP,CG,ISAI,Large,None,32,nla-gpu2.ianm.kit.edu,1,32,74c788091cf80ee89f78a7949b4ea413,223.42525
 HIP,CG,ISAI,Large,None,4,nla-gpu2.ianm.kit.edu,1,4,5c77b75d4e7d0356189abb91f81c669a,230.051223
 HIP,CG,ISAI,Large,None,8,nla-gpu2.ianm.kit.edu,1,8,ecdcc8e116030c51972fb646736bbb44,181.706704
+HIP,GMRES,BJ,Large,None,16,nla-gpu2.ianm.kit.edu,1,16,0,0
+HIP,GMRES,BJ,Large,None,32,nla-gpu2.ianm.kit.edu,1,32,0,0
+HIP,GMRES,BJ,Large,None,4,nla-gpu2.ianm.kit.edu,1,4,8d25aad2de56b2ea7a5c9f90bac76501,264.080267
+HIP,GMRES,BJ,Large,None,8,nla-gpu2.ianm.kit.edu,1,8,058001e8a9db4be82991f230511e155d,215.297775
