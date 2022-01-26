@@ -36,3 +36,11 @@ HIP,BiCGStab,ILU,Large,None,16,nla-gpu2.ianm.kit.edu,1,16,b53baa5c4d7015cd537d64
 HIP,BiCGStab,ILU,Large,None,32,nla-gpu2.ianm.kit.edu,1,32,3604aa27d7d75ba67b4408075ded2a2a,657.870012
 HIP,BiCGStab,ILU,Large,None,4,nla-gpu2.ianm.kit.edu,1,4,ea3035c9cd0d16291f8a83fb44be5538,427.056027
 HIP,BiCGStab,ILU,Large,None,8,nla-gpu2.ianm.kit.edu,1,8,332bd5e3790f8dc3f1e6c09b7cbce06f,381.872642
+HIP,GMRES,Multigrid,Large,None,16,nla-gpu2.ianm.kit.edu,1,16,0,0
+HIP,GMRES,Multigrid,Large,None,32,nla-gpu2.ianm.kit.edu,1,32,0,0
+HIP,GMRES,Multigrid,Large,None,4,nla-gpu2.ianm.kit.edu,1,4,0,0
+HIP,GMRES,Multigrid,Large,None,8,nla-gpu2.ianm.kit.edu,1,8,0,0
+HIP,CG,ISAI,Large,None,16,nla-gpu2.ianm.kit.edu,1,16,92281aba533871be3b61292fd8164f66,152.987259
+HIP,CG,ISAI,Large,None,32,nla-gpu2.ianm.kit.edu,1,32,74c788091cf80ee89f78a7949b4ea413,223.42525
+HIP,CG,ISAI,Large,None,4,nla-gpu2.ianm.kit.edu,1,4,5c77b75d4e7d0356189abb91f81c669a,230.051223
+HIP,CG,ISAI,Large,None,8,nla-gpu2.ianm.kit.edu,1,8,ecdcc8e116030c51972fb646736bbb44,181.706704
