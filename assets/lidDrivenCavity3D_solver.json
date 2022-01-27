@@ -1,0 +1,51 @@
+{
+  "obr": {
+    "OBR_MIN_VERSION": "0.2.1",
+    "BENCHMARK_FILE_VERSION": "0.3.0"
+  },
+  "case": {
+    "type": "OpenFOAMExternalCase",
+    "solver": "icoFoam",
+    "case": "lidDrivenCavity3D",
+    "origin": "~/data/code/ogl_labbook/base/Lid_driven_cavity-3d/S",
+    "git": "https://develop.openfoam.com/committees/hpc.git",
+    "build": ["blockMesh", "ln -s fvSolution.fixedNORM system/fvSolution"]
+  },
+  "variation": {
+      "name": "mesh",
+      "type": "ReBlockMesh",
+      "mapFields": false,
+      "dimensions": 3,
+      "variants":{"cells": [400]},
+      "block": "100 100 100",
+      "controlDict": {
+        "stationary": false,
+        "timeSteps": 3
+      },
+      "variation": [{
+        "name": "matrix_solver",
+        "type": "ChangeMatrixSolver",
+        "fields": ["p"],
+        "defaults": {
+          "p" : {
+            "minIter": 0,
+            "maxIter": 10000,
+            "relTol":  0.0,
+            "tolerance":  1e-06,
+            "verbose": "1"
+            }
+        },
+        "variants": {"solver": ["CG", "BiCGStab"],
+                     "preconditioner": ["NoPrecond", "DIC", "DILU"],
+                     "executor": ["HIP", "DefaultOF"]
+	},
+        "variation": [{
+             "name": "mpiRank",
+             "type": "ChangeNumberOfSubdomains",
+             "variants": { "numberOfSubdomains": [2, 4, 8, 10, 12, 16, 20, 32, 40] },
+             "variant_of": ["DefaultOF", "HIP"],
+             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
+          }]
+      }]
+  }
+}
