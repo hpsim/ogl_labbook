@@ -3,3 +3,4 @@ executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,mpiRa
 DefaultOF,BiCGStab,DIC,400,None,32,nla-gpu2.ianm.kit.edu,32,1,84db6745e9d48939b6b3f0f740281cba,1086.401147
 DefaultOF,BiCGStab,NoPrecond,400,None,32,nla-gpu2.ianm.kit.edu,32,1,a4b750cd8708e0cc449bc263f4d91022,2639.886912
 DefaultOF,CG,NoPrecond,400,None,32,nla-gpu2.ianm.kit.edu,32,1,60793896511c8b70fc05dc9a194a6809,1305.226507
+DefaultOF,CG,DIC,400,None,32,nla-gpu2.ianm.kit.edu,32,1,d2704ac7130daa710c124043287f128a,805.624765
