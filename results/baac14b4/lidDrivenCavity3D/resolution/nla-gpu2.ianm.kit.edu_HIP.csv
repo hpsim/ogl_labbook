@@ -1,0 +1,25 @@
+executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,processes,mpiRank,log_id,run_time
+#{'node_data': {'host': 'nla-gpu2.ianm.kit.edu\n', 'top': ['top - 21:47:18 up 55 days, 11:40,  2 users,  load average: 4.61, 6.60, 5.55', 'Tasks: 948 total,   1 running, 947 sleeping,   0 stopped,   0 zombie', '%Cpu(s):  0.0 us,  0.2 sy,  0.1 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st', 'MiB Mem : 515584.2 total, 373937.0 free,   4134.5 used, 137512.6 buff/cache', 'MiB Swap: 131072.0 total, 131017.5 free,     54.5 used. 507842.9 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', '3614136 greole    25   5   66248   5928   4268 R   5.9   0.0   0:00.03 top', '      1 root      20   0  250472  12924   6868 S   0.0   0.0   0:29.75 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   0:03.00 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp', '      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par+', '     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_perc+', '     11 root      20   0       0      0      0 S   0.0   0.0   0:03.32 ksoftir+', '     12 root      20   0       0      0      0 I   0.0   0.0   4:42.84 rcu_sch+'], 'uptime': ' 21:47:18 up 55 days, 11:40,  2 users,  load average: 4.61, 6.60, 5.55\n', 'libOGL.so': '016cbc38c14f9bf4f596ba635538e7da  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.0', 'OBR_VERSION': '0.3.0'}
+HIP,BiCGStab,ISAI,300,None,8,nla-gpu2.ianm.kit.edu,1,8,861c8e9209c57784838772dbf1704bb3,692.457333
+HIP,BiCGStab,NoPrecond,300,None,8,nla-gpu2.ianm.kit.edu,1,8,db920154f2de29ff14b31893710902a0,423.128022
+HIP,CG,NoPrecond,300,None,8,nla-gpu2.ianm.kit.edu,1,8,af5905f0f0bd68efe9682820ae5292c0,300.744134
+HIP,GMRES,ISAI,300,None,8,nla-gpu2.ianm.kit.edu,1,8,576a60b7e24c2ed6d0428382a0f2c3d7,5453.32703
+HIP,CG,ISAI,300,None,8,nla-gpu2.ianm.kit.edu,1,8,43d969dd9492c1ba9044d7625c5f7ad7,303.953824
+HIP,GMRES,NoPrecond,300,None,8,nla-gpu2.ianm.kit.edu,1,8,0,0
+HIP,BiCGStab,ISAI,200,None,8,nla-gpu2.ianm.kit.edu,1,8,b5ccabfbeea8fd698fad15c2f105c988,204.427342
+HIP,BiCGStab,NoPrecond,200,None,8,nla-gpu2.ianm.kit.edu,1,8,bd9a787e7045196425071f66b865214e,66.564553
+HIP,CG,NoPrecond,200,None,8,nla-gpu2.ianm.kit.edu,1,8,13c0ab42aa6888f20ee55b5374a78129,55.599077
+HIP,GMRES,ISAI,200,None,8,nla-gpu2.ianm.kit.edu,1,8,3f9619c2af8aea574884d060650501a0,1600.091077
+HIP,CG,ISAI,200,None,8,nla-gpu2.ianm.kit.edu,1,8,dd3ba40cadc8d58646b24abb1cf799df,53.998142
+HIP,GMRES,NoPrecond,200,None,8,nla-gpu2.ianm.kit.edu,1,8,76727f28ddc50204c642036da495d8e4,1544.081811
+HIP,BiCGStab,ISAI,100,None,8,nla-gpu2.ianm.kit.edu,1,8,d4507cf6c08525e0af15b5eaee6a4f52,10.146376
+HIP,BiCGStab,NoPrecond,100,None,8,nla-gpu2.ianm.kit.edu,1,8,bd7edf5d0cf30379cfc3b35737c90bbe,9.352825
+HIP,CG,NoPrecond,100,None,8,nla-gpu2.ianm.kit.edu,1,8,305a9efe98a6af0dfa722768bde30e2a,6.88758
+HIP,GMRES,ISAI,100,None,8,nla-gpu2.ianm.kit.edu,1,8,1ebcdc87115bb90b7a9b9c7c7224340e,279.350261
+HIP,CG,ISAI,100,None,8,nla-gpu2.ianm.kit.edu,1,8,efee260dd3d309ea2a94c6c2f9d47794,6.665601
+HIP,GMRES,NoPrecond,100,None,8,nla-gpu2.ianm.kit.edu,1,8,ca1b585484c94efe5994248e41c72501,281.023194
+HIP,BiCGStab,ISAI,400,None,0,nla-gpu2.ianm.kit.edu,1,8,0,0
+HIP,BiCGStab,NoPrecond,400,None,0,nla-gpu2.ianm.kit.edu,1,8,d9984b8c6da283d816b982459a5079eb,1271.981619
+HIP,CG,NoPrecond,400,None,0,nla-gpu2.ianm.kit.edu,1,8,d8ca29dede579d125b6fb8d302b7cb18,993.403283
+HIP,GMRES,ISAI,400,None,0,nla-gpu2.ianm.kit.edu,1,8,0,0
+HIP,CG,ISAI,400,None,0,nla-gpu2.ianm.kit.edu,1,8,6edadb4356c5eb7600ec3ea5933c67a2,1000.739444
