@@ -8,11 +8,14 @@ DefaultOF,BiCGStab,DIC,200,None,32,nla-gpu2.ianm.kit.edu,32,1,66167a4f875de2b7b2
 DefaultOF,BiCGStab,NoPrecond,200,None,32,nla-gpu2.ianm.kit.edu,32,1,c34978eebc7816d12ff986b3f35ddfbd,121.360692
 DefaultOF,CG,NoPrecond,200,None,32,nla-gpu2.ianm.kit.edu,32,1,227adda6f39cd1869392fe5b2db27781,58.381963
 DefaultOF,CG,DIC,200,None,32,nla-gpu2.ianm.kit.edu,32,1,f345035e261efd54b1641810bd80c26b,50.274295
-DefaultOF,BiCGStab,DIC,100,None,32,nla-gpu2.ianm.kit.edu,1,32,3ce1636fa6bccceaa8294bd269452a7b,5.258796
+DefaultOF,BiCGStab,DIC,100,None,32,nla-gpu2.ianm.kit.edu,1,32,2c64046fd4daafd78c8014625f26e9b1,5.12516
 DefaultOF,BiCGStab,NoPrecond,100,None,32,nla-gpu2.ianm.kit.edu,32,1,00d98dd670b59ffbbea7cf1a62cf9210,7.788362
 DefaultOF,CG,NoPrecond,100,None,32,nla-gpu2.ianm.kit.edu,32,1,c714da24681052b43fc54ad5148fc3ac,5.103103
-DefaultOF,CG,DIC,100,None,32,nla-gpu2.ianm.kit.edu,1,32,24749eb55bb4f8a1a4050491a9538e5f,4.393892
-DefaultOF,BiCGStab,DIC,400,None,32,nla-gpu2.ianm.kit.edu,32,1,84db6745e9d48939b6b3f0f740281cba,1086.401147
+DefaultOF,BiCGStab,DIC,100,None,32,nla-gpu2.ianm.kit.edu,1,32,3ce1636fa6bccceaa8294bd269452a7b,5.258796
+DefaultOF,CG,DIC,300,None,32,nla-gpu2.ianm.kit.edu,1,32,1d170ccd659e3824c15cdc385829807f,81.052648
+DefaultOF,CG,DIC,200,None,32,nla-gpu2.ianm.kit.edu,1,32,5093d060d17bd7ae214aa56bd75f1202,30.565974
+DefaultOF,CG,DIC,100,None,32,nla-gpu2.ianm.kit.edu,1,32,a6849148e29c3d2730e37fdeee4d5d40,11.293462
+DefaultOF,BiCGStab,DIC,400,None,32,nla-gpu2.ianm.kit.edu,32,1,52555f00476418755dad2bfb75dfaa05,1084.899512
 DefaultOF,BiCGStab,NoPrecond,400,None,32,nla-gpu2.ianm.kit.edu,32,1,a4b750cd8708e0cc449bc263f4d91022,2639.886912
 DefaultOF,CG,NoPrecond,400,None,32,nla-gpu2.ianm.kit.edu,32,1,60793896511c8b70fc05dc9a194a6809,1305.226507
 DefaultOF,CG,DIC,400,None,32,nla-gpu2.ianm.kit.edu,32,1,d2704ac7130daa710c124043287f128a,805.624765
