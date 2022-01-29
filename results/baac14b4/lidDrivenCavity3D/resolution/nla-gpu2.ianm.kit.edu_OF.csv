@@ -18,3 +18,5 @@ DefaultOF,BiCGStab,DIC,200,None,32,nla-gpu2.ianm.kit.edu,32,1,0,0
 DefaultOF,CG,DIC,200,None,32,nla-gpu2.ianm.kit.edu,32,1,5f1a61a7348679dfe24d10d92b011a84,46.944918
 DefaultOF,BiCGStab,DIC,100,None,32,nla-gpu2.ianm.kit.edu,32,1,fb2bbf77efa3f23e5bca6d6d62ea78d9,3.994768
 DefaultOF,CG,DIC,100,None,32,nla-gpu2.ianm.kit.edu,32,1,2ed625dd3f452abda73610d511221659,3.829981
+DefaultOF,BiCGStab,DIC,400,None,32,nla-gpu2.ianm.kit.edu,32,1,70a711b0ade5d459961c9adfb411ea26,1088.604459
+DefaultOF,CG,DIC,400,None,32,nla-gpu2.ianm.kit.edu,32,1,0298dfde53664e8295cc36bb90eed78d,805.398405
