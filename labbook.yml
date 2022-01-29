@@ -64,7 +64,7 @@ pipelines:
     results:
       - results
   - name: run_of
-    run: obr benchmark --folder . --select=DefaultOF,${{env.NCORES}}{{env.OBR_SELECT}} --filter=mpiRank/8 --report=OF_${{env.HOSTNAME}{{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
+    run: obr benchmark --folder . --select=DefaultOF${{env.OBR_SELECT}} --filter=mpiRank/8 --report=OF_${{env.HOSTNAME}${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
     results:
       - results
 
