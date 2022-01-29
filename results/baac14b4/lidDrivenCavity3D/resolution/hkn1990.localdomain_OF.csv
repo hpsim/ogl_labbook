@@ -1,0 +1,19 @@
+
+executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,mpiRank,processes,log_id,run_time
+#{'node_data': {'host': 'hkn0848.localdomain\n', 'top': ['top - 17:44:14 up 174 days, 20:35,  0 users,  load average: 3.92, 33.29, 50.80', 'Tasks: 1679 total,   1 running, 1678 sleeping,   0 stopped,   0 zombie', '%Cpu(s):  0.1 us,  0.1 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st', 'MiB Mem : 514600.6 total, 497972.9 free,  15634.4 used,    993.2 buff/cache', 'MiB Swap:      0.0 total,      0.0 free,      0.0 used. 496339.0 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', '1640762 eq4036    20   0   57488   6092   3580 R  11.8   0.0   0:00.04 top', '      1 root      20   0   95860  10272   6808 S   0.0   0.0   0:52.80 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   0:24.44 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp', '      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par+', '      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+', '     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_perc+', '     11 root      20   0       0      0      0 S   0.0   0.0  13:05.77 ksoftir+'], 'uptime': ' 17:44:14 up 174 days, 20:35,  0 users,  load average: 3.92, 33.29, 50.80\n', 'libOGL.so': '89e18a68dc7e9cf902ea8d5fdf2132fc  /home/hk-project-test-fine/eq4036/OpenFOAM/eq4036-v2112/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.0', 'OBR_VERSION': '0.3.0'}
+DefaultOF,BiCGStab,DIC,100,1,38,hkn0848.localdomain,38,1,4fd43fecd80e531549719dbacaae33fb,5.053114
+DefaultOF,BiCGStab,NoPrecond,100,1,38,hkn0848.localdomain,38,1,5f7e2d3a4ce13f1f3e8bcdfecb35d627,5.846195
+DefaultOF,CG,NoPrecond,100,1,38,hkn0848.localdomain,38,1,a23f709abed75ad3f836eaf701a92d67,4.508754
+DefaultOF,CG,DIC,100,1,38,hkn0848.localdomain,38,1,63032e5ab5c755dc4a30f2bd6e366ac0,3.947085
+DefaultOF,BiCGStab,DIC,200,1,38,hkn1024.localdomain,38,1,49d05795c27252acb005b6a9b3891328,69.832727
+DefaultOF,BiCGStab,NoPrecond,200,1,38,hkn1024.localdomain,38,1,362fe30cd7cd55eee25c9ad3a25996f5,86.714083
+DefaultOF,CG,NoPrecond,200,1,38,hkn1024.localdomain,38,1,ecfd4f590e1f45b383624c1c44f68068,53.617108
+DefaultOF,CG,DIC,200,1,38,hkn1024.localdomain,38,1,637e4dafc5206281555cc0ef6ad34c82,50.586369
+DefaultOF,BiCGStab,DIC,300,1,38,hkn1024.localdomain,38,1,15abafa3acd6483752c6971f96c6d550,352.856067
+DefaultOF,BiCGStab,NoPrecond,300,1,38,hkn1024.localdomain,38,1,373cabedcccc04dcdb96e3f5039ef778,567.63057
+DefaultOF,CG,NoPrecond,300,1,38,hkn1024.localdomain,38,1,ab233f8eef04dfa326a907b87ed02695,364.686462
+DefaultOF,CG,DIC,300,1,38,hkn1024.localdomain,38,1,7d67e8f2b8894641466d5319c55986c4,266.716368
+DefaultOF,BiCGStab,DIC,400,1,38,hkn1143.localdomain,1,38,5a4ebea4b8ff299aa80ded777c757192,1052.52834
+DefaultOF,BiCGStab,NoPrecond,400,1,38,hkn1143.localdomain,1,38,1528d378b0bcc5a759f1c6706ac2b38f,2297.96161
+DefaultOF,CG,NoPrecond,400,1,38,hkn1143.localdomain,1,38,00e759459db200a1c34474ed08bbbafe,1224.773246
+DefaultOF,CG,DIC,400,1,38,hkn1143.localdomain,1,38,6e6c81c18e9ace21a6223b65c0c58134,882.704219
