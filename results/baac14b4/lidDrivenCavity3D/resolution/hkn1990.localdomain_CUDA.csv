@@ -1,0 +1,19 @@
+executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,mpiRank,processes,log_id,run_time
+#{'node_data': {'host': 'hkn0848.localdomain\n', 'top': ['top - 17:44:14 up 174 days, 20:35,  0 users,  load average: 3.92, 33.29, 50.80', 'Tasks: 1679 total,   1 running, 1678 sleeping,   0 stopped,   0 zombie', '%Cpu(s):  0.1 us,  0.1 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st', 'MiB Mem : 514600.6 total, 497972.9 free,  15634.4 used,    993.2 buff/cache', 'MiB Swap:      0.0 total,      0.0 free,      0.0 used. 496339.0 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', '1640762 eq4036    20   0   57488   6092   3580 R  11.8   0.0   0:00.04 top', '      1 root      20   0   95860  10272   6808 S   0.0   0.0   0:52.80 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   0:24.44 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp', '      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par+', '      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+', '     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_perc+', '     11 root      20   0       0      0      0 S   0.0   0.0  13:05.77 ksoftir+'], 'uptime': ' 17:44:14 up 174 days, 20:35,  0 users,  load average: 3.92, 33.29, 50.80\n', 'libOGL.so': '89e18a68dc7e9cf902ea8d5fdf2132fc  /home/hk-project-test-fine/eq4036/OpenFOAM/eq4036-v2112/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.0', 'OBR_VERSION': '0.3.0'}
+CUDA,CG,ISAI,100,1,8,hkn0535.localdomain,1,8,a02bfdb88e57ba6c0ee9e4d55ebd1516,6.805922
+CUDA,BiCGStab,NoPrecond,100,1,8,hkn0535.localdomain,1,8,1a7e1118681b9498201ad21c13af20cb,7.285724
+CUDA,CG,NoPrecond,100,1,8,hkn0535.localdomain,1,8,a3cf72b4143a909899096047ae9a7c49,6.436843
+CUDA,BiCGStab,ISAI,100,1,8,hkn0535.localdomain,1,8,8cd408193417a99ce936339e8f139bc4,16.449375
+CUDA,BiCGStab,Multigrid,100,1,8,hkn0535.localdomain,1,8,0,0
+CUDA,CG,Multigrid,100,1,8,hkn0535.localdomain,1,8,4d0c40ae2ecd7a99f4b96879a5c70606,11.677952
+CUDA,CG,ISAI,200,1,8,hkn0434.localdomain,1,8,3001bc897f0b7da110759de85336ee4f,49.267878
+CUDA,BiCGStab,NoPrecond,200,1,8,hkn0434.localdomain,1,8,e46d87db0b6f78d27f4258953a2b336a,60.963544
+CUDA,CG,NoPrecond,200,1,8,hkn0434.localdomain,1,8,ebbb0f3867a79c16c304d43dc6541a09,49.640803
+CUDA,BiCGStab,ISAI,200,1,8,hkn0434.localdomain,1,8,a0d648de809aaad1555600610cd44c13,61.790977
+CUDA,CG,ISAI,300,1,8,hkn0718.localdomain,8,1,4c1bee208d4e5fa3acc6c31ab05b9c8a,271.560321
+CUDA,CG,ISAI,300,1,8,hkn0718.localdomain,8,1,4c1bee208d4e5fa3acc6c31ab05b9c8a,271.560321
+CUDA,BiCGStab,NoPrecond,300,1,8,hkn0718.localdomain,8,1,6873859aa555f95f35c8a7fbb3e3dd92,335.013638
+CUDA,CG,NoPrecond,300,1,8,hkn0718.localdomain,8,1,a8cbd00f52d6b3f1f39e80add0d9cd24,270.979337
+CUDA,CG,ISAI,400,1,8,hkn0734.localdomain,8,1,7a4e103dca7a657fc97a2b11368c64ec,987.693285
+CUDA,BiCGStab,NoPrecond,400,1,8,hkn0734.localdomain,8,1,2d4bab62d19aa64a571c6ef7b14865be,1210.966172
+CUDA,CG,NoPrecond,400,1,8,hkn0734.localdomain,8,1,3d3a10e62cacdb510ad86dc2a06fa58f,971.20752
