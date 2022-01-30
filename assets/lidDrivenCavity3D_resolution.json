@@ -16,7 +16,7 @@
       "type": "ReBlockMesh",
       "mapFields": false,
       "dimensions": 3,
-      "variants":{"cells": [100, 200, 300, 400]},
+      "variants":{"cells": [100, 200, 300, 400, 500]},
       "block": "100 100 100",
       "controlDict": {
         "stationary": false,
@@ -35,15 +35,15 @@
             "verbose": "1"
             }
         },
-        "variants": {"solver": ["CG", "BiCGStab", "GMRES"],
-                     "preconditioner": ["NoPrecond", "DIC", "ISAI"],
-                     "executor": ["HIP", "DefaultOF"]
+        "variants": {"solver": ["CG", "BiCGStab"],
+                     "preconditioner": ["NoPrecond"],
+                     "executor": ["CUDA", "DefaultOF"]
 	},
         "variation": [{
              "name": "mpiRank",
              "type": "ChangeNumberOfSubdomains",
-             "variants": { "numberOfSubdomains": [ 8, 32] },
-             "variant_of": ["DefaultOF", "HIP"],
+             "variants": { "numberOfSubdomains": [ 8, 38, 72] },
+             "variant_of": ["DefaultOF", "CUDA"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           }]
       }]
