@@ -6,7 +6,7 @@ HIP,BiCGStab,NoPrecond,200,None,8,nla-gpu2.ianm.kit.edu,8,1,415b30743ec3483954da
 HIP,CG,NoPrecond,200,None,8,nla-gpu2.ianm.kit.edu,8,1,5ce6f32f025fad47f524262c0cb9a890,55.432902
 HIP,BiCGStab,NoPrecond,100,None,8,nla-gpu2.ianm.kit.edu,8,1,ed48caf055a2cb973d6c3e662a061a47,9.582267
 HIP,CG,NoPrecond,100,None,8,nla-gpu2.ianm.kit.edu,8,1,d9f96003b0e83797ad1394ef30c78eb9,6.843542
-HIP,BiCGStab,NoPrecond,500,None,8,nla-gpu2.ianm.kit.edu,8,1,0,0
+HIP,BiCGStab,NoPrecond,500,None,8,nla-gpu2.ianm.kit.edu,8,1,567651ae6721d5438d67c0ca0e6a14f6,3967.773815
 HIP,CG,NoPrecond,500,None,8,nla-gpu2.ianm.kit.edu,8,1,242b4b89b0247a5237f487352b4436f7,3004.146566
 HIP,BiCGStab,NoPrecond,400,None,8,nla-gpu2.ianm.kit.edu,8,1,8a0d8d4c529c641eda6aba07887528df,1692.025412
 HIP,CG,NoPrecond,400,None,8,nla-gpu2.ianm.kit.edu,8,1,5c8324a4270ccd6bc4db833a96d22b9e,1077.457269
