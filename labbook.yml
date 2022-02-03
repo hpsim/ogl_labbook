@@ -58,13 +58,13 @@ cases:
 
 pipelines:
   - name: decompose
-    run: obr decompose --folder . --filter=mpiRank/40 --select=Multigrid
+    run: obr decompose --folder . --filter=mpiRank/40 --select=${{env.OBR_SELECT}}
   - name: run_gko
     run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}}${{env.OBR_SELECT}} --filter=mpiRank/32 --report=GKO_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_${{env.HOSTNAME}}.log
     results:
       - results
   - name: run_of
-    run: obr benchmark --folder . --select=DefaultOF${{env.OBR_SELECT}} --filter=mpiRank/8 --report=OF_${{env.HOSTNAME}${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
+    run: obr benchmark --folder . --select=DefaultOF${{env.OBR_SELECT}} --filter=mpiRank/8 --report=OF_${{env.HOSTNAME}}${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
     results:
       - results
 
