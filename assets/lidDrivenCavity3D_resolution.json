@@ -43,7 +43,7 @@
         "variation": [{
              "name": "mpiRank",
              "type": "ChangeNumberOfSubdomains",
-             "variants": { "numberOfSubdomains": [ 8, 38, 72] },
+             "variants": { "numberOfSubdomains": [ 8, "fullNode"] },
              "variant_of": ["DefaultOF", "HIP"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           }]
