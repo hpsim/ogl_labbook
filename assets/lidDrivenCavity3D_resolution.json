@@ -38,7 +38,7 @@
         },
         "variants": {"solver": ["CG", "BiCGStab"],
                      "preconditioner": ["NoPrecond"],
-                     "executor": ["HIP", "DefaultOF"]
+                     "executor": ["HIP", "DefaultOF", "CUDA"]
 	},
         "variation": [{
              "name": "mpiRank",
