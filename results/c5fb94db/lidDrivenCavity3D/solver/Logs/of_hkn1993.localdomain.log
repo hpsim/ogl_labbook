@@ -1,0 +1,1548 @@
+hash: 84a3b7cadf7d8743996a31df3b6bc8c4
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 21:40:48
+Host   : hkn1144.localdomain
+PID    : 189172
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/100/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn1144.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0123807, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 11160
+nonePCG:  Solving for p, Initial residual = 1, Final residual = 9.50904e-07, No Iterations 858
+linear solve p 163812
+time step continuity errors : sum local = 5.80438e-10, global = 2.15026e-21, cumulative = 2.15026e-21
+nonePCG:  Solving for p, Initial residual = 0.779441, Final residual = 9.81116e-07, No Iterations 846
+linear solve p 189180
+time step continuity errors : sum local = 7.50477e-10, global = -1.38561e-20, cumulative = -1.17058e-20
+ExecutionTime = 0.57 s  ClockTime = 1 s
+
+Time = 0.002
+
+Courant Number mean: 0.0550624 max: 0.808118
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.136971, Final residual = 0.00675163, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.43175, Final residual = 0.0192806, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.939944, Final residual = 0.0394916, No Iterations 5
+linear solve U 17076
+nonePCG:  Solving for p, Initial residual = 0.82146, Final residual = 9.83523e-07, No Iterations 838
+linear solve p 161395
+time step continuity errors : sum local = 1.12752e-09, global = -1.35103e-21, cumulative = -1.30569e-20
+nonePCG:  Solving for p, Initial residual = 0.759885, Final residual = 9.749e-07, No Iterations 836
+linear solve p 161536
+time step continuity errors : sum local = 1.14197e-09, global = -2.9764e-20, cumulative = -4.28208e-20
+ExecutionTime = 0.93 s  ClockTime = 1 s
+
+Time = 0.003
+
+Courant Number mean: 0.0839423 max: 0.944204
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.06427, Final residual = 0.00240894, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.225245, Final residual = 0.00642828, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.718581, Final residual = 0.0270145, No Iterations 5
+linear solve U 15557
+nonePCG:  Solving for p, Initial residual = 0.843312, Final residual = 9.85343e-07, No Iterations 848
+linear solve p 160973
+time step continuity errors : sum local = 1.01182e-09, global = -2.82174e-20, cumulative = -7.10382e-20
+nonePCG:  Solving for p, Initial residual = 0.808396, Final residual = 9.72243e-07, No Iterations 847
+linear solve p 161037
+time step continuity errors : sum local = 9.74018e-10, global = -1.97561e-20, cumulative = -9.07944e-20
+ExecutionTime = 1.29 s  ClockTime = 1 s
+
+Time = 0.004
+
+Courant Number mean: 0.0969093 max: 0.926909
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0386219, Final residual = 0.00173946, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.166005, Final residual = 0.00734072, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.619845, Final residual = 0.0210824, No Iterations 5
+linear solve U 15777
+nonePCG:  Solving for p, Initial residual = 0.767434, Final residual = 9.63126e-07, No Iterations 847
+linear solve p 160348
+time step continuity errors : sum local = 9.19479e-10, global = -3.0294e-20, cumulative = -1.21088e-19
+nonePCG:  Solving for p, Initial residual = 0.702123, Final residual = 9.75415e-07, No Iterations 845
+linear solve p 160417
+time step continuity errors : sum local = 9.46631e-10, global = -4.37887e-20, cumulative = -1.64877e-19
+ExecutionTime = 1.64 s  ClockTime = 2 s
+
+Time = 0.005
+
+Courant Number mean: 0.10902 max: 0.944785
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0304962, Final residual = 0.00133312, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.100149, Final residual = 0.00479013, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.571315, Final residual = 0.0174925, No Iterations 5
+linear solve U 15645
+nonePCG:  Solving for p, Initial residual = 0.771128, Final residual = 9.34341e-07, No Iterations 849
+linear solve p 160643
+time step continuity errors : sum local = 7.36121e-10, global = -2.31213e-20, cumulative = -1.87998e-19
+nonePCG:  Solving for p, Initial residual = 0.722748, Final residual = 9.49674e-07, No Iterations 848
+linear solve p 162219
+time step continuity errors : sum local = 7.36206e-10, global = -3.98779e-20, cumulative = -2.27876e-19
+ExecutionTime = 2.01 s  ClockTime = 2 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: a6a889f9475888d6d7782bfc044b317d
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 21:40:57
+Host   : hkn1144.localdomain
+PID    : 192541
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/100/Variation_matrix_solver/CG_FDIC_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn1144.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0123807, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 11318
+FDICPCG:  Solving for p, Initial residual = 1, Final residual = 9.98795e-07, No Iterations 400
+linear solve p 135418
+time step continuity errors : sum local = 6.09678e-10, global = 2.95377e-21, cumulative = 2.95377e-21
+FDICPCG:  Solving for p, Initial residual = 0.779441, Final residual = 9.54938e-07, No Iterations 397
+linear solve p 131519
+time step continuity errors : sum local = 7.30461e-10, global = -1.72411e-20, cumulative = -1.42873e-20
+ExecutionTime = 0.46 s  ClockTime = 0 s
+
+Time = 0.002
+
+Courant Number mean: 0.0550624 max: 0.808118
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.136971, Final residual = 0.00675163, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.43175, Final residual = 0.0192806, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.939941, Final residual = 0.0394909, No Iterations 5
+linear solve U 15401
+FDICPCG:  Solving for p, Initial residual = 0.82146, Final residual = 9.27792e-07, No Iterations 398
+linear solve p 167359
+time step continuity errors : sum local = 1.06364e-09, global = -2.09346e-20, cumulative = -3.52219e-20
+FDICPCG:  Solving for p, Initial residual = 0.759885, Final residual = 9.17025e-07, No Iterations 397
+linear solve p 146171
+time step continuity errors : sum local = 1.07418e-09, global = -3.26994e-20, cumulative = -6.79213e-20
+ExecutionTime = 0.82 s  ClockTime = 1 s
+
+Time = 0.003
+
+Courant Number mean: 0.0839423 max: 0.944204
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.06427, Final residual = 0.00240894, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.225245, Final residual = 0.00642828, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.718576, Final residual = 0.0270141, No Iterations 5
+linear solve U 17627
+FDICPCG:  Solving for p, Initial residual = 0.843312, Final residual = 9.05353e-07, No Iterations 397
+linear solve p 137049
+time step continuity errors : sum local = 9.29691e-10, global = -2.0351e-20, cumulative = -8.82722e-20
+FDICPCG:  Solving for p, Initial residual = 0.808397, Final residual = 9.54684e-07, No Iterations 396
+linear solve p 129198
+time step continuity errors : sum local = 9.56445e-10, global = -1.41887e-20, cumulative = -1.02461e-19
+ExecutionTime = 1.12 s  ClockTime = 1 s
+
+Time = 0.004
+
+Courant Number mean: 0.0969093 max: 0.926909
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0386219, Final residual = 0.00173946, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.166005, Final residual = 0.00734072, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.619844, Final residual = 0.0210825, No Iterations 5
+linear solve U 15543
+FDICPCG:  Solving for p, Initial residual = 0.767434, Final residual = 9.1856e-07, No Iterations 395
+linear solve p 129225
+time step continuity errors : sum local = 8.76963e-10, global = -3.01756e-20, cumulative = -1.32636e-19
+FDICPCG:  Solving for p, Initial residual = 0.702123, Final residual = 9.30077e-07, No Iterations 394
+linear solve p 129007
+time step continuity errors : sum local = 9.02649e-10, global = -2.96426e-20, cumulative = -1.62279e-19
+ExecutionTime = 1.42 s  ClockTime = 1 s
+
+Time = 0.005
+
+Courant Number mean: 0.10902 max: 0.944785
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0304963, Final residual = 0.00133312, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.100149, Final residual = 0.00479014, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.57131, Final residual = 0.0174927, No Iterations 5
+linear solve U 15890
+FDICPCG:  Solving for p, Initial residual = 0.771129, Final residual = 9.92716e-07, No Iterations 390
+linear solve p 127418
+time step continuity errors : sum local = 7.82104e-10, global = -2.70719e-20, cumulative = -1.89351e-19
+FDICPCG:  Solving for p, Initial residual = 0.722749, Final residual = 9.51005e-07, No Iterations 390
+linear solve p 127041
+time step continuity errors : sum local = 7.37238e-10, global = -1.63535e-20, cumulative = -2.05705e-19
+ExecutionTime = 1.71 s  ClockTime = 2 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: 5a93318406fcfdc9fc5d3bbae500c9f2
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 21:41:02
+Host   : hkn1144.localdomain
+PID    : 194223
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/100/Variation_matrix_solver/CG_DIC_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn1144.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0123807, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 12109
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 9.98795e-07, No Iterations 400
+linear solve p 124977
+time step continuity errors : sum local = 6.09678e-10, global = 2.95377e-21, cumulative = 2.95377e-21
+DICPCG:  Solving for p, Initial residual = 0.779441, Final residual = 9.54938e-07, No Iterations 397
+linear solve p 121837
+time step continuity errors : sum local = 7.30461e-10, global = -1.72411e-20, cumulative = -1.42873e-20
+ExecutionTime = 0.4 s  ClockTime = 1 s
+
+Time = 0.002
+
+Courant Number mean: 0.0550624 max: 0.808118
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.136971, Final residual = 0.00675163, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.43175, Final residual = 0.0192806, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.939941, Final residual = 0.0394909, No Iterations 5
+linear solve U 15440
+DICPCG:  Solving for p, Initial residual = 0.82146, Final residual = 9.27792e-07, No Iterations 398
+linear solve p 137515
+time step continuity errors : sum local = 1.06364e-09, global = -2.09346e-20, cumulative = -3.52219e-20
+DICPCG:  Solving for p, Initial residual = 0.759885, Final residual = 9.17025e-07, No Iterations 397
+linear solve p 146846
+time step continuity errors : sum local = 1.07418e-09, global = -3.26994e-20, cumulative = -6.79213e-20
+ExecutionTime = 0.72 s  ClockTime = 1 s
+
+Time = 0.003
+
+Courant Number mean: 0.0839423 max: 0.944204
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.06427, Final residual = 0.00240894, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.225245, Final residual = 0.00642828, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.718576, Final residual = 0.0270141, No Iterations 5
+linear solve U 20366
+DICPCG:  Solving for p, Initial residual = 0.843312, Final residual = 9.05353e-07, No Iterations 397
+linear solve p 147247
+time step continuity errors : sum local = 9.29691e-10, global = -2.0351e-20, cumulative = -8.82722e-20
+DICPCG:  Solving for p, Initial residual = 0.808397, Final residual = 9.54684e-07, No Iterations 396
+linear solve p 132901
+time step continuity errors : sum local = 9.56445e-10, global = -1.41887e-20, cumulative = -1.02461e-19
+ExecutionTime = 1.04 s  ClockTime = 1 s
+
+Time = 0.004
+
+Courant Number mean: 0.0969093 max: 0.926909
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0386219, Final residual = 0.00173946, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.166005, Final residual = 0.00734072, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.619844, Final residual = 0.0210825, No Iterations 5
+linear solve U 15127
+DICPCG:  Solving for p, Initial residual = 0.767434, Final residual = 9.1856e-07, No Iterations 395
+linear solve p 126689
+time step continuity errors : sum local = 8.76963e-10, global = -3.01756e-20, cumulative = -1.32636e-19
+DICPCG:  Solving for p, Initial residual = 0.702123, Final residual = 9.30077e-07, No Iterations 394
+linear solve p 120045
+time step continuity errors : sum local = 9.02649e-10, global = -2.96426e-20, cumulative = -1.62279e-19
+ExecutionTime = 1.33 s  ClockTime = 1 s
+
+Time = 0.005
+
+Courant Number mean: 0.10902 max: 0.944785
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0304963, Final residual = 0.00133312, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.100149, Final residual = 0.00479014, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.57131, Final residual = 0.0174927, No Iterations 5
+linear solve U 15369
+DICPCG:  Solving for p, Initial residual = 0.771129, Final residual = 9.92716e-07, No Iterations 390
+linear solve p 124968
+time step continuity errors : sum local = 7.82104e-10, global = -2.70719e-20, cumulative = -1.89351e-19
+DICPCG:  Solving for p, Initial residual = 0.722749, Final residual = 9.51005e-07, No Iterations 390
+linear solve p 122574
+time step continuity errors : sum local = 7.37238e-10, global = -1.63535e-20, cumulative = -2.05705e-19
+ExecutionTime = 1.6 s  ClockTime = 2 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: fc5ee54b7b04d1d3b4dbf445107e91fe
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 21:46:57
+Host   : hkn1641.localdomain
+PID    : 1588192
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/200/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn1641.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0005
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0234332, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 211606
+nonePCG:  Solving for p, Initial residual = 1, Final residual = 9.84305e-07, No Iterations 1735
+linear solve p 6956493
+time step continuity errors : sum local = 2.06012e-10, global = 2.29943e-21, cumulative = 2.29943e-21
+nonePCG:  Solving for p, Initial residual = 0.822908, Final residual = 9.63695e-07, No Iterations 1729
+linear solve p 6829450
+time step continuity errors : sum local = 2.41794e-10, global = -2.03569e-21, cumulative = 2.63746e-22
+ExecutionTime = 14.76 s  ClockTime = 16 s
+
+Time = 0.001
+
+Courant Number mean: 0.038857 max: 0.866941
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.117681, Final residual = 0.0147872, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.506534, Final residual = 0.0579909, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.906006, Final residual = 0.109601, No Iterations 5
+linear solve U 347901
+nonePCG:  Solving for p, Initial residual = 0.908845, Final residual = 9.93618e-07, No Iterations 1710
+linear solve p 6758164
+time step continuity errors : sum local = 5.72326e-10, global = -4.57737e-21, cumulative = -4.31362e-21
+nonePCG:  Solving for p, Initial residual = 0.857257, Final residual = 9.98805e-07, No Iterations 1705
+linear solve p 6770570
+time step continuity errors : sum local = 5.86904e-10, global = -1.23219e-21, cumulative = -5.54581e-21
+ExecutionTime = 28.84 s  ClockTime = 30 s
+
+Time = 0.0015
+
+Courant Number mean: 0.0609427 max: 1.02246
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0680658, Final residual = 0.00638992, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.355277, Final residual = 0.0245103, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.757272, Final residual = 0.0746964, No Iterations 5
+linear solve U 348092
+nonePCG:  Solving for p, Initial residual = 0.940448, Final residual = 9.81464e-07, No Iterations 1717
+linear solve p 6826151
+time step continuity errors : sum local = 6.89817e-10, global = -8.08685e-21, cumulative = -1.36327e-20
+nonePCG:  Solving for p, Initial residual = 0.905926, Final residual = 9.80774e-07, No Iterations 1716
+linear solve p 6804551
+time step continuity errors : sum local = 6.83412e-10, global = -2.26694e-21, cumulative = -1.58996e-20
+ExecutionTime = 43.01 s  ClockTime = 44 s
+
+Time = 0.002
+
+Courant Number mean: 0.0714122 max: 0.952461
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0566146, Final residual = 0.00622568, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.296889, Final residual = 0.0308028, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.76997, Final residual = 0.0635903, No Iterations 5
+linear solve U 344761
+nonePCG:  Solving for p, Initial residual = 0.937704, Final residual = 9.9091e-07, No Iterations 1696
+linear solve p 6743466
+time step continuity errors : sum local = 8.52766e-10, global = 3.39797e-22, cumulative = -1.55598e-20
+nonePCG:  Solving for p, Initial residual = 0.877578, Final residual = 9.98747e-07, No Iterations 1688
+linear solve p 6645003
+time step continuity errors : sum local = 8.76107e-10, global = -4.85366e-21, cumulative = -2.04135e-20
+ExecutionTime = 56.92 s  ClockTime = 58 s
+
+Time = 0.0025
+
+Courant Number mean: 0.0814556 max: 1.10768
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0539978, Final residual = 0.00567018, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.281165, Final residual = 0.023769, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.765303, Final residual = 0.056346, No Iterations 5
+linear solve U 336883
+nonePCG:  Solving for p, Initial residual = 0.953381, Final residual = 9.87311e-07, No Iterations 1680
+linear solve p 6599904
+time step continuity errors : sum local = 9.67395e-10, global = -4.35347e-21, cumulative = -2.47669e-20
+nonePCG:  Solving for p, Initial residual = 0.912391, Final residual = 9.81091e-07, No Iterations 1679
+linear solve p 6631934
+time step continuity errors : sum local = 9.55439e-10, global = -9.99398e-21, cumulative = -3.47609e-20
+ExecutionTime = 70.68 s  ClockTime = 72 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: e8c1857a2eb95432592f4b6eb3d15671
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 21:48:17
+Host   : hkn1641.localdomain
+PID    : 1591628
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/200/Variation_matrix_solver/CG_FDIC_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn1641.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0005
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0234332, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 173796
+FDICPCG:  Solving for p, Initial residual = 1, Final residual = 9.90136e-07, No Iterations 776
+linear solve p 5788810
+time step continuity errors : sum local = 2.07238e-10, global = -5.41318e-21, cumulative = -5.41318e-21
+FDICPCG:  Solving for p, Initial residual = 0.822908, Final residual = 9.9006e-07, No Iterations 749
+linear solve p 5610340
+time step continuity errors : sum local = 2.48408e-10, global = -2.2535e-21, cumulative = -7.66668e-21
+ExecutionTime = 12.35 s  ClockTime = 13 s
+
+Time = 0.001
+
+Courant Number mean: 0.038857 max: 0.866941
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.117681, Final residual = 0.0147872, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.506534, Final residual = 0.0579909, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.906007, Final residual = 0.109601, No Iterations 5
+linear solve U 374659
+FDICPCG:  Solving for p, Initial residual = 0.908845, Final residual = 9.58496e-07, No Iterations 742
+linear solve p 5636826
+time step continuity errors : sum local = 5.521e-10, global = -6.06647e-21, cumulative = -1.37332e-20
+FDICPCG:  Solving for p, Initial residual = 0.857257, Final residual = 9.75183e-07, No Iterations 740
+linear solve p 5574616
+time step continuity errors : sum local = 5.73028e-10, global = -2.94462e-21, cumulative = -1.66778e-20
+ExecutionTime = 24.11 s  ClockTime = 25 s
+
+Time = 0.0015
+
+Courant Number mean: 0.0609427 max: 1.02246
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0680658, Final residual = 0.00638992, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.355277, Final residual = 0.0245104, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.757274, Final residual = 0.0746972, No Iterations 5
+linear solve U 355948
+FDICPCG:  Solving for p, Initial residual = 0.940448, Final residual = 9.92003e-07, No Iterations 708
+linear solve p 5262382
+time step continuity errors : sum local = 6.97217e-10, global = 1.14047e-21, cumulative = -1.55373e-20
+FDICPCG:  Solving for p, Initial residual = 0.905926, Final residual = 9.88892e-07, No Iterations 707
+linear solve p 5329043
+time step continuity errors : sum local = 6.89063e-10, global = -1.79272e-21, cumulative = -1.733e-20
+ExecutionTime = 35.25 s  ClockTime = 36 s
+
+Time = 0.002
+
+Courant Number mean: 0.0714122 max: 0.952461
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0566146, Final residual = 0.00622568, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.296889, Final residual = 0.0308028, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.769969, Final residual = 0.0635909, No Iterations 5
+linear solve U 341732
+FDICPCG:  Solving for p, Initial residual = 0.937704, Final residual = 9.46402e-07, No Iterations 700
+linear solve p 5202323
+time step continuity errors : sum local = 8.14457e-10, global = -2.03269e-21, cumulative = -1.93627e-20
+FDICPCG:  Solving for p, Initial residual = 0.877578, Final residual = 9.43719e-07, No Iterations 699
+linear solve p 5209040
+time step continuity errors : sum local = 8.27829e-10, global = -4.91312e-21, cumulative = -2.42758e-20
+ExecutionTime = 46.2 s  ClockTime = 47 s
+
+Time = 0.0025
+
+Courant Number mean: 0.0814556 max: 1.10768
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0539978, Final residual = 0.00567019, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.281165, Final residual = 0.0237689, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.765305, Final residual = 0.0563441, No Iterations 5
+linear solve U 368154
+FDICPCG:  Solving for p, Initial residual = 0.953381, Final residual = 9.8055e-07, No Iterations 698
+linear solve p 5205287
+time step continuity errors : sum local = 9.6075e-10, global = -3.14328e-21, cumulative = -2.74191e-20
+FDICPCG:  Solving for p, Initial residual = 0.912391, Final residual = 9.34899e-07, No Iterations 698
+linear solve p 5161594
+time step continuity errors : sum local = 9.10434e-10, global = -6.18497e-21, cumulative = -3.36041e-20
+ExecutionTime = 57.14 s  ClockTime = 58 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: 168984aa4f80aeb254e3f6174a49e54a
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 21:49:18
+Host   : hkn1641.localdomain
+PID    : 1593359
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/200/Variation_matrix_solver/CG_DIC_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn1641.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0005
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0234332, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 208591
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 9.90136e-07, No Iterations 776
+linear solve p 6050334
+time step continuity errors : sum local = 2.07238e-10, global = -5.41318e-21, cumulative = -5.41318e-21
+DICPCG:  Solving for p, Initial residual = 0.822908, Final residual = 9.9006e-07, No Iterations 749
+linear solve p 5858688
+time step continuity errors : sum local = 2.48408e-10, global = -2.2535e-21, cumulative = -7.66668e-21
+ExecutionTime = 12.87 s  ClockTime = 13 s
+
+Time = 0.001
+
+Courant Number mean: 0.038857 max: 0.866941
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.117681, Final residual = 0.0147872, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.506534, Final residual = 0.0579909, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.906007, Final residual = 0.109601, No Iterations 5
+linear solve U 357510
+DICPCG:  Solving for p, Initial residual = 0.908845, Final residual = 9.58496e-07, No Iterations 742
+linear solve p 5880164
+time step continuity errors : sum local = 5.521e-10, global = -6.06647e-21, cumulative = -1.37332e-20
+DICPCG:  Solving for p, Initial residual = 0.857257, Final residual = 9.75183e-07, No Iterations 740
+linear solve p 5768325
+time step continuity errors : sum local = 5.73028e-10, global = -2.94462e-21, cumulative = -1.66778e-20
+ExecutionTime = 25.09 s  ClockTime = 26 s
+
+Time = 0.0015
+
+Courant Number mean: 0.0609427 max: 1.02246
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0680658, Final residual = 0.00638992, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.355277, Final residual = 0.0245104, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.757274, Final residual = 0.0746972, No Iterations 5
+linear solve U 352524
+DICPCG:  Solving for p, Initial residual = 0.940448, Final residual = 9.92003e-07, No Iterations 708
+linear solve p 5520497
+time step continuity errors : sum local = 6.97217e-10, global = 1.14047e-21, cumulative = -1.55373e-20
+DICPCG:  Solving for p, Initial residual = 0.905926, Final residual = 9.88892e-07, No Iterations 707
+linear solve p 5494473
+time step continuity errors : sum local = 6.89063e-10, global = -1.79272e-21, cumulative = -1.733e-20
+ExecutionTime = 36.67 s  ClockTime = 37 s
+
+Time = 0.002
+
+Courant Number mean: 0.0714122 max: 0.952461
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0566146, Final residual = 0.00622568, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.296889, Final residual = 0.0308028, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.769969, Final residual = 0.0635909, No Iterations 5
+linear solve U 342485
+DICPCG:  Solving for p, Initial residual = 0.937704, Final residual = 9.46402e-07, No Iterations 700
+linear solve p 5461575
+time step continuity errors : sum local = 8.14457e-10, global = -2.03269e-21, cumulative = -1.93627e-20
+DICPCG:  Solving for p, Initial residual = 0.877578, Final residual = 9.43719e-07, No Iterations 699
+linear solve p 5434837
+time step continuity errors : sum local = 8.27829e-10, global = -4.91312e-21, cumulative = -2.42758e-20
+ExecutionTime = 48.13 s  ClockTime = 49 s
+
+Time = 0.0025
+
+Courant Number mean: 0.0814556 max: 1.10768
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0539978, Final residual = 0.00567019, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.281165, Final residual = 0.0237689, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.765305, Final residual = 0.0563441, No Iterations 5
+linear solve U 341506
+DICPCG:  Solving for p, Initial residual = 0.953381, Final residual = 9.8055e-07, No Iterations 698
+linear solve p 5405635
+time step continuity errors : sum local = 9.6075e-10, global = -3.14328e-21, cumulative = -2.74191e-20
+DICPCG:  Solving for p, Initial residual = 0.912391, Final residual = 9.34899e-07, No Iterations 698
+linear solve p 5394530
+time step continuity errors : sum local = 9.10434e-10, global = -6.18497e-21, cumulative = -3.36041e-20
+ExecutionTime = 59.48 s  ClockTime = 60 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: 7ecc4cd3b7fb284ab3fed4dc8eebe4f3
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 21:52:30
+Host   : hkn0019.localdomain
+PID    : 3532849
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/300/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn0019.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.000333333
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0308117, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 602142
+nonePCG:  Solving for p, Initial residual = 1, Final residual = 9.86508e-07, No Iterations 2618
+linear solve p 52035972
+time step continuity errors : sum local = 1.0568e-10, global = 1.00416e-21, cumulative = 1.00416e-21
+nonePCG:  Solving for p, Initial residual = 0.837201, Final residual = 9.76747e-07, No Iterations 2609
+linear solve p 51836045
+time step continuity errors : sum local = 1.23558e-10, global = -1.95194e-21, cumulative = -9.47778e-22
+ExecutionTime = 106.71 s  ClockTime = 108 s
+
+Time = 0.000666667
+
+Courant Number mean: 0.0300619 max: 0.891187
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.10617, Final residual = 0.0201161, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.547015, Final residual = 0.0960697, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.892828, Final residual = 0.176458, No Iterations 5
+linear solve U 1249023
+nonePCG:  Solving for p, Initial residual = 0.93403, Final residual = 9.87095e-07, No Iterations 2596
+linear solve p 51764674
+time step continuity errors : sum local = 3.5216e-10, global = -2.78381e-21, cumulative = -3.73159e-21
+nonePCG:  Solving for p, Initial residual = 0.885747, Final residual = 9.83077e-07, No Iterations 2593
+linear solve p 51108302
+time step continuity errors : sum local = 3.57675e-10, global = -1.96145e-21, cumulative = -5.69304e-21
+ExecutionTime = 211.3 s  ClockTime = 213 s
+
+Time = 0.001
+
+Courant Number mean: 0.0481998 max: 1.07207
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0660693, Final residual = 0.00978896, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.414447, Final residual = 0.0444998, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.787267, Final residual = 0.11975, No Iterations 5
+linear solve U 1248567
+nonePCG:  Solving for p, Initial residual = 0.962084, Final residual = 9.93307e-07, No Iterations 2576
+linear solve p 51033659
+time step continuity errors : sum local = 5.06988e-10, global = -4.5888e-21, cumulative = -1.02818e-20
+nonePCG:  Solving for p, Initial residual = 0.925221, Final residual = 9.89048e-07, No Iterations 2574
+linear solve p 50720292
+time step continuity errors : sum local = 5.04335e-10, global = -3.1543e-21, cumulative = -1.34361e-20
+ExecutionTime = 314.79 s  ClockTime = 317 s
+
+Time = 0.00133333
+
+Courant Number mean: 0.0572509 max: 0.963389
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0637793, Final residual = 0.0103286, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.374301, Final residual = 0.0546482, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.80201, Final residual = 0.101707, No Iterations 5
+linear solve U 1227333
+nonePCG:  Solving for p, Initial residual = 0.968068, Final residual = 9.72865e-07, No Iterations 2568
+linear solve p 50989018
+time step continuity errors : sum local = 7.18697e-10, global = -6.4049e-21, cumulative = -1.9841e-20
+nonePCG:  Solving for p, Initial residual = 0.912269, Final residual = 9.7545e-07, No Iterations 2566
+linear solve p 51442711
+time step continuity errors : sum local = 7.33961e-10, global = -4.30435e-21, cumulative = -2.41454e-20
+ExecutionTime = 418.94 s  ClockTime = 422 s
+
+Time = 0.00166667
+
+Courant Number mean: 0.0659115 max: 1.32466
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0687333, Final residual = 0.0100962, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.400238, Final residual = 0.0464612, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.794303, Final residual = 0.0895727, No Iterations 5
+linear solve U 1243620
+nonePCG:  Solving for p, Initial residual = 0.977411, Final residual = 9.92414e-07, No Iterations 2541
+linear solve p 50183967
+time step continuity errors : sum local = 1.01206e-09, global = -2.79336e-21, cumulative = -2.69387e-20
+nonePCG:  Solving for p, Initial residual = 0.933165, Final residual = 9.8681e-07, No Iterations 2539
+linear solve p 50268692
+time step continuity errors : sum local = 1.00961e-09, global = -4.00379e-21, cumulative = -3.09425e-20
+ExecutionTime = 521.11 s  ClockTime = 524 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: b3048e57103d10571ee06d31980bcdf9
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 22:01:25
+Host   : hkn0019.localdomain
+PID    : 3536708
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/300/Variation_matrix_solver/CG_FDIC_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn0019.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.000333333
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0308117, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 607195
+FDICPCG:  Solving for p, Initial residual = 1, Final residual = 9.76844e-07, No Iterations 1181
+linear solve p 36777141
+time step continuity errors : sum local = 1.04646e-10, global = 3.57894e-21, cumulative = 3.57894e-21
+FDICPCG:  Solving for p, Initial residual = 0.837201, Final residual = 9.84953e-07, No Iterations 1176
+linear solve p 36573254
+time step continuity errors : sum local = 1.24597e-10, global = -1.92526e-21, cumulative = 1.65369e-21
+ExecutionTime = 76.28 s  ClockTime = 77 s
+
+Time = 0.000666667
+
+Courant Number mean: 0.0300619 max: 0.891187
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.10617, Final residual = 0.0201161, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.547015, Final residual = 0.0960697, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.892828, Final residual = 0.176459, No Iterations 5
+linear solve U 1237592
+FDICPCG:  Solving for p, Initial residual = 0.93403, Final residual = 9.94404e-07, No Iterations 1129
+linear solve p 34958999
+time step continuity errors : sum local = 3.5478e-10, global = -9.39107e-21, cumulative = -7.73739e-21
+FDICPCG:  Solving for p, Initial residual = 0.885746, Final residual = 9.94101e-07, No Iterations 1123
+linear solve p 34672053
+time step continuity errors : sum local = 3.61699e-10, global = -1.9923e-21, cumulative = -9.72969e-21
+ExecutionTime = 147.81 s  ClockTime = 149 s
+
+Time = 0.001
+
+Courant Number mean: 0.0481998 max: 1.07207
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0660693, Final residual = 0.00978898, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.414447, Final residual = 0.0444999, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.787269, Final residual = 0.119753, No Iterations 5
+linear solve U 1238194
+FDICPCG:  Solving for p, Initial residual = 0.962084, Final residual = 9.96947e-07, No Iterations 1110
+linear solve p 34538757
+time step continuity errors : sum local = 5.08845e-10, global = -3.39221e-21, cumulative = -1.31219e-20
+FDICPCG:  Solving for p, Initial residual = 0.925221, Final residual = 9.64119e-07, No Iterations 1110
+linear solve p 34247020
+time step continuity errors : sum local = 4.91622e-10, global = -4.65459e-21, cumulative = -1.77765e-20
+ExecutionTime = 218.48 s  ClockTime = 220 s
+
+Time = 0.00133333
+
+Courant Number mean: 0.0572509 max: 0.963389
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0637793, Final residual = 0.0103286, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.374302, Final residual = 0.0546482, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.802013, Final residual = 0.101708, No Iterations 5
+linear solve U 1270836
+FDICPCG:  Solving for p, Initial residual = 0.968068, Final residual = 9.98471e-07, No Iterations 1029
+linear solve p 31735896
+time step continuity errors : sum local = 7.37641e-10, global = -3.85962e-21, cumulative = -2.16361e-20
+FDICPCG:  Solving for p, Initial residual = 0.912269, Final residual = 9.91205e-07, No Iterations 1026
+linear solve p 31421987
+time step continuity errors : sum local = 7.45843e-10, global = -1.92427e-21, cumulative = -2.35604e-20
+ExecutionTime = 283.57 s  ClockTime = 285 s
+
+Time = 0.00166667
+
+Courant Number mean: 0.0659115 max: 1.32466
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0687335, Final residual = 0.0100962, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.400238, Final residual = 0.0464611, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.794304, Final residual = 0.0895693, No Iterations 5
+linear solve U 1252479
+FDICPCG:  Solving for p, Initial residual = 0.977411, Final residual = 9.83033e-07, No Iterations 1018
+linear solve p 31194682
+time step continuity errors : sum local = 1.00251e-09, global = -4.45121e-21, cumulative = -2.80116e-20
+FDICPCG:  Solving for p, Initial residual = 0.933165, Final residual = 9.91153e-07, No Iterations 1017
+linear solve p 31315834
+time step continuity errors : sum local = 1.01407e-09, global = -5.49732e-21, cumulative = -3.35089e-20
+ExecutionTime = 348.02 s  ClockTime = 350 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: cd8f175ce3ca574eb9d7514b7f076fab
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 22:07:18
+Host   : hkn0019.localdomain
+PID    : 3538749
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/300/Variation_matrix_solver/CG_DIC_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn0019.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.000333333
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0308117, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 622509
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 9.76844e-07, No Iterations 1181
+linear solve p 38802127
+time step continuity errors : sum local = 1.04646e-10, global = 3.57894e-21, cumulative = 3.57894e-21
+DICPCG:  Solving for p, Initial residual = 0.837201, Final residual = 9.84953e-07, No Iterations 1176
+linear solve p 38145893
+time step continuity errors : sum local = 1.24597e-10, global = -1.92526e-21, cumulative = 1.65369e-21
+ExecutionTime = 79.89 s  ClockTime = 81 s
+
+Time = 0.000666667
+
+Courant Number mean: 0.0300619 max: 0.891187
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.10617, Final residual = 0.0201161, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.547015, Final residual = 0.0960697, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.892828, Final residual = 0.176459, No Iterations 5
+linear solve U 1233554
+DICPCG:  Solving for p, Initial residual = 0.93403, Final residual = 9.94404e-07, No Iterations 1129
+linear solve p 36472971
+time step continuity errors : sum local = 3.5478e-10, global = -9.39107e-21, cumulative = -7.73739e-21
+DICPCG:  Solving for p, Initial residual = 0.885746, Final residual = 9.94101e-07, No Iterations 1123
+linear solve p 36331172
+time step continuity errors : sum local = 3.61699e-10, global = -1.9923e-21, cumulative = -9.72969e-21
+ExecutionTime = 154.58 s  ClockTime = 156 s
+
+Time = 0.001
+
+Courant Number mean: 0.0481998 max: 1.07207
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0660693, Final residual = 0.00978898, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.414447, Final residual = 0.0444999, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.787269, Final residual = 0.119753, No Iterations 5
+linear solve U 1229658
+DICPCG:  Solving for p, Initial residual = 0.962084, Final residual = 9.96947e-07, No Iterations 1110
+linear solve p 35950104
+time step continuity errors : sum local = 5.08845e-10, global = -3.39221e-21, cumulative = -1.31219e-20
+DICPCG:  Solving for p, Initial residual = 0.925221, Final residual = 9.64119e-07, No Iterations 1110
+linear solve p 36238901
+time step continuity errors : sum local = 4.91622e-10, global = -4.65459e-21, cumulative = -1.77765e-20
+ExecutionTime = 228.64 s  ClockTime = 230 s
+
+Time = 0.00133333
+
+Courant Number mean: 0.0572509 max: 0.963389
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0637793, Final residual = 0.0103286, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.374302, Final residual = 0.0546482, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.802013, Final residual = 0.101708, No Iterations 5
+linear solve U 1250269
+DICPCG:  Solving for p, Initial residual = 0.968068, Final residual = 9.98471e-07, No Iterations 1029
+linear solve p 33036664
+time step continuity errors : sum local = 7.37641e-10, global = -3.85962e-21, cumulative = -2.16361e-20
+DICPCG:  Solving for p, Initial residual = 0.912269, Final residual = 9.91205e-07, No Iterations 1026
+linear solve p 32977765
+time step continuity errors : sum local = 7.45843e-10, global = -1.92427e-21, cumulative = -2.35604e-20
+ExecutionTime = 296.56 s  ClockTime = 298 s
+
+Time = 0.00166667
+
+Courant Number mean: 0.0659115 max: 1.32466
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0687335, Final residual = 0.0100962, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.400238, Final residual = 0.0464611, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.794304, Final residual = 0.0895693, No Iterations 5
+linear solve U 1239837
+DICPCG:  Solving for p, Initial residual = 0.977411, Final residual = 9.83033e-07, No Iterations 1018
+linear solve p 32927770
+time step continuity errors : sum local = 1.00251e-09, global = -4.45121e-21, cumulative = -2.80116e-20
+DICPCG:  Solving for p, Initial residual = 0.933165, Final residual = 9.91153e-07, No Iterations 1017
+linear solve p 32731529
+time step continuity errors : sum local = 1.01407e-09, global = -5.49732e-21, cumulative = -3.35089e-20
+ExecutionTime = 364.15 s  ClockTime = 366 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: d05581cfe6754e60e83b44af26104974
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 22:07:08
+Host   : hkn0037.localdomain
+PID    : 3676117
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/400/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn0037.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.00025
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0353154, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 1449148
+nonePCG:  Solving for p, Initial residual = 1, Final residual = 9.96039e-07, No Iterations 3512
+linear solve p 170471770
+time step continuity errors : sum local = 6.54418e-11, global = 2.54275e-22, cumulative = 2.54275e-22
+nonePCG:  Solving for p, Initial residual = 0.845907, Final residual = 9.94739e-07, No Iterations 3500
+linear solve p 170063989
+time step continuity errors : sum local = 7.64639e-11, global = 4.0473e-24, cumulative = 2.58323e-22
+ExecutionTime = 347.01 s  ClockTime = 349 s
+
+Time = 0.0005
+
+Courant Number mean: 0.0245927 max: 0.905081
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0983649, Final residual = 0.0237595, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.575182, Final residual = 0.134804, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.863469, Final residual = 0.22629, No Iterations 5
+linear solve U 2941351
+nonePCG:  Solving for p, Initial residual = 0.94634, Final residual = 9.94587e-07, No Iterations 3480
+linear solve p 169295312
+time step continuity errors : sum local = 2.46363e-10, global = -7.96933e-22, cumulative = -5.3861e-22
+nonePCG:  Solving for p, Initial residual = 0.900185, Final residual = 9.8454e-07, No Iterations 3476
+linear solve p 168579269
+time step continuity errors : sum local = 2.48636e-10, global = 1.00166e-21, cumulative = 4.63048e-22
+ExecutionTime = 688.79 s  ClockTime = 692 s
+
+Time = 0.00075
+
+Courant Number mean: 0.0400082 max: 1.11015
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0630015, Final residual = 0.0125703, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.444902, Final residual = 0.064635, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.779824, Final residual = 0.153165, No Iterations 5
+linear solve U 2956385
+nonePCG:  Solving for p, Initial residual = 0.971215, Final residual = 9.96912e-07, No Iterations 3493
+linear solve p 169284517
+time step continuity errors : sum local = 3.86502e-10, global = -1.17531e-21, cumulative = -7.12264e-22
+nonePCG:  Solving for p, Initial residual = 0.933062, Final residual = 9.95276e-07, No Iterations 3491
+linear solve p 170151483
+time step continuity errors : sum local = 3.87003e-10, global = -7.42915e-22, cumulative = -1.45518e-21
+ExecutionTime = 1032.13 s  ClockTime = 1036 s
+
+Time = 0.001
+
+Courant Number mean: 0.0479117 max: 0.970771
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.065896, Final residual = 0.0135171, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.422201, Final residual = 0.0774152, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.805703, Final residual = 0.129159, No Iterations 5
+linear solve U 2966616
+nonePCG:  Solving for p, Initial residual = 0.978778, Final residual = 9.94286e-07, No Iterations 3491
+linear solve p 169103948
+time step continuity errors : sum local = 6.17624e-10, global = -4.20383e-22, cumulative = -1.87556e-21
+nonePCG:  Solving for p, Initial residual = 0.925204, Final residual = 9.91071e-07, No Iterations 3483
+linear solve p 169084661
+time step continuity errors : sum local = 6.26773e-10, global = -1.1963e-21, cumulative = -3.07186e-21
+ExecutionTime = 1374.22 s  ClockTime = 1380 s
+
+Time = 0.00125
+
+Courant Number mean: 0.0553702 max: 1.55004
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0764307, Final residual = 0.0136254, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.467197, Final residual = 0.0667477, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.796242, Final residual = 0.111449, No Iterations 5
+linear solve U 2945299
+nonePCG:  Solving for p, Initial residual = 0.984923, Final residual = 9.93088e-07, No Iterations 2152
+linear solve p 104851420
+time step continuity errors : sum local = 1.00732e-09, global = -1.76806e-21, cumulative = -4.83992e-21
+nonePCG:  Solving for p, Initial residual = 0.939446, Final residual = 9.84722e-07, No Iterations 2137
+linear solve p 104250997
+time step continuity errors : sum local = 9.59294e-10, global = -6.57337e-22, cumulative = -5.49726e-21
+ExecutionTime = 1587.61 s  ClockTime = 1594 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: 7246a8543237da89a58aa84e1b6acb31
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 22:33:56
+Host   : hkn0037.localdomain
+PID    : 3680982
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/400/Variation_matrix_solver/CG_FDIC_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn0037.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.00025
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0353154, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 1452438
+FDICPCG:  Solving for p, Initial residual = 1, Final residual = 9.88737e-07, No Iterations 1572
+linear solve p 117738203
+time step continuity errors : sum local = 6.49623e-11, global = 1.10976e-21, cumulative = 1.10976e-21
+FDICPCG:  Solving for p, Initial residual = 0.845908, Final residual = 9.97157e-07, No Iterations 1565
+linear solve p 117829725
+time step continuity errors : sum local = 7.66499e-11, global = -3.9307e-22, cumulative = 7.16691e-22
+ExecutionTime = 242.04 s  ClockTime = 244 s
+
+Time = 0.0005
+
+Courant Number mean: 0.0245927 max: 0.905081
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0983649, Final residual = 0.0237595, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.575182, Final residual = 0.134804, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.86347, Final residual = 0.226291, No Iterations 5
+linear solve U 2946529
+FDICPCG:  Solving for p, Initial residual = 0.94634, Final residual = 9.91372e-07, No Iterations 1482
+linear solve p 110663140
+time step continuity errors : sum local = 2.4557e-10, global = 3.08206e-23, cumulative = 7.47512e-22
+FDICPCG:  Solving for p, Initial residual = 0.900185, Final residual = 9.92883e-07, No Iterations 1480
+linear solve p 111016339
+time step continuity errors : sum local = 2.50747e-10, global = -2.09595e-21, cumulative = -1.34844e-21
+ExecutionTime = 468.09 s  ClockTime = 471 s
+
+Time = 0.00075
+
+Courant Number mean: 0.0400082 max: 1.11015
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0630015, Final residual = 0.0125703, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.444903, Final residual = 0.0646352, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.77983, Final residual = 0.153169, No Iterations 5
+linear solve U 2938285
+FDICPCG:  Solving for p, Initial residual = 0.971215, Final residual = 9.91948e-07, No Iterations 1386
+linear solve p 104018834
+time step continuity errors : sum local = 3.84586e-10, global = 1.03047e-21, cumulative = -3.17964e-22
+FDICPCG:  Solving for p, Initial residual = 0.933062, Final residual = 9.81291e-07, No Iterations 1385
+linear solve p 103981709
+time step continuity errors : sum local = 3.81574e-10, global = 1.17671e-22, cumulative = -2.00293e-22
+ExecutionTime = 680.5 s  ClockTime = 684 s
+
+Time = 0.001
+
+Courant Number mean: 0.0479117 max: 0.970771
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.065896, Final residual = 0.0135171, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.422202, Final residual = 0.0774152, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.805701, Final residual = 0.129159, No Iterations 5
+linear solve U 2973816
+FDICPCG:  Solving for p, Initial residual = 0.978778, Final residual = 9.93567e-07, No Iterations 1363
+linear solve p 103163574
+time step continuity errors : sum local = 6.17181e-10, global = -8.34001e-22, cumulative = -1.03429e-21
+FDICPCG:  Solving for p, Initial residual = 0.925204, Final residual = 9.94894e-07, No Iterations 1361
+linear solve p 102893899
+time step continuity errors : sum local = 6.29194e-10, global = -7.55158e-22, cumulative = -1.78945e-21
+ExecutionTime = 890.98 s  ClockTime = 895 s
+
+Time = 0.00125
+
+Courant Number mean: 0.0553702 max: 1.55004
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0764308, Final residual = 0.0136254, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.467198, Final residual = 0.0667478, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.796245, Final residual = 0.111453, No Iterations 5
+linear solve U 2975633
+FDICPCG:  Solving for p, Initial residual = 0.984923, Final residual = 9.95306e-07, No Iterations 820
+linear solve p 61711862
+time step continuity errors : sum local = 9.98513e-10, global = -2.95387e-21, cumulative = -4.74332e-21
+FDICPCG:  Solving for p, Initial residual = 0.939446, Final residual = 9.99168e-07, No Iterations 764
+linear solve p 57252769
+time step continuity errors : sum local = 9.7159e-10, global = -2.27164e-21, cumulative = -7.01495e-21
+ExecutionTime = 1014.72 s  ClockTime = 1019 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: ee8dccf138e3dce552eab9285bab8a9b
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Feb 07 2022
+Time   : 22:50:59
+Host   : hkn0037.localdomain
+PID    : 3683610
+I/O    : uncollated
+Case   : /hkfs/home/project/hk-project-test-fine/eq4036/data/code/ogl_labbook/lidDrivenCavity3D/solver/Variation_mesh/400/Variation_matrix_solver/CG_DIC_DefaultOF/Variation_mpiRank/76/base
+nProcs : 76
+Hosts  :
+(
+    (hkn0037.localdomain 76)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.00025
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.0353154, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 1458180
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 9.88737e-07, No Iterations 1572
+linear solve p 123805010
+time step continuity errors : sum local = 6.49623e-11, global = 1.10976e-21, cumulative = 1.10976e-21
+DICPCG:  Solving for p, Initial residual = 0.845908, Final residual = 9.97157e-07, No Iterations 1565
+linear solve p 122349355
+time step continuity errors : sum local = 7.66499e-11, global = -3.9307e-22, cumulative = 7.16691e-22
+ExecutionTime = 252.5 s  ClockTime = 254 s
+
+Time = 0.0005
+
+Courant Number mean: 0.0245927 max: 0.905081
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0983649, Final residual = 0.0237595, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.575182, Final residual = 0.134804, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.86347, Final residual = 0.226291, No Iterations 5
+linear solve U 2947630
+DICPCG:  Solving for p, Initial residual = 0.94634, Final residual = 9.91372e-07, No Iterations 1482
+linear solve p 116303516
+time step continuity errors : sum local = 2.4557e-10, global = 3.08206e-23, cumulative = 7.47512e-22
+DICPCG:  Solving for p, Initial residual = 0.900185, Final residual = 9.92883e-07, No Iterations 1480
+linear solve p 116024967
+time step continuity errors : sum local = 2.50747e-10, global = -2.09595e-21, cumulative = -1.34844e-21
+ExecutionTime = 489.17 s  ClockTime = 491 s
+
+Time = 0.00075
+
+Courant Number mean: 0.0400082 max: 1.11015
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0630015, Final residual = 0.0125703, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.444903, Final residual = 0.0646352, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.77983, Final residual = 0.153169, No Iterations 5
+linear solve U 2944872
+DICPCG:  Solving for p, Initial residual = 0.971215, Final residual = 9.91948e-07, No Iterations 1386
+linear solve p 108838782
+time step continuity errors : sum local = 3.84586e-10, global = 1.03047e-21, cumulative = -3.17964e-22
+DICPCG:  Solving for p, Initial residual = 0.933062, Final residual = 9.81291e-07, No Iterations 1385
+linear solve p 108632625
+time step continuity errors : sum local = 3.81574e-10, global = 1.17671e-22, cumulative = -2.00293e-22
+ExecutionTime = 711.03 s  ClockTime = 714 s
+
+Time = 0.001
+
+Courant Number mean: 0.0479117 max: 0.970771
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.065896, Final residual = 0.0135171, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.422202, Final residual = 0.0774152, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.805701, Final residual = 0.129159, No Iterations 5
+linear solve U 2977596
+DICPCG:  Solving for p, Initial residual = 0.978778, Final residual = 9.93567e-07, No Iterations 1363
+linear solve p 107001442
+time step continuity errors : sum local = 6.17181e-10, global = -8.34001e-22, cumulative = -1.03429e-21
+DICPCG:  Solving for p, Initial residual = 0.925204, Final residual = 9.94894e-07, No Iterations 1361
+linear solve p 106846624
+time step continuity errors : sum local = 6.29194e-10, global = -7.55158e-22, cumulative = -1.78945e-21
+ExecutionTime = 929.31 s  ClockTime = 933 s
+
+Time = 0.00125
+
+Courant Number mean: 0.0553702 max: 1.55004
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0764308, Final residual = 0.0136254, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.467198, Final residual = 0.0667478, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.796245, Final residual = 0.111453, No Iterations 5
+linear solve U 2955375
+DICPCG:  Solving for p, Initial residual = 0.984923, Final residual = 9.95306e-07, No Iterations 820
+linear solve p 64375735
+time step continuity errors : sum local = 9.98513e-10, global = -2.95387e-21, cumulative = -4.74332e-21
+DICPCG:  Solving for p, Initial residual = 0.939446, Final residual = 9.99168e-07, No Iterations 764
+linear solve p 60332375
+time step continuity errors : sum local = 9.7159e-10, global = -2.27164e-21, cumulative = -7.01495e-21
+ExecutionTime = 1058.77 s  ClockTime = 1063 s
+
+End
+
+Finalising parallel run
+================================================================================
