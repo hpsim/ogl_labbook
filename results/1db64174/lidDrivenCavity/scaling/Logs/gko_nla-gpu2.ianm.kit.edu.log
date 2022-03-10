@@ -4618,3 +4618,1620 @@ End
 
 Finalising parallel run
 ================================================================================
+hash: 8d2854b97470305a1abe355cc1bbcad9
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : f815a12bba-20210902 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Mar 09 2022
+Time   : 16:34:04
+Host   : nla-gpu2.ianm.kit.edu
+PID    : 174706
+I/O    : uncollated
+Case   : /home/greole/data/code/ogl_labbook/lidDrivenCavity/scaling/Variation_mesh/100/Variation_matrix_solver/CG_NoPrecond_HIP/Variation_mpiRank_gko/4/base
+nProcs : 4
+Hosts  :
+(
+    (nla-gpu2.ianm.kit.edu 4)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 2.73334e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 113493
+[OGL LOG][Proc: 0]global_index_init : 6931 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]init_host_sparsity_pattern : 1482732 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 7001 mu s
+[OGL LOG][Proc: 0]convert_coo_to_csr : 58673 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 402 mu s
+[OGL LOG][Proc: 0]gather_RHS : 1109 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 16 mu s
+[OGL LOG][Proc: 0]solve : 684619 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.86363e-05, No Iterations 778
+linear solve p 3122152
+time step continuity errors : sum local = 1.74255e-09, global = -3.38322e-22, cumulative = -3.38322e-22
+[OGL LOG][Proc: 0]global_index_init : 12 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4289 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 296 mu s
+[OGL LOG][Proc: 0]gather_RHS : 437 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 443737 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.40745e-05, No Iterations 776
+linear solve p 564452
+time step continuity errors : sum local = 3.28538e-10, global = 4.41942e-23, cumulative = -2.94128e-22
+ExecutionTime = 5.92 s  ClockTime = 5 s
+
+Time = 0.0002
+
+Courant Number mean: 0.00201333 max: 0.0540371
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.216464, Final residual = 2.39619e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.309937, Final residual = 1.92653e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.981397, Final residual = 4.55574e-06, No Iterations 5
+linear solve U 204609
+[OGL LOG][Proc: 0]global_index_init : 7 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4376 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 272 mu s
+[OGL LOG][Proc: 0]gather_RHS : 407 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 457514 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 2.44587e-05, No Iterations 776
+linear solve p 579824
+time step continuity errors : sum local = 4.03678e-10, global = -3.55623e-22, cumulative = -6.49751e-22
+[OGL LOG][Proc: 0]global_index_init : 14 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 5477 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 438 mu s
+[OGL LOG][Proc: 0]gather_RHS : 458 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 451623 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 8.26165e-05, No Iterations 745
+linear solve p 573535
+time step continuity errors : sum local = 8.99345e-10, global = -3.8848e-22, cumulative = -1.03823e-21
+ExecutionTime = 8.02 s  ClockTime = 7 s
+
+Time = 0.0003
+
+Courant Number mean: 0.00317979 max: 0.0721774
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0963256, Final residual = 9.91172e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.140691, Final residual = 7.59316e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.205678, Final residual = 1.01884e-06, No Iterations 5
+linear solve U 205323
+[OGL LOG][Proc: 0]global_index_init : 33 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4283 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 291 mu s
+[OGL LOG][Proc: 0]gather_RHS : 468 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 459783 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 7.50863e-05, No Iterations 726
+linear solve p 582147
+time step continuity errors : sum local = 9.51357e-10, global = -2.80156e-22, cumulative = -1.31839e-21
+[OGL LOG][Proc: 0]global_index_init : 16 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4505 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 882 mu s
+[OGL LOG][Proc: 0]gather_RHS : 443 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 471423 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.0961e-05, No Iterations 755
+linear solve p 593743
+time step continuity errors : sum local = 5.70437e-10, global = 2.11594e-22, cumulative = -1.10679e-21
+ExecutionTime = 10.13 s  ClockTime = 8 s
+
+Time = 0.0004
+
+Courant Number mean: 0.00397985 max: 0.0793325
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.059365, Final residual = 4.37934e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0868087, Final residual = 3.94704e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.127388, Final residual = 4.8673e-07, No Iterations 5
+linear solve U 209366
+[OGL LOG][Proc: 0]global_index_init : 16 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4281 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 291 mu s
+[OGL LOG][Proc: 0]gather_RHS : 447 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 450420 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.01023e-05, No Iterations 721
+linear solve p 572570
+time step continuity errors : sum local = 3.60757e-10, global = -7.44878e-22, cumulative = -1.85167e-21
+[OGL LOG][Proc: 0]global_index_init : 28 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4314 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 829 mu s
+[OGL LOG][Proc: 0]gather_RHS : 440 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 455231 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.88134e-05, No Iterations 729
+linear solve p 577700
+time step continuity errors : sum local = 1.14196e-09, global = 3.37452e-22, cumulative = -1.51422e-21
+ExecutionTime = 12.21 s  ClockTime = 10 s
+
+Time = 0.0005
+
+Courant Number mean: 0.00460129 max: 0.0828851
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.04286, Final residual = 3.18504e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0618651, Final residual = 2.17844e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0973891, Final residual = 3.46021e-07, No Iterations 5
+linear solve U 208439
+[OGL LOG][Proc: 0]global_index_init : 14 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4272 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 298 mu s
+[OGL LOG][Proc: 0]gather_RHS : 437 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 454736 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.90792e-05, No Iterations 726
+linear solve p 577543
+time step continuity errors : sum local = 5.86873e-10, global = -4.0497e-22, cumulative = -1.91919e-21
+[OGL LOG][Proc: 0]global_index_init : 29 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4350 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 290 mu s
+[OGL LOG][Proc: 0]gather_RHS : 446 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 452829 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 8.87071e-05, No Iterations 726
+linear solve p 576876
+time step continuity errors : sum local = 1.0403e-09, global = 4.94217e-22, cumulative = -1.42497e-21
+ExecutionTime = 14.27 s  ClockTime = 11 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: 1fa7ca704cb4e2e1037c6d52a43c4191
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : f815a12bba-20210902 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Mar 09 2022
+Time   : 16:34:16
+Host   : nla-gpu2.ianm.kit.edu
+PID    : 174782
+I/O    : uncollated
+Case   : /home/greole/data/code/ogl_labbook/lidDrivenCavity/scaling/Variation_mesh/100/Variation_matrix_solver/CG_NoPrecond_HIP/Variation_mpiRank_gko/5/base
+nProcs : 5
+Hosts  :
+(
+    (nla-gpu2.ianm.kit.edu 5)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 4.80514e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 91766
+[OGL LOG][Proc: 0]global_index_init : 34494 mu s
+[OGL LOG][Proc: 0]global_index_init : 5 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]init_host_sparsity_pattern : 1130148 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 6019 mu s
+[OGL LOG][Proc: 0]convert_coo_to_csr : 62337 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 385 mu s
+[OGL LOG][Proc: 0]gather_RHS : 1016 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 17 mu s
+[OGL LOG][Proc: 0]solve : 516684 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.7837e-05, No Iterations 774
+linear solve p 2428432
+time step continuity errors : sum local = 1.7285e-09, global = 1.05153e-22, cumulative = 1.05153e-22
+[OGL LOG][Proc: 0]global_index_init : 21 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3300 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 292 mu s
+[OGL LOG][Proc: 0]gather_RHS : 378 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 336886 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 7.50421e-05, No Iterations 721
+linear solve p 440775
+time step continuity errors : sum local = 7.2354e-10, global = 3.67021e-22, cumulative = 4.72173e-22
+ExecutionTime = 4.57 s  ClockTime = 4 s
+
+Time = 0.0002
+
+Courant Number mean: 0.00201332 max: 0.0540371
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.216464, Final residual = 3.65869e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.309938, Final residual = 2.61474e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.981386, Final residual = 6.15896e-06, No Iterations 5
+linear solve U 170277
+[OGL LOG][Proc: 0]global_index_init : 10 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3246 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 1038 mu s
+[OGL LOG][Proc: 0]gather_RHS : 377 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 1 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 433506 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.78367e-05, No Iterations 729
+linear solve p 547989
+time step continuity errors : sum local = 1.61481e-09, global = 3.82366e-22, cumulative = 8.5454e-22
+[OGL LOG][Proc: 0]global_index_init : 11 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3571 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 900 mu s
+[OGL LOG][Proc: 0]gather_RHS : 426 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 418346 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.54491e-05, No Iterations 726
+linear solve p 523166
+time step continuity errors : sum local = 6.03611e-10, global = -8.58019e-22, cumulative = -3.47933e-24
+ExecutionTime = 6.52 s  ClockTime = 5 s
+
+Time = 0.0003
+
+Courant Number mean: 0.00317979 max: 0.0721774
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0963257, Final residual = 1.43178e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.140691, Final residual = 9.72064e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.205876, Final residual = 1.36965e-06, No Iterations 5
+linear solve U 170783
+[OGL LOG][Proc: 0]global_index_init : 15 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3929 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 294 mu s
+[OGL LOG][Proc: 0]gather_RHS : 382 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 431437 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 6.18797e-05, No Iterations 726
+linear solve p 535351
+time step continuity errors : sum local = 7.84083e-10, global = 1.24605e-22, cumulative = 1.21126e-22
+[OGL LOG][Proc: 0]global_index_init : 19 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3593 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 2336 mu s
+[OGL LOG][Proc: 0]gather_RHS : 648 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 403410 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 8.39358e-05, No Iterations 697
+linear solve p 510215
+time step continuity errors : sum local = 9.39561e-10, global = -1.15848e-22, cumulative = 5.27812e-24
+ExecutionTime = 8.42 s  ClockTime = 7 s
+
+Time = 0.0004
+
+Courant Number mean: 0.00397984 max: 0.0793325
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.059365, Final residual = 5.30447e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0868088, Final residual = 5.09345e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.127373, Final residual = 7.00594e-07, No Iterations 5
+linear solve U 170355
+[OGL LOG][Proc: 0]global_index_init : 16 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3740 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 280 mu s
+[OGL LOG][Proc: 0]gather_RHS : 405 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 386928 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 8.32267e-05, No Iterations 676
+linear solve p 491129
+time step continuity errors : sum local = 9.9743e-10, global = -3.82572e-22, cumulative = -3.77294e-22
+[OGL LOG][Proc: 0]global_index_init : 10 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3598 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 280 mu s
+[OGL LOG][Proc: 0]gather_RHS : 370 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 407734 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 8.20129e-05, No Iterations 703
+linear solve p 525362
+time step continuity errors : sum local = 9.47764e-10, global = -9.56267e-22, cumulative = -1.33356e-21
+ExecutionTime = 10.27 s  ClockTime = 8 s
+
+Time = 0.0005
+
+Courant Number mean: 0.00460129 max: 0.082885
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.04286, Final residual = 3.68009e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0618652, Final residual = 3.05609e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0974418, Final residual = 4.9921e-07, No Iterations 5
+linear solve U 169932
+[OGL LOG][Proc: 0]global_index_init : 15 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3619 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 778 mu s
+[OGL LOG][Proc: 0]gather_RHS : 408 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 422301 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.82463e-05, No Iterations 729
+linear solve p 527467
+time step continuity errors : sum local = 5.76982e-10, global = 7.99859e-22, cumulative = -5.33702e-22
+[OGL LOG][Proc: 0]global_index_init : 10 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3323 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 328 mu s
+[OGL LOG][Proc: 0]gather_RHS : 417 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 407236 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 8.71381e-05, No Iterations 697
+linear solve p 511303
+time step continuity errors : sum local = 1.02186e-09, global = 4.6145e-23, cumulative = -4.87557e-22
+ExecutionTime = 12.16 s  ClockTime = 9 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: ac3af35eb68c4eb0300cfe3e208830f4
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : f815a12bba-20210902 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Mar 09 2022
+Time   : 16:34:26
+Host   : nla-gpu2.ianm.kit.edu
+PID    : 174860
+I/O    : uncollated
+Case   : /home/greole/data/code/ogl_labbook/lidDrivenCavity/scaling/Variation_mesh/100/Variation_matrix_solver/CG_NoPrecond_HIP/Variation_mpiRank_gko/8/base
+nProcs : 8
+Hosts  :
+(
+    (nla-gpu2.ianm.kit.edu 8)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 4.82e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 56795
+[OGL LOG][Proc: 0]global_index_init : 21010 mu s
+[OGL LOG][Proc: 0]global_index_init : 5 mu s
+[OGL LOG][Proc: 0]global_index_init : 5 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]init_host_sparsity_pattern : 567360 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3200 mu s
+[OGL LOG][Proc: 0]convert_coo_to_csr : 68097 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 223 mu s
+[OGL LOG][Proc: 0]gather_RHS : 113 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 20 mu s
+[OGL LOG][Proc: 0]solve : 563641 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.7144e-05, No Iterations 795
+linear solve p 1961589
+time step continuity errors : sum local = 1.7162e-09, global = -5.06041e-22, cumulative = -5.06041e-22
+[OGL LOG][Proc: 0]global_index_init : 18 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 6 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 1903 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 979 mu s
+[OGL LOG][Proc: 0]gather_RHS : 161 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 362024 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.44828e-05, No Iterations 776
+linear solve p 420702
+time step continuity errors : sum local = 9.10981e-10, global = 2.40959e-22, cumulative = -2.65082e-22
+ExecutionTime = 3.74 s  ClockTime = 3 s
+
+Time = 0.0002
+
+Courant Number mean: 0.00201332 max: 0.0540371
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.216464, Final residual = 3.8456e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.309938, Final residual = 2.74235e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.981394, Final residual = 5.65846e-06, No Iterations 5
+linear solve U 129181
+[OGL LOG][Proc: 0]global_index_init : 15 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2775 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 821 mu s
+[OGL LOG][Proc: 0]gather_RHS : 173 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 360680 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.80902e-05, No Iterations 776
+linear solve p 418785
+time step continuity errors : sum local = 9.58768e-10, global = 2.37297e-24, cumulative = -2.62709e-22
+[OGL LOG][Proc: 0]global_index_init : 15 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2022 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 789 mu s
+[OGL LOG][Proc: 0]gather_RHS : 172 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 361504 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.38291e-05, No Iterations 776
+linear solve p 414030
+time step continuity errors : sum local = 5.85993e-10, global = -5.07181e-22, cumulative = -7.69891e-22
+ExecutionTime = 5.22 s  ClockTime = 4 s
+
+Time = 0.0003
+
+Courant Number mean: 0.00317979 max: 0.0721774
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0963257, Final residual = 1.48103e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.140691, Final residual = 9.67791e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.205633, Final residual = 1.2605e-06, No Iterations 5
+linear solve U 101594
+[OGL LOG][Proc: 0]global_index_init : 16 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 1890 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 815 mu s
+[OGL LOG][Proc: 0]gather_RHS : 161 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 370526 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.37397e-05, No Iterations 776
+linear solve p 423776
+time step continuity errors : sum local = 4.27506e-10, global = 1.27224e-22, cumulative = -6.42666e-22
+[OGL LOG][Proc: 0]global_index_init : 16 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 1920 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 767 mu s
+[OGL LOG][Proc: 0]gather_RHS : 159 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 357028 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.17993e-05, No Iterations 776
+linear solve p 414005
+time step continuity errors : sum local = 4.67896e-10, global = 1.66152e-22, cumulative = -4.76514e-22
+ExecutionTime = 6.68 s  ClockTime = 5 s
+
+Time = 0.0004
+
+Courant Number mean: 0.00397984 max: 0.0793325
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.059365, Final residual = 5.16934e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0868087, Final residual = 4.58062e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.127267, Final residual = 6.35592e-07, No Iterations 5
+linear solve U 105124
+[OGL LOG][Proc: 0]global_index_init : 19 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 1911 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 788 mu s
+[OGL LOG][Proc: 0]gather_RHS : 164 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 357484 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.63023e-05, No Iterations 776
+linear solve p 417415
+time step continuity errors : sum local = 5.54856e-10, global = 2.5502e-22, cumulative = -2.21494e-22
+[OGL LOG][Proc: 0]global_index_init : 20 mu s
+[OGL LOG][Proc: 0]global_index_init : 7 mu s
+[OGL LOG][Proc: 0]global_index_init : 7 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 1996 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 796 mu s
+[OGL LOG][Proc: 0]gather_RHS : 160 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 358938 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.95078e-05, No Iterations 776
+linear solve p 411834
+time step continuity errors : sum local = 4.56586e-10, global = 1.50828e-23, cumulative = -2.06412e-22
+ExecutionTime = 8.13 s  ClockTime = 6 s
+
+Time = 0.0005
+
+Courant Number mean: 0.00460129 max: 0.082885
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.04286, Final residual = 3.64541e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0618651, Final residual = 2.6236e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0973896, Final residual = 4.52803e-07, No Iterations 5
+linear solve U 102448
+[OGL LOG][Proc: 0]global_index_init : 34 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]global_index_init : 5 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 1915 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 799 mu s
+[OGL LOG][Proc: 0]gather_RHS : 159 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 357804 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.20924e-05, No Iterations 776
+linear solve p 410184
+time step continuity errors : sum local = 6.2289e-10, global = -8.756e-22, cumulative = -1.08201e-21
+[OGL LOG][Proc: 0]global_index_init : 18 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 5 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 1992 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 802 mu s
+[OGL LOG][Proc: 0]gather_RHS : 158 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 358912 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.10267e-05, No Iterations 776
+linear solve p 411779
+time step continuity errors : sum local = 4.81144e-10, global = -7.27633e-22, cumulative = -1.80965e-21
+ExecutionTime = 9.56 s  ClockTime = 7 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: e90c7d7c4a1c3fb7a02b436f1b3a36b3
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : f815a12bba-20210902 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Mar 09 2022
+Time   : 16:34:33
+Host   : nla-gpu2.ianm.kit.edu
+PID    : 174929
+I/O    : uncollated
+Case   : /home/greole/data/code/ogl_labbook/lidDrivenCavity/scaling/Variation_mesh/100/Variation_matrix_solver/CG_NoPrecond_HIP/Variation_mpiRank_gko/7/base
+nProcs : 7
+Hosts  :
+(
+    (nla-gpu2.ianm.kit.edu 7)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 5.16041e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 65408
+[OGL LOG][Proc: 0]global_index_init : 33310 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]init_host_sparsity_pattern : 704577 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 4917 mu s
+[OGL LOG][Proc: 0]convert_coo_to_csr : 67578 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 244 mu s
+[OGL LOG][Proc: 0]gather_RHS : 942 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 20 mu s
+[OGL LOG][Proc: 0]solve : 507228 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.78765e-05, No Iterations 777
+linear solve p 2060425
+time step continuity errors : sum local = 1.72928e-09, global = 1.61358e-21, cumulative = 1.61358e-21
+[OGL LOG][Proc: 0]global_index_init : 19 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2376 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 950 mu s
+[OGL LOG][Proc: 0]gather_RHS : 400 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 341940 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 2.96483e-05, No Iterations 776
+linear solve p 409753
+time step continuity errors : sum local = 2.85864e-10, global = 3.68803e-22, cumulative = 1.98238e-21
+ExecutionTime = 3.87 s  ClockTime = 4 s
+
+Time = 0.0002
+
+Courant Number mean: 0.00201332 max: 0.0540371
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.216464, Final residual = 4.7988e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.309938, Final residual = 3.4486e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.981352, Final residual = 8.27368e-06, No Iterations 5
+linear solve U 121772
+[OGL LOG][Proc: 0]global_index_init : 15 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 5 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2264 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 351 mu s
+[OGL LOG][Proc: 0]gather_RHS : 382 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 357541 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 2.99976e-05, No Iterations 776
+linear solve p 424351
+time step continuity errors : sum local = 4.95134e-10, global = -5.65604e-23, cumulative = 1.92582e-21
+[OGL LOG][Proc: 0]global_index_init : 14 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3067 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 432 mu s
+[OGL LOG][Proc: 0]gather_RHS : 398 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 327473 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 8.95716e-05, No Iterations 745
+linear solve p 391602
+time step continuity errors : sum local = 9.75194e-10, global = -5.7327e-22, cumulative = 1.35255e-21
+ExecutionTime = 5.3 s  ClockTime = 5 s
+
+Time = 0.0003
+
+Courant Number mean: 0.00317979 max: 0.0721774
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0963256, Final residual = 1.80619e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.140692, Final residual = 1.20467e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.205786, Final residual = 1.83985e-06, No Iterations 5
+linear solve U 121151
+[OGL LOG][Proc: 0]global_index_init : 12 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2284 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 307 mu s
+[OGL LOG][Proc: 0]gather_RHS : 416 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 342139 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.94083e-05, No Iterations 755
+linear solve p 409057
+time step continuity errors : sum local = 6.26027e-10, global = -7.17485e-22, cumulative = 6.35064e-22
+[OGL LOG][Proc: 0]global_index_init : 21 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2734 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 294 mu s
+[OGL LOG][Proc: 0]gather_RHS : 348 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 335997 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.99761e-05, No Iterations 751
+linear solve p 394768
+time step continuity errors : sum local = 6.7141e-10, global = -4.31907e-22, cumulative = 2.03156e-22
+ExecutionTime = 6.7 s  ClockTime = 6 s
+
+Time = 0.0004
+
+Courant Number mean: 0.00397984 max: 0.0793325
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.059365, Final residual = 6.68382e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0868089, Final residual = 5.60338e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.127398, Final residual = 9.88849e-07, No Iterations 5
+linear solve U 119884
+[OGL LOG][Proc: 0]global_index_init : 30 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2226 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 399 mu s
+[OGL LOG][Proc: 0]gather_RHS : 404 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 333710 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 6.96722e-05, No Iterations 721
+linear solve p 400070
+time step continuity errors : sum local = 8.34975e-10, global = -2.31343e-22, cumulative = -2.81867e-23
+[OGL LOG][Proc: 0]global_index_init : 14 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2248 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 351 mu s
+[OGL LOG][Proc: 0]gather_RHS : 401 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 351686 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.60326e-05, No Iterations 757
+linear solve p 411139
+time step continuity errors : sum local = 5.31997e-10, global = -2.35048e-22, cumulative = -2.63235e-22
+ExecutionTime = 8.1 s  ClockTime = 7 s
+
+Time = 0.0005
+
+Courant Number mean: 0.00460129 max: 0.082885
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0428599, Final residual = 4.66968e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0618654, Final residual = 3.25091e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.097288, Final residual = 7.09932e-07, No Iterations 5
+linear solve U 120541
+[OGL LOG][Proc: 0]global_index_init : 22 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3356 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 236 mu s
+[OGL LOG][Proc: 0]gather_RHS : 359 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 362960 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.86566e-05, No Iterations 751
+linear solve p 429748
+time step continuity errors : sum local = 5.81859e-10, global = -3.22032e-22, cumulative = -5.85266e-22
+[OGL LOG][Proc: 0]global_index_init : 16 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2254 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 374 mu s
+[OGL LOG][Proc: 0]gather_RHS : 416 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 349354 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.55348e-05, No Iterations 751
+linear solve p 413807
+time step continuity errors : sum local = 6.51303e-10, global = -4.7851e-22, cumulative = -1.06378e-21
+ExecutionTime = 9.55 s  ClockTime = 8 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: 4230986fb7d2ffaecdab62dcabd4635e
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : f815a12bba-20210902 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Mar 09 2022
+Time   : 16:34:41
+Host   : nla-gpu2.ianm.kit.edu
+PID    : 174990
+I/O    : uncollated
+Case   : /home/greole/data/code/ogl_labbook/lidDrivenCavity/scaling/Variation_mesh/100/Variation_matrix_solver/CG_NoPrecond_HIP/Variation_mpiRank_gko/2/base
+nProcs : 2
+Hosts  :
+(
+    (nla-gpu2.ianm.kit.edu 2)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 3.63147e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 255498
+[OGL LOG][Proc: 0]global_index_init : 28 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]init_host_sparsity_pattern : 2826066 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 16230 mu s
+[OGL LOG][Proc: 0]convert_coo_to_csr : 40019 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 786 mu s
+[OGL LOG][Proc: 0]gather_RHS : 1327 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 5 mu s
+[OGL LOG][Proc: 0]solve : 682421 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.70362e-05, No Iterations 795
+linear solve p 4333487
+time step continuity errors : sum local = 1.71433e-09, global = 2.52362e-22, cumulative = 2.52362e-22
+[OGL LOG][Proc: 0]global_index_init : 9 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 14795 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 424 mu s
+[OGL LOG][Proc: 0]gather_RHS : 631 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 1 mu s
+[OGL LOG][Proc: 0]solve : 421764 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.44873e-05, No Iterations 776
+linear solve p 681651
+time step continuity errors : sum local = 9.11024e-10, global = -3.20393e-22, cumulative = -6.80311e-23
+ExecutionTime = 8.76 s  ClockTime = 8 s
+
+Time = 0.0002
+
+Courant Number mean: 0.00201333 max: 0.0540371
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.216464, Final residual = 2.34815e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.309938, Final residual = 7.28982e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.981405, Final residual = 2.65655e-06, No Iterations 5
+linear solve U 487547
+[OGL LOG][Proc: 0]global_index_init : 13 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 14058 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 441 mu s
+[OGL LOG][Proc: 0]gather_RHS : 629 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 1 mu s
+[OGL LOG][Proc: 0]solve : 418637 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.82685e-05, No Iterations 776
+linear solve p 680201
+time step continuity errors : sum local = 9.61731e-10, global = 1.63827e-23, cumulative = -5.16484e-23
+[OGL LOG][Proc: 0]global_index_init : 8 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 13661 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 409 mu s
+[OGL LOG][Proc: 0]gather_RHS : 618 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 417878 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.38661e-05, No Iterations 776
+linear solve p 675725
+time step continuity errors : sum local = 5.86397e-10, global = 7.52463e-22, cumulative = 7.00815e-22
+ExecutionTime = 11.6 s  ClockTime = 11 s
+
+Time = 0.0003
+
+Courant Number mean: 0.00317979 max: 0.0721774
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0963257, Final residual = 9.75879e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.140691, Final residual = 2.69379e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.205557, Final residual = 5.91724e-07, No Iterations 5
+linear solve U 486167
+[OGL LOG][Proc: 0]global_index_init : 17 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 13797 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 441 mu s
+[OGL LOG][Proc: 0]gather_RHS : 623 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 0 mu s
+[OGL LOG][Proc: 0]solve : 422038 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.38106e-05, No Iterations 776
+linear solve p 682065
+time step continuity errors : sum local = 4.28405e-10, global = -6.71841e-22, cumulative = 2.89743e-23
+[OGL LOG][Proc: 0]global_index_init : 8 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 13626 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 412 mu s
+[OGL LOG][Proc: 0]gather_RHS : 621 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 1 mu s
+[OGL LOG][Proc: 0]solve : 418461 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.17972e-05, No Iterations 776
+linear solve p 683587
+time step continuity errors : sum local = 4.67872e-10, global = -2.3587e-22, cumulative = -2.06896e-22
+ExecutionTime = 14.45 s  ClockTime = 13 s
+
+Time = 0.0004
+
+Courant Number mean: 0.00397985 max: 0.0793325
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.059365, Final residual = 3.19664e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0868086, Final residual = 1.49991e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.127219, Final residual = 2.76921e-07, No Iterations 5
+linear solve U 487926
+[OGL LOG][Proc: 0]global_index_init : 9 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 13600 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 431 mu s
+[OGL LOG][Proc: 0]gather_RHS : 631 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 1 mu s
+[OGL LOG][Proc: 0]solve : 413245 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.63681e-05, No Iterations 776
+linear solve p 671930
+time step continuity errors : sum local = 5.55641e-10, global = -7.80663e-22, cumulative = -9.87559e-22
+[OGL LOG][Proc: 0]global_index_init : 9 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 13586 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 409 mu s
+[OGL LOG][Proc: 0]gather_RHS : 627 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 456926 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.95492e-05, No Iterations 776
+linear solve p 722455
+time step continuity errors : sum local = 4.57065e-10, global = -7.64025e-22, cumulative = -1.75158e-21
+ExecutionTime = 17.35 s  ClockTime = 15 s
+
+Time = 0.0005
+
+Courant Number mean: 0.0046013 max: 0.0828851
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.04286, Final residual = 2.45212e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0618651, Final residual = 9.2358e-08, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0973549, Final residual = 1.86148e-07, No Iterations 5
+linear solve U 488586
+[OGL LOG][Proc: 0]global_index_init : 9 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]global_index_init : 0 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 13579 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 462 mu s
+[OGL LOG][Proc: 0]gather_RHS : 670 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 491331 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.21177e-05, No Iterations 776
+linear solve p 756464
+time step continuity errors : sum local = 6.23191e-10, global = -1.44564e-22, cumulative = -1.89615e-21
+[OGL LOG][Proc: 0]global_index_init : 8 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 13621 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 425 mu s
+[OGL LOG][Proc: 0]gather_RHS : 627 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 492833 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.10269e-05, No Iterations 776
+linear solve p 762345
+time step continuity errors : sum local = 4.81146e-10, global = 2.12964e-22, cumulative = -1.68318e-21
+ExecutionTime = 20.36 s  ClockTime = 17 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: 9eca3f5c26278def6279e98a17a87758
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : f815a12bba-20210902 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Mar 09 2022
+Time   : 16:34:59
+Host   : nla-gpu2.ianm.kit.edu
+PID    : 175035
+I/O    : uncollated
+Case   : /home/greole/data/code/ogl_labbook/lidDrivenCavity/scaling/Variation_mesh/100/Variation_matrix_solver/CG_NoPrecond_HIP/Variation_mpiRank_gko/3/base
+nProcs : 3
+Hosts  :
+(
+    (nla-gpu2.ianm.kit.edu 3)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 4.02927e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 152496
+[OGL LOG][Proc: 0]global_index_init : 7716 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]init_host_sparsity_pattern : 2042979 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 9680 mu s
+[OGL LOG][Proc: 0]convert_coo_to_csr : 52463 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 512 mu s
+[OGL LOG][Proc: 0]gather_RHS : 691 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 18 mu s
+[OGL LOG][Proc: 0]solve : 499973 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.21037e-05, No Iterations 779
+linear solve p 3310618
+time step continuity errors : sum local = 1.62718e-09, global = -6.72466e-22, cumulative = -6.72466e-22
+[OGL LOG][Proc: 0]global_index_init : 13 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 6754 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 407 mu s
+[OGL LOG][Proc: 0]gather_RHS : 508 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 311441 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.43335e-05, No Iterations 776
+linear solve p 445922
+time step continuity errors : sum local = 3.31032e-10, global = -7.17164e-22, cumulative = -1.38963e-21
+ExecutionTime = 6.26 s  ClockTime = 6 s
+
+Time = 0.0002
+
+Courant Number mean: 0.00201333 max: 0.054037
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.216464, Final residual = 2.96627e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.309937, Final residual = 2.50398e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.981406, Final residual = 6.00508e-06, No Iterations 5
+linear solve U 282559
+[OGL LOG][Proc: 0]global_index_init : 15 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 6303 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 406 mu s
+[OGL LOG][Proc: 0]gather_RHS : 546 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 313938 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 2.34842e-05, No Iterations 776
+linear solve p 449374
+time step continuity errors : sum local = 3.87579e-10, global = 4.15349e-22, cumulative = -9.7428e-22
+[OGL LOG][Proc: 0]global_index_init : 7 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 5810 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 349 mu s
+[OGL LOG][Proc: 0]gather_RHS : 518 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 312356 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 2.01121e-05, No Iterations 776
+linear solve p 445360
+time step continuity errors : sum local = 2.18939e-10, global = -1.97041e-22, cumulative = -1.17132e-21
+ExecutionTime = 8.11 s  ClockTime = 7 s
+
+Time = 0.0003
+
+Courant Number mean: 0.00317979 max: 0.0721774
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0963256, Final residual = 1.17171e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.140691, Final residual = 9.91814e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.205601, Final residual = 1.30878e-06, No Iterations 5
+linear solve U 275321
+[OGL LOG][Proc: 0]global_index_init : 8 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 5813 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 371 mu s
+[OGL LOG][Proc: 0]gather_RHS : 541 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 299915 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 7.5616e-05, No Iterations 745
+linear solve p 436697
+time step continuity errors : sum local = 9.58041e-10, global = 3.67744e-22, cumulative = -8.03578e-22
+[OGL LOG][Proc: 0]global_index_init : 8 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 6698 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 378 mu s
+[OGL LOG][Proc: 0]gather_RHS : 536 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 302268 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 6.29344e-05, No Iterations 755
+linear solve p 436801
+time step continuity errors : sum local = 7.04451e-10, global = -2.59544e-23, cumulative = -8.29532e-22
+ExecutionTime = 9.91 s  ClockTime = 8 s
+
+Time = 0.0004
+
+Courant Number mean: 0.00397985 max: 0.0793326
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.059365, Final residual = 4.31016e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0868086, Final residual = 4.91936e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.127141, Final residual = 6.76004e-07, No Iterations 5
+linear solve U 276065
+[OGL LOG][Proc: 0]global_index_init : 8 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 5832 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 387 mu s
+[OGL LOG][Proc: 0]gather_RHS : 550 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 289213 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.9317e-05, No Iterations 721
+linear solve p 423587
+time step continuity errors : sum local = 1.19065e-09, global = -9.16892e-22, cumulative = -1.74642e-21
+[OGL LOG][Proc: 0]global_index_init : 8 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 5970 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 339 mu s
+[OGL LOG][Proc: 0]gather_RHS : 539 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 305248 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.23721e-05, No Iterations 757
+linear solve p 438788
+time step continuity errors : sum local = 6.05238e-10, global = -1.29524e-22, cumulative = -1.87595e-21
+ExecutionTime = 11.7 s  ClockTime = 10 s
+
+Time = 0.0005
+
+Courant Number mean: 0.00460129 max: 0.0828851
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0428599, Final residual = 3.281e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0618651, Final residual = 2.69233e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0974998, Final residual = 4.92873e-07, No Iterations 5
+linear solve U 275359
+[OGL LOG][Proc: 0]global_index_init : 9 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 5834 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 442 mu s
+[OGL LOG][Proc: 0]gather_RHS : 619 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 301273 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 7.31575e-05, No Iterations 751
+linear solve p 437096
+time step continuity errors : sum local = 8.74791e-10, global = 1.78358e-22, cumulative = -1.69759e-21
+[OGL LOG][Proc: 0]global_index_init : 8 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]global_index_init : 1 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 5817 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 345 mu s
+[OGL LOG][Proc: 0]gather_RHS : 543 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 304211 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 6.78884e-05, No Iterations 751
+linear solve p 437888
+time step continuity errors : sum local = 7.9614e-10, global = -1.39464e-21, cumulative = -3.09223e-21
+ExecutionTime = 13.5 s  ClockTime = 11 s
+
+End
+
+Finalising parallel run
+================================================================================
+hash: 4172025bd80b4c677b973be08f9b9aae
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : f815a12bba-20210902 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Mar 09 2022
+Time   : 16:35:11
+Host   : nla-gpu2.ianm.kit.edu
+PID    : 175103
+I/O    : uncollated
+Case   : /home/greole/data/code/ogl_labbook/lidDrivenCavity/scaling/Variation_mesh/100/Variation_matrix_solver/CG_NoPrecond_HIP/Variation_mpiRank_gko/6/base
+nProcs : 6
+Hosts  :
+(
+    (nla-gpu2.ianm.kit.edu 6)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.0001
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 4.78178e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 76097
+[OGL LOG][Proc: 0]global_index_init : 25020 mu s
+[OGL LOG][Proc: 0]global_index_init : 4 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]init_host_sparsity_pattern : 831237 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 5345 mu s
+[OGL LOG][Proc: 0]convert_coo_to_csr : 65134 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 299 mu s
+[OGL LOG][Proc: 0]gather_RHS : 734 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 16 mu s
+[OGL LOG][Proc: 0]solve : 486049 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.75888e-05, No Iterations 771
+linear solve p 2125434
+time step continuity errors : sum local = 1.72417e-09, global = -8.0046e-22, cumulative = -8.0046e-22
+[OGL LOG][Proc: 0]global_index_init : 17 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2727 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 258 mu s
+[OGL LOG][Proc: 0]gather_RHS : 344 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 315040 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 8.73907e-05, No Iterations 751
+linear solve p 399578
+time step continuity errors : sum local = 8.42663e-10, global = -1.91372e-22, cumulative = -9.91832e-22
+ExecutionTime = 4.05 s  ClockTime = 3 s
+
+Time = 0.0002
+
+Courant Number mean: 0.00201332 max: 0.0540371
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.216464, Final residual = 3.91106e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.309938, Final residual = 2.79487e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.981354, Final residual = 6.96048e-06, No Iterations 5
+linear solve U 164886
+[OGL LOG][Proc: 0]global_index_init : 13 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3446 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 252 mu s
+[OGL LOG][Proc: 0]gather_RHS : 406 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 355768 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 6.16547e-05, No Iterations 751
+linear solve p 439790
+time step continuity errors : sum local = 1.0177e-09, global = -1.24946e-22, cumulative = -1.11678e-21
+[OGL LOG][Proc: 0]global_index_init : 15 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2803 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 250 mu s
+[OGL LOG][Proc: 0]gather_RHS : 332 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 362412 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.4992e-05, No Iterations 751
+linear solve p 446552
+time step continuity errors : sum local = 5.98674e-10, global = -2.11449e-22, cumulative = -1.32823e-21
+ExecutionTime = 5.62 s  ClockTime = 4 s
+
+Time = 0.0003
+
+Courant Number mean: 0.00317979 max: 0.0721775
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0963257, Final residual = 1.51863e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.140692, Final residual = 1.01562e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.205751, Final residual = 1.54274e-06, No Iterations 5
+linear solve U 139980
+[OGL LOG][Proc: 0]global_index_init : 15 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2714 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 346 mu s
+[OGL LOG][Proc: 0]gather_RHS : 360 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 365563 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.35236e-05, No Iterations 751
+linear solve p 450363
+time step continuity errors : sum local = 6.78175e-10, global = -6.77422e-22, cumulative = -2.00565e-21
+[OGL LOG][Proc: 0]global_index_init : 28 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3180 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 224 mu s
+[OGL LOG][Proc: 0]gather_RHS : 375 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 3 mu s
+[OGL LOG][Proc: 0]solve : 360251 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 4.7661e-05, No Iterations 751
+linear solve p 447540
+time step continuity errors : sum local = 5.33516e-10, global = 5.88354e-22, cumulative = -1.41729e-21
+ExecutionTime = 7.15 s  ClockTime = 5 s
+
+Time = 0.0004
+
+Courant Number mean: 0.00397984 max: 0.0793326
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.059365, Final residual = 5.55957e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0868089, Final residual = 4.83275e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.127376, Final residual = 8.11449e-07, No Iterations 5
+linear solve U 139379
+[OGL LOG][Proc: 0]global_index_init : 12 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2664 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 247 mu s
+[OGL LOG][Proc: 0]gather_RHS : 328 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 351320 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 5.91857e-05, No Iterations 721
+linear solve p 437531
+time step continuity errors : sum local = 7.0936e-10, global = -1.36005e-22, cumulative = -1.5533e-21
+[OGL LOG][Proc: 0]global_index_init : 16 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2681 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 260 mu s
+[OGL LOG][Proc: 0]gather_RHS : 362 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 372449 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.82521e-05, No Iterations 757
+linear solve p 456216
+time step continuity errors : sum local = 4.42053e-10, global = -5.72889e-22, cumulative = -2.12619e-21
+ExecutionTime = 8.69 s  ClockTime = 7 s
+
+Time = 0.0005
+
+Courant Number mean: 0.00460129 max: 0.0828851
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0428599, Final residual = 3.85137e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0618654, Final residual = 2.80675e-07, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0972656, Final residual = 5.8305e-07, No Iterations 5
+linear solve U 140069
+[OGL LOG][Proc: 0]global_index_init : 14 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 3045 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 254 mu s
+[OGL LOG][Proc: 0]gather_RHS : 349 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 352599 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 9.95621e-05, No Iterations 721
+linear solve p 435884
+time step continuity errors : sum local = 1.19081e-09, global = 4.46737e-22, cumulative = -1.67945e-21
+[OGL LOG][Proc: 0]global_index_init : 24 mu s
+[OGL LOG][Proc: 0]global_index_init : 2 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]global_index_init : 3 mu s
+[OGL LOG][Proc: 0]update_host_matrix_data : 2752 mu s
+[OGL LOG][Proc: 0]gather_initGuess : 274 mu s
+[OGL LOG][Proc: 0]gather_RHS : 365 mu s
+[OGL LOG][Proc: 0]gather_global_matrix : 0 mu s
+[OGL LOG][Proc: 0]generate_solver : 2 mu s
+[OGL LOG][Proc: 0]solve : 364771 mu s
+nonehipGKOCG:  Solving for p, Initial residual = 1, Final residual = 3.89735e-05, No Iterations 757
+linear solve p 451703
+time step continuity errors : sum local = 4.57049e-10, global = 3.72622e-22, cumulative = -1.30683e-21
+ExecutionTime = 10.21 s  ClockTime = 8 s
+
+End
+
+Finalising parallel run
+================================================================================
