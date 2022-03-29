@@ -1,0 +1,23 @@
+executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,processes,mpiRank_gko,timestamp,log_id,run_time
+#{'node_data': {'host': 'nla-gpu2.ianm.kit.edu\n', 'top': ['top - 15:11:43 up 4 days, 22:12,  4 users,  load average: 0.00, 0.82, 2.24', 'Tasks: 960 total,   1 running, 944 sleeping,  15 stopped,   0 zombie', '%Cpu(s):  0.1 us,  0.2 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0 st', 'MiB Mem : 483328.2 total, 242817.4 free,   2774.4 used, 237736.3 buff/cache', 'MiB Swap: 131072.0 total, 130929.0 free,    143.0 used. 477972.6 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', ' 161513 greole    20   0   66404   5780   4120 R   5.9   0.0   0:00.02 top', '      1 root      20   0  249664   9332   6140 S   0.0   0.0   0:04.76 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   0:01.14 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp', '      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp', '      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri', '     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq', '     11 root      20   0       0      0      0 S   0.0   0.0   0:01.97 ksoftirqd/0'], 'uptime': ' 15:11:43 up 4 days, 22:12,  4 users,  load average: 0.00, 0.82, 2.24\n', 'libOGL.so': '5ac39bd5bb2625066e174816aa7c2088  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.1', 'OBR_VERSION': '0.4.0'}
+HIP,CG,ISAI,Medium,None,4,nla-gpu2.ianm.kit.edu,1,4,2022-03-28 13:14:35.080528,236d477cab400db1c8d3413db9fd1c8a,171.80628
+HIP,CG,ISAI,Medium,None,5,nla-gpu2.ianm.kit.edu,1,5,2022-03-28 13:17:11.887996,5fa191ea629d278ccca9be8cec07b6f2,156.802939
+HIP,CG,ISAI,Medium,None,8,nla-gpu2.ianm.kit.edu,1,8,2022-03-28 13:18:52.011699,28849347da231da5f260123df63cc7ca,100.118092
+HIP,CG,ISAI,Medium,None,7,nla-gpu2.ianm.kit.edu,1,7,2022-03-28 13:20:53.116077,46ecec003d3a089beea5992f2d982535,121.098137
+HIP,CG,ISAI,Medium,None,2,nla-gpu2.ianm.kit.edu,1,2,2022-03-28 13:25:26.071829,56b8460f7bc778b7f03aeac79dc362ef,272.949967
+HIP,CG,ISAI,Medium,None,3,nla-gpu2.ianm.kit.edu,1,3,2022-03-28 13:30:11.036687,62ccd9a3f488745721a6b56e4de0a6a5,284.960095
+HIP,CG,ISAI,Medium,None,6,nla-gpu2.ianm.kit.edu,1,6,2022-03-28 13:32:26.126515,2fed2f35a6a02cc6dfd98383881ac5b8,135.082983
+HIP,CG,BJ,Medium,None,4,nla-gpu2.ianm.kit.edu,1,4,0,0,0
+HIP,CG,BJ,Medium,None,5,nla-gpu2.ianm.kit.edu,1,5,0,0,0
+HIP,CG,BJ,Medium,None,8,nla-gpu2.ianm.kit.edu,1,8,0,0,0
+HIP,CG,BJ,Medium,None,7,nla-gpu2.ianm.kit.edu,1,7,0,0,0
+HIP,CG,BJ,Medium,None,2,nla-gpu2.ianm.kit.edu,1,2,0,0,0
+HIP,CG,BJ,Medium,None,3,nla-gpu2.ianm.kit.edu,1,3,0,0,0
+HIP,CG,BJ,Medium,None,6,nla-gpu2.ianm.kit.edu,1,6,2022-03-28 15:40:20.028467,3fdfe4671b6b298b355e9f8ff1b95226,123.701428
+HIP,CG,Multigrid,Medium,None,4,nla-gpu2.ianm.kit.edu,1,4,2022-03-28 15:42:55.794748,0082869eebc584e1f4d514044ca0dd0a,155.750873
+HIP,CG,Multigrid,Medium,None,5,nla-gpu2.ianm.kit.edu,1,5,2022-03-28 15:45:22.823430,3a6e3b9503eaef75098e09c624fd9314,147.023377
+HIP,CG,Multigrid,Medium,None,8,nla-gpu2.ianm.kit.edu,1,8,2022-03-28 15:46:58.271790,fb5684fed9f3508ac5bc7b07d274e2d3,95.443053
+HIP,CG,Multigrid,Medium,None,7,nla-gpu2.ianm.kit.edu,1,7,2022-03-28 15:48:52.557032,b768c0583275b5cb624cd945c87b434c,114.278044
+HIP,CG,Multigrid,Medium,None,2,nla-gpu2.ianm.kit.edu,1,2,2022-03-28 15:52:54.508162,998aa39b7b122618221843febda68111,241.944056
+HIP,CG,Multigrid,Medium,None,3,nla-gpu2.ianm.kit.edu,1,3,2022-03-28 15:57:18.205003,07c7c4caef748142883c6c489eeb48d8,263.692453
+HIP,CG,Multigrid,Medium,None,6,nla-gpu2.ianm.kit.edu,1,6,2022-03-28 15:59:23.976850,9974a401364fdc1347288301bc1773f7,125.766842
