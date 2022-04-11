@@ -18,7 +18,7 @@
       "variants":{"case": [["Small/v1912", "Small"],  ["Medium/v1912", "Medium"], ["Large/v1912", "Large"]]},
       "controlDict": {
         "stationary": true,
-        "timeSteps": 3
+        "timeSteps": 20
       },
      "build": ["cp -r 0.org 0", "chmod +x AllmeshS", "chmod +x AllmeshM", "chmod +x AllmeshL", "./AllmeshS", "./AllmeshM","./AllmeshL","potentialFoam -writephi"],
      "variation": [{
@@ -35,17 +35,25 @@
           "verbose": "1"
           }
       },
-      "variants": {"solver": ["CG", "BiCGStab", "GMRES"],
-                   "preconditioner": ["ILU", "DIC", "BJ", "Multigrid"],
-                   "executor": ["HIP", "DefaultOF"]
+      "variants": {"solver": ["CG"],
+                   "preconditioner": ["DIC", "BJ", "ISAI", "Multigrid"],
+                   "executor": ["${{env.GINKGO_EXECUTOR}}", "DefaultOF"]
       },
       "variation": [{
-           "name": "mpiRank",
-           "type": "ChangeNumberOfSubdomains",
-           "variants": { "numberOfSubdomains": [8, 32, 40] },
-           "variant_of": ["DefaultOF", "HIP"],
-           "comment": "creates a subvariation of the CG BJ cases for different max block size values"
-        }]
+             "name": "mpiRank_gko",
+             "type": "ChangeNumberOfSubdomains",
+             "variants": { "numberOfSubdomains": [2, 4, 8, 12, 16] },
+             "variant_of": ["${{env.GINKGO_EXECUTOR}}"],
+             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
+          },
+	  {
+             "name": "mpiRank_of",
+             "type": "ChangeNumberOfSubdomains",
+             "variants": { "numberOfSubdomains": ["fullNode"] },
+             "variant_of": ["DefaultOF"],
+             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
+          }
+	]
    }]
 }
 }
