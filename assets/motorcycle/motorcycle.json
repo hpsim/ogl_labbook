@@ -15,12 +15,12 @@
       "type": "ExistingCaseVariants",
       "mapFields": false,
       "dimensions": 3,
-      "variants":{"case": [["Small/v1912", "Small"],  ["Medium/v1912", "Medium"], ["Large/v1912", "Large"]]},
+      "variants":{"case": [["Small/v1912", "Small"],["Medium/v1912", "Medium"],["Large/v1912", "Large"],["Huge/v1912", "Huge"],["Giant/v1912", "Giant"]]},
       "controlDict": {
         "stationary": true,
         "timeSteps": 20
       },
-     "build": ["cp -r 0.org 0", "chmod +x AllmeshS", "chmod +x AllmeshM", "chmod +x AllmeshL", "./AllmeshS", "./AllmeshM","./AllmeshL","potentialFoam -writephi"],
+     "build": ["cp -r 0.org 0", "cp ${{env.OGL_LABBOOK_ASSETS}}/motorcycle/Allmesh .",  "./Allmesh" ,"potentialFoam -writephi"],
      "variation": [{
       "name": "matrix_solver",
       "type": "ChangeMatrixSolver",
@@ -42,14 +42,16 @@
       "variation": [{
              "name": "mpiRank_gko",
              "type": "ChangeNumberOfSubdomains",
-             "variants": { "numberOfSubdomains": [2, 4, 8, 12, 16] },
+	     "multiplier": "${{env.NGPUS}}",
+             "variants": { "numberOfSubdomains": [0.5, 1, 2, 4, 8, 16]},
              "variant_of": ["${{env.GINKGO_EXECUTOR}}"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           },
 	  {
              "name": "mpiRank_of",
              "type": "ChangeNumberOfSubdomains",
-             "variants": { "numberOfSubdomains": ["fullNode"] },
+	     "multiplier": "${{env.NCORES}}",
+             "variants": { "numberOfSubdomains": [0.5, 1, 2, 4, 8, 16]},
              "variant_of": ["DefaultOF"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           }

@@ -1,0 +1,59 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# check if a cached version exists
+
+if [ -d "$OGL_LABBOOK_ASSETS/motorcycle/snappyHexMeshCache" ]; then
+  echo "Using snappyHexMeshCache"
+  cp -r $OGL_LABBOOK_ASSETS/motorcycle/snappyHexMeshCache/* .
+else
+  echo "Recreating snappyHexMesh"
+  runApplication blockMesh
+  runApplication decomposePar 
+  mpirun -np 16 --oversubscribe snappyHexMesh -overwrite
+  runApplication reconstructParMesh -constant
+  runApplication reconstructPar -constant
+fi
+
+full_dir=$( dirname $(pwd))
+cur_dir=$( basename $full_dir)
+echo $cur_dir
+if [[ $cur_dir == "Small" ]]; then
+  exit 0
+fi
+
+
+foamDictionary -entry "pointAndNormalDict.basePoint" -set "( 0 4 0 )" system/mirrorMeshDict
+runApplication mirrorMesh -overwrite
+
+if [[ $cur_dir == "Medium" ]]; then
+  exit 0
+fi
+
+mv log.mirrorMesh log.mirrorMesh1
+foamDictionary -entry "pointAndNormalDict.basePoint" -set "( 0 12 0 )" system/mirrorMeshDict
+runApplication mirrorMesh -overwrite
+
+if [[ $cur_dir == "Large" ]]; then
+  exit 0
+fi
+
+# -4 .x. 4 | 4 .x. 8 .x. 12 | 12 .x. 16 .x. 20 .x. 24
+mv log.mirrorMesh log.mirrorMesh2
+foamDictionary -entry "pointAndNormalDict.basePoint" -set "( 0 24 0 )" system/mirrorMeshDict
+runApplication mirrorMesh -overwrite
+
+if [[ $cur_dir == "Huge" ]]; then
+  exit 0
+fi
+
+# -4 .x. 4 | 4 .x. 8 .x. 12 | 12 .x. 16 .x. 20 .x. 24 | 
+mv log.mirrorMesh log.mirrorMesh2
+foamDictionary -entry "pointAndNormalDict.basePoint" -set "( 0 48 0 )" system/mirrorMeshDict
+runApplication mirrorMesh -overwrite
+
+#optional
+#runApplication checkMesh 
