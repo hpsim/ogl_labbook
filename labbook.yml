@@ -24,18 +24,30 @@ submodules:
     build-type: no-build
 
 cases:
-  - name: lidDrivenCavity3D_resolution
+  - name: motorcycle
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/motorcycle/${{matrix.file}} --folder ${{matrix.name}} --filter ${{env.OBR_FILTER}}
+    path: motorcycle_local
+    matrix:
+      - file: scaling.json
+        folder: scaling
+  - name: lidDrivenCavity
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/lidDrivenCavity3D/${{matrix.file}} --folder ${{matrix.folder}} --filter ${{env.OBR_FILTER}}
+    path: lidDrivenCavity
+    matrix:
+      - file: scaling.json
+        folder: scaling
+  - name: lidDrivenCavity3D_tolerance
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
     path: lidDrivenCavity
     matrix:
-      - file: lidDrivenCavity3D_resolution.json
-        folder: resolution
+      - file: lidDrivenCavity3D_tolerance.json
+        folder: tolerance
   - name: lidDrivenCavity3D_solver
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
     path: lidDrivenCavity
     matrix:
       - file: lidDrivenCavity3D_solver.json
-        folder: lidDrivenCavity3D
+        folder: solver
   - name: motorcycle_resolution
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
     path: motorcycle
@@ -58,13 +70,25 @@ cases:
 
 pipelines:
   - name: decompose
-    run: obr decompose --folder . --filter=mpiRank/40 --select=${{env.OBR_SELECT}}
-  - name: run_gko
-    run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}}${{env.OBR_SELECT}} --filter=mpiRank/32 --report=GKO_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_${{env.HOSTNAME}}.log
+    run: obr decompose --folder . --select=${{env.OBR_SELECT}}
+  - name: run_gpu
+    run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}}  --report=gko_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
     results:
       - results
-  - name: run_of
-    run: obr benchmark --folder . --select=DefaultOF${{env.OBR_SELECT}} --filter=mpiRank/8 --report=OF_${{env.HOSTNAME}}${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
+  - name: run_cpu
+    run: obr benchmark --folder . --select=DefaultOF,${{env.OBR_SELECT}} --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_DefaultOF_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: slurm_run_cpu
+    run: obr benchmark --partition cpuonly --ntasks_per_node=${{env.NCORES}} --time 720 --select=DefaultOF,${{env.OBR_SELECT}} --folder . --runner SlurmCaseRunner --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: slurm_run_gpu
+    run: obr benchmark --partition accelerated --ntasks_per_node=${{env.NGPUS}} --time 720 --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --folder . --runner SlurmCaseRunner --report=gko_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: collect
+    run: obr benchmark --select=${{env.OBR_SELECT}} --folder . --runner ResultsCollector --report=of_${{env.HOSTNAME}}${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
     results:
       - results
 
