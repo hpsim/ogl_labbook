@@ -20,7 +20,7 @@
       "block": "100 100 100",
       "controlDict": {
         "stationary": false,
-        "timeSteps": 5,
+        "timeSteps": 20,
 	"deltaT": 0.0001
       },
       "variation": [{
@@ -36,24 +36,27 @@
             "verbose": "1"
             }
         },
-        "variants": {"solver": ["CG", "BiCGStab"],
+        "variants": {"solver": ["CG"],
                      "preconditioner": ["NoPrecond"],
                      "executor": ["env.GINKGO_EXECUTOR"]
 	},
         "variation": [{
              "name": "mpiRank_gko",
              "type": "ChangeNumberOfSubdomains",
-             "variants": { "numberOfSubdomains": [2, 3, 4, 5, 6, 7, 8] },
+	     "multiplier": "${{env.NGPUS}}",
+             "variants": { "numberOfSubdomains": [0.5, 1, 2, 4, 8, 16]},
              "variant_of": ["${{env.GINKGO_EXECUTOR}}"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           },
 	  {
              "name": "mpiRank_of",
              "type": "ChangeNumberOfSubdomains",
-             "variants": { "numberOfSubdomains": ["fullNode"] },
-             "variant_of": ["${{env.GINKGO_EXECUTOR}}"],
+	     "multiplier": "${{env.NCORES}}",
+             "variants": { "numberOfSubdomains": [0.5, 1, 2, 4, 8, 16]},
+             "variant_of": ["DefaultOF"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           }
+
 	]
       }]
   }
