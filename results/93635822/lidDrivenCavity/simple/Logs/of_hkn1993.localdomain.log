@@ -4440,3 +4440,55 @@ End
 
 Finalising parallel run
 ================================================================================
+[0] 
+[0] 
+[0] --> FOAM FATAL ERROR: (openfoam-2112)
+[0] "system/decomposeParDict" specifies 512 processors but job was started with 456 processors.
+[0] 
+FOAM parallel run exiting
+[0] 
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1744702
+Cluster: hk
+User/Group: eq4036/hk-project-test-fine
+State: FAILED (exit code 1)
+Partition: cpuonly
+Nodes: 6
+Cores per node: 152
+Nodelist: hkn[0827,0834,0836-0837,0841,0845]
+CPU Utilized: 00:02:27
+CPU Efficiency: 0.54% of 07:36:00 core-walltime
+Job Wall-clock time: 00:00:30
+Starttime: Thu May 19 12:33:47 2022
+Endtime: Thu May 19 12:34:17 2022
+Memory Utilized: 34.75 MB
+Memory Efficiency: 0.00% of 2.87 TB
+Energy Consumed: 38502 Joule / 10.695 Watthours
+Average node power draw: 1283.4 Watt
+hash: 9cf3fa0b8c285038c97cc8d1fc80d9a1
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2112                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : d44c8318f0-20220111 OPENFOAM=2112 version=v2112
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : May 19 2022
+Time   : 12:34:12
+Host   : hkn0827.localdomain
+PID    : 3523049
+I/O    : uncollated
+================================================================================
