@@ -7,7 +7,7 @@
     "type": "OpenFOAMExternalCase",
     "solver": "icoFoam",
     "case": "lidDrivenCavity3D",
-    "origin": "~/data/code/ogl_labbook/base/Lid_driven_cavity-3d/S",
+    "origin": "$OGL_LABBOOK/ogl_labbook/base/Lid_driven_cavity-3d/S",
     "git": "https://develop.openfoam.com/committees/hpc.git",
     "build": ["blockMesh", "ln -s fvSolution.fixedNORM system/fvSolution"]
   },

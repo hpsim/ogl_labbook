@@ -7,7 +7,7 @@
     "type": "OpenFOAMExternalCase",
     "solver": "icoFoam",
     "case": "lidDrivenCavity3D",
-    "origin": "~/data/code/ogl_labbook/base/Lid_driven_cavity-3d/S",
+    "origin": "$OGL_LABBOOK/base/Lid_driven_cavity-3d/S",
     "git": "https://develop.openfoam.com/committees/hpc.git",
     "build": ["blockMesh", "ln -s fvSolution.fixedNORM system/fvSolution"]
   },
@@ -45,16 +45,16 @@
              "type": "ChangeNumberOfSubdomains",
 	     "multiplier": "${{env.NGPUS}}",
 	     "method" : "simple",
-             "variants": { "numberOfSubdomains": [0.5, 1, 2, 4, 8, 16]},
+             "variants": { "numberOfSubdomains": [0.5, 1, 2, 4, 8, 16, 32, 64, 128]},
              "variant_of": ["${{env.GINKGO_EXECUTOR}}"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           },
 	  {
              "name": "mpiRank_of",
              "type": "ChangeNumberOfSubdomains",
-	     "multiplier": "64",
+	     "multiplier": "${{env.NCORES}}",
 	     "method" : "simple",
-             "variants": { "numberOfSubdomains": [0.5, 1, 2, 4, 8, 16]},
+             "variants": { "numberOfSubdomains": [0.5, 1, 2, 4, 8, 16, 32, 64, 128]},
              "variant_of": ["DefaultOF"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           }
