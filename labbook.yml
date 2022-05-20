@@ -36,6 +36,8 @@ cases:
     matrix:
       - file: scaling.json
         folder: scaling
+      - file: scaling_simple.json
+        folder: simple
   - name: lidDrivenCavity3D_tolerance
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
     path: lidDrivenCavity
@@ -80,11 +82,11 @@ pipelines:
     results:
       - results
   - name: slurm_run_cpu
-    run: obr benchmark --partition cpuonly --ntasks_per_node=${{env.NCORES}} --time 720 --select=DefaultOF,${{env.OBR_SELECT}} --folder . --runner SlurmCaseRunner --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
+    run: obr benchmark --partition cpuonly --ntasks_per_node=${{env.NCORES}} ${{env.OBR_SLURM_ARGS}} --time 720 --select=DefaultOF,${{env.OBR_SELECT}} --folder . --runner SlurmCaseRunner --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
     results:
       - results
   - name: slurm_run_gpu
-    run: obr benchmark --partition accelerated --ntasks_per_node=${{env.NGPUS}} --time 720 --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --folder . --runner SlurmCaseRunner --report=gko_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    run: obr benchmark --partition accelerated --ntasks_per_node=${{env.NGPUS}} ${{env.OBR_SLURM_ARGS}} --time 720 --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --folder . --runner SlurmCaseRunner --report=gko_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
     results:
       - results
   - name: collect
