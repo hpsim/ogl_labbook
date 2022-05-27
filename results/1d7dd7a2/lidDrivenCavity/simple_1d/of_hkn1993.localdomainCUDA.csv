@@ -1,0 +1,32 @@
+executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,processes,mpiRank_gko,timestamp,log_id,run_time
+#{'node_data': {'host': 'hkn1993.localdomain\n', 'top': ['top - 08:10:36 up 31 days, 17:07,  0 users,  load average: 0.21, 0.78, 2.07', 'Tasks: 1806 total,   1 running, 1805 sleeping,   0 stopped,   0 zombie', '%Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st', 'MiB Mem : 514459.2 total, 467856.8 free,  33896.6 used,  12705.8 buff/cache', 'MiB Swap:  15258.7 total,  15258.7 free,      0.0 used. 477217.2 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', '  25584 root       0 -20  101.6g  26.1g  19.2g S  45.5   5.2   6571:03 mmfsd', '1833041 lu7800    20   0  756772  59880  28112 S  36.4   0.0  72:24.28 gitlab-runner', '2914889 eq4036    20   0   57676   6256   3752 R  22.7   0.0   0:00.14 top', '      1 root      20   0  239408  11960   7900 S   0.0   0.0   4:15.74 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   0:09.27 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp', '      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp', '      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri'], 'uptime': ' 08:10:36 up 31 days, 17:07,  0 users,  load average: 0.21, 0.78, 2.07\n', 'libOGL.so': 'c31ff7fbea61461db688abb6e04bee7d  /home/hk-project-test-fine/eq4036/OpenFOAM/eq4036-v2112/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.1', 'OBR_VERSION': '0.4.0'}
+CUDA,CG,NoPrecond,500,1,2,hkn1993.localdomain,1,0.5,2022-05-27 06:10:36.686176,489a5bf632b38e8400eec7d7916e838b,0
+CUDA,CG,NoPrecond,500,1,4,hkn1993.localdomain,1,1,2022-05-27 06:10:36.706119,6f8a96dba03d70d593f046a9c6928a0e,0
+CUDA,CG,NoPrecond,500,1,16,hkn1993.localdomain,1,4,2022-05-27 06:10:36.730719,f93d6bff589e6d654498ebaff041a463,0
+CUDA,CG,NoPrecond,500,1,64,hkn1993.localdomain,1,16,2022-05-27 06:10:36.784531,353a92bfc125558369742dcec30a6f51,0
+CUDA,CG,NoPrecond,500,1,32,hkn1993.localdomain,1,8,2022-05-27 06:10:36.872550,e82cf1c607d70125ddb9573a7fcf62ed,0
+CUDA,CG,NoPrecond,500,1,8,hkn1993.localdomain,1,2,2022-05-27 06:10:36.907292,7f243708ac1fb26d220863cd34ccbcd5,0
+CUDA,CG,NoPrecond,400,1,2,hkn1993.localdomain,1,0.5,2022-05-27 06:10:37.563353,484077aa921f933366baedb712d5ba90,0
+CUDA,CG,NoPrecond,400,1,4,hkn1993.localdomain,1,1,2022-05-27 06:10:37.580106,305e388d7b547fe2f56cb023ca2bdbb8,0
+CUDA,CG,NoPrecond,400,1,16,hkn1993.localdomain,1,4,2022-05-27 06:10:37.626519,93271aa8d5226ddc33d2d12044486cb9,0
+CUDA,CG,NoPrecond,400,1,64,hkn1993.localdomain,1,16,2022-05-27 06:10:37.694570,3a2c5b207fb62e094699bfd78e199464,0
+CUDA,CG,NoPrecond,400,1,32,hkn1993.localdomain,1,8,2022-05-27 06:10:37.786416,d143f30d5b815d9104937dfd53578ed1,0
+CUDA,CG,NoPrecond,400,1,8,hkn1993.localdomain,1,2,2022-05-27 06:10:37.857012,cd0313bd757ee08e3e1ba840ed43d448,0
+CUDA,CG,NoPrecond,300,1,2,hkn1993.localdomain,1,0.5,2022-05-27 06:10:38.996588,c51ec21c999071df9f35847d50f556ed,0
+CUDA,CG,NoPrecond,300,1,4,hkn1993.localdomain,1,1,2022-05-27 06:10:39.033781,7c1730c3a1621f058a9a112544e99e3c,0
+CUDA,CG,NoPrecond,300,1,16,hkn1993.localdomain,1,4,2022-05-27 06:10:39.095644,60ca08a9ee8fe3ddf4c81984d52f9bd6,0
+CUDA,CG,NoPrecond,300,1,64,hkn1993.localdomain,1,16,2022-05-27 06:10:39.161824,95e503972b4ed8b981379c344a7e1d8f,0
+CUDA,CG,NoPrecond,300,1,32,hkn1993.localdomain,1,8,2022-05-27 06:10:39.251458,5d21ee1730580f35d71b625b30a38fea,0
+CUDA,CG,NoPrecond,300,1,8,hkn1993.localdomain,1,2,2022-05-27 06:10:39.315110,e52478fa150b5bb09d25f8a20db1a384,0
+CUDA,CG,NoPrecond,200,1,2,hkn1993.localdomain,1,0.5,2022-05-27 06:10:40.365474,554fcd19d2f18da11a9e7842fa4a08b2,0
+CUDA,CG,NoPrecond,200,1,4,hkn1993.localdomain,1,1,2022-05-27 06:10:40.412836,e764630d740300f3dddd9e3887386cfe,0
+CUDA,CG,NoPrecond,200,1,16,hkn1993.localdomain,1,4,2022-05-27 06:10:40.473860,4197a931defd85cc99e99dbacb404c5c,0
+CUDA,CG,NoPrecond,200,1,64,hkn1993.localdomain,1,16,2022-05-27 06:10:40.540103,c46d6c4c2eee5229d03272277ec0ba2b,0
+CUDA,CG,NoPrecond,200,1,32,hkn1993.localdomain,1,8,2022-05-27 06:10:40.629522,8d24732f6a0d387848c9cde483509a24,0
+CUDA,CG,NoPrecond,200,1,8,hkn1993.localdomain,1,2,2022-05-27 06:10:40.707580,91fc96530f7b080502544742d61732e7,0
+CUDA,CG,NoPrecond,100,1,2,hkn1993.localdomain,1,0.5,2022-05-27 06:10:41.953013,f445392cfbdb9505631cdcdca60d8f6c,0
+CUDA,CG,NoPrecond,100,1,4,hkn1993.localdomain,1,1,2022-05-27 06:10:42.006515,63181bc522e98416aeb97670edcb486e,0
+CUDA,CG,NoPrecond,100,1,16,hkn1993.localdomain,1,4,2022-05-27 06:10:42.061689,d9388ab34dd3685852c351fa339c0cd7,0
+CUDA,CG,NoPrecond,100,1,64,hkn1993.localdomain,1,16,2022-05-27 06:10:42.130005,9cd8fc8a535723a5cceccda768b2f449,0
+CUDA,CG,NoPrecond,100,1,32,hkn1993.localdomain,1,8,2022-05-27 06:10:42.219117,e951f0be0abb89b06ef271f8155311d2,0
+CUDA,CG,NoPrecond,100,1,8,hkn1993.localdomain,1,2,2022-05-27 06:10:42.293803,e4ea7e745216b900616ec06c218559c9,0
