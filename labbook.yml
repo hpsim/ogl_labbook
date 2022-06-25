@@ -1,5 +1,11 @@
 config:
   type: OpenFOAM
+  campaign:
+    type: submodule_branch
+    submodule: ogl
+  revision:
+    type: submodule
+    submodule: ogl
   case:
     name: base
     type: submodule
@@ -86,7 +92,7 @@ pipelines:
     results:
       - results
   - name: slurm_run_gpu
-    run: obr benchmark --partition accelerated --ntasks_per_node=${{env.NGPUS}} ${{env.OBR_SLURM_ARGS}} --time 720 --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --folder . --runner SlurmCaseRunner --report=gko_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    run: obr benchmark --partition accelerated --ntasks_per_node=${{env.NGPUS}} --time 150 --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --folder . --runner TemplatedCaseRunner --report=gko_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
     results:
       - results
   - name: collect
