@@ -1,0 +1,13 @@
+INFO:root:Execute: obr decompose --folder . --select=500,simple,DefaultOF in lidDrivenCavity
+No Salvia installation found
+Owls Version: 0.10.0-26-g31283c0
+Warning no matplotlib support
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank_of/4096/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank_of/128/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank_of/2048/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank_of/64/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank_of/1024/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank_of/512/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank_of/32/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_DefaultOF/Variation_mpiRank_of/256/base
+run all selected cases in 220.42286113333333 minutes

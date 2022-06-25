@@ -1,0 +1,10 @@
+INFO:root:Execute: obr decompose --folder . --select=500,simple,CUDA in lidDrivenCavity
+No Salvia installation found
+Owls Version: 0.10.0-26-g31283c0
+Warning no matplotlib support
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_CUDA/Variation_mpiRank_gko/2/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_CUDA/Variation_mpiRank_gko/16/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_CUDA/Variation_mpiRank_gko/8/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_CUDA/Variation_mpiRank_gko/4/base
+decomposing ./simple/Variation_mesh/500/Variation_matrix_solver/CG_NoPrecond_CUDA/Variation_mpiRank_gko/32/base
+run all selected cases in 109.7254879 minutes
