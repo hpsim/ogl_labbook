@@ -1,6 +1,6 @@
 {
   "obr": {
-    "OBR_MIN_VERSION": "0.3.0",
+    "OBR_MIN_VERSION": "0.4.0",
     "BENCHMARK_FILE_VERSION": "0.3.0"
   },
   "case": {
@@ -16,12 +16,13 @@
       "type": "ReBlockMesh",
       "mapFields": false,
       "dimensions": 3,
-      "variants":{"cells": [100, 200, 300, 400, 500]},
+      "variants":{"cells": [100 ]},
       "block": "100 100 100",
       "controlDict": {
         "stationary": false,
         "timeSteps": 20,
-	"deltaT": 0.0001
+	"deltaT": 0.0001,
+	"libs": ["libOGL.so", "libpetscFoam.so"]
       },
       "variation": [{
         "name": "matrix_solver",
@@ -38,7 +39,10 @@
         },
         "variants": {"solver": ["CG"],
                      "preconditioner": ["NoPrecond"],
-                     "executor": ["${{env.GINKGO_EXECUTOR}}", "DefaultOF"]
+                     "backend": {
+			     "Ginkgo": ["${{env.GINKGO_EXECUTOR}}"],
+			     "OpenFOAM": ["Default"],
+			     "PETSC": ["Default"]}
 	},
         "variation": [{
              "name": "mpiRank_gko",
