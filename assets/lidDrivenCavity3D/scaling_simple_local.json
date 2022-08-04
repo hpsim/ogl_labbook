@@ -16,7 +16,7 @@
       "type": "ReBlockMesh",
       "mapFields": false,
       "dimensions": 3,
-      "variants":{"cells": [100 ]},
+      "variants":{"cells": [100, 200, 300, 400, 500]},
       "block": "100 100 100",
       "controlDict": {
         "stationary": false,
@@ -41,16 +41,24 @@
                      "backend": {
 			     "Ginkgo": ["${{env.GINKGO_EXECUTOR}}"],
 			     "OpenFOAM": ["Default"],
-			     "PETSC": ["Default"]}
+			     "PETSC": ["${{env.GINKGO_EXECUTOR}}", "Default"]}
 	},
         "variation": [{
              "name": "mpiRank_gko",
              "type": "ChangeNumberOfSubdomains",
 	     "multiplier": "1",
 	     "method" : "simple",
-             "variants_generator": { "start": 2, "end": "${{env.NGPUS}}", "step": 1, "type": "linear"},
-             "variants": { "numberOfSubdomains": []},
-             "variant_of": ["${{env.GINKGO_EXECUTOR}}"],
+             "variants": { "numberOfSubdomains": [2, 4, 6, 8]},
+             "variant_of": ["Ginkgo"],
+             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
+          },
+	  {
+             "name": "mpiRank_of",
+             "type": "ChangeNumberOfSubdomains",
+	     "multiplier": "1",
+	     "method" : "simple",
+             "variants": { "numberOfSubdomains": [2, 4, 6, 8]},
+             "variant_of": ["PETSC"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           },
 	  {
@@ -59,7 +67,7 @@
 	     "multiplier": "${{env.NCORES}}",
 	     "method" : "simple",
              "variants": { "numberOfSubdomains": [1]},
-             "variant_of": ["DefaultOF"],
+             "variant_of": ["OpenFOAM"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           }
 	]
