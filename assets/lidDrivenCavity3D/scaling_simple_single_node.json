@@ -16,7 +16,7 @@
       "type": "ReBlockMesh",
       "mapFields": false,
       "dimensions": 3,
-      "variants":{"cells": [100, 200, 300, 400, 500]},
+      "variants":{"cells": [100, 200, 300, 400]},
       "block": "100 100 100",
       "controlDict": {
         "stationary": false,
@@ -46,9 +46,9 @@
         "variation": [{
              "name": "mpiRank_gko",
              "type": "ChangeNumberOfSubdomains",
-	     "multiplier": "1",
+	     "multiplier": "${{env.NGPUS}}",
 	     "method" : "simple",
-             "variants": { "numberOfSubdomains": [2, 4, 6, 8]},
+             "variants": { "numberOfSubdomains": [1]},
              "variant_of": ["Ginkgo"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           },
@@ -57,8 +57,17 @@
              "type": "ChangeNumberOfSubdomains",
 	     "multiplier": "1",
 	     "method" : "simple",
-             "variants": { "numberOfSubdomains": [2, 4, 6, 8]},
-             "variant_of": ["PETSC"],
+             "variants": { "numberOfSubdomains": [4, 8, 16, 32]},
+             "variant_of": ["PETSC_CUDA"],
+             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
+          },
+	  {
+             "name": "mpiRank_of",
+             "type": "ChangeNumberOfSubdomains",
+	     "multiplier": "${{env.NCORES}}",
+	     "method" : "simple",
+             "variants": { "numberOfSubdomains": [1]},
+             "variant_of": ["PETSC_Default"],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           },
 	  {
