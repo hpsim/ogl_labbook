@@ -80,11 +80,15 @@ pipelines:
   - name: decompose
     run: obr decompose --folder . --select=${{env.OBR_SELECT}}
   - name: run_gpu
-    run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}}  --report=gko_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: run_petsc
+    run: obr benchmark --folder . --select=PETSC,${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_PETSC_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_PETSC_${{env.HOSTNAME}}.log
     results:
       - results
   - name: run_cpu
-    run: obr benchmark --folder . --select=DefaultOF,${{env.OBR_SELECT}} --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_DefaultOF_${{env.HOSTNAME}}.log
+    run: obr benchmark --folder . --select=OpenFOAM,${{env.OBR_SELECT}} --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_DefaultOF_${{env.HOSTNAME}}.log
     results:
       - results
   - name: slurm_run_cpu
