@@ -14,5 +14,8 @@ CUDA,CG,NoPrecond,200,1,4,hkn1993.localdomain,1,Ginkgo,1,0,2022-08-09 10:10:13.2
 Default,CG,NoPrecond,200,1,76,hkn1993.localdomain,0,OpenFOAM,1,1,2022-08-09 10:10:13.336164,cb1895ce06e4b55638e70db815cddb6b,0
 Default,CG,NoPrecond,100,1,76,hkn1993.localdomain,0,PETSC,1,1,2022-08-09 10:10:13.395169,6cc2646c802d4616072b5dac3ee1f97a,0
 CUDA,CG,NoPrecond,100,1,4,hkn1993.localdomain,0,PETSC,1,4,2022-08-09 10:10:13.460346,e203d680b29cef318d92c0f917d7b160,0
+CUDA,CG,NoPrecond,100,1,6,hkn1993.localdomain,6,Ginkgo,1,0,2022-08-09 10:10:13.489326,e5fc484b6a9da9924293cd16dfae5174,0
+CUDA,CG,NoPrecond,100,1,2,hkn1993.localdomain,2,Ginkgo,1,0,2022-08-09 10:10:13.541076,a0cad1b3131055b8c3a425cebcd98935,0
 CUDA,CG,NoPrecond,100,1,4,hkn1993.localdomain,1,Ginkgo,1,0,2022-08-09 10:10:13.582494,ee14767a74aa1dd42cbc08d692974f5c,0
+CUDA,CG,NoPrecond,100,1,8,hkn1993.localdomain,8,Ginkgo,1,0,2022-08-09 10:10:13.613985,ecf854feae929ea17cff5dbbbfc3711c,0
 Default,CG,NoPrecond,100,1,76,hkn1993.localdomain,0,OpenFOAM,1,1,2022-08-09 10:10:13.689210,cc0536878dcd6c1a52418a4f3b839907,0
