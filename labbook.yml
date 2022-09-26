@@ -16,10 +16,10 @@ submodules:
     description: The main driver of this labbook, proving linear solver and preconditioner
     repo: https://github.com/hpsim/OGL.git
     run: |
-      mkdir -p builds/dev
-      cmake -G ${{env.OGL_MAKE_GENERATOR}} -B builds/dev -S . -DCMAKE_BUILD_TYPE=Release ${{env.OGL_CMAKE_FLAGS}}
-      cmake --build ./builds/dev --config Release
-      cmake --install ./builds/dev
+      mkdir -p builds/${{env.OGL_BUILD_TYPE}}
+      cmake -G ${{env.OGL_MAKE_GENERATOR}} -B builds/${{env.OGL_BUILD_TYPE}} -S . -DCMAKE_BUILD_TYPE=${{env.OGL_BUILD_TYPE}} ${{env.OGL_CMAKE_FLAGS}}
+      cmake --build ./builds/${{env.OGL_BUILD_TYPE}} --config ${{env.OGL_BUILD_TYPE}}
+      cmake --install ./builds/${{env.OGL_BUILD_TYPE}}
   - name: obr
     description: Collection of python scripts to generate parameter studies
     repo: https://github.com/hpsim/OBR.git
@@ -44,6 +44,8 @@ cases:
         folder: scaling
       - file: scaling_simple_single_node.json
         folder: single_node
+      - file: scaling_matrix_formats.json
+        folder: matrix_formats
   - name: lidDrivenCavity3D_tolerance
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
     path: lidDrivenCavity
@@ -79,16 +81,20 @@ cases:
 pipelines:
   - name: decompose
     run: obr decompose --folder . --select=${{env.OBR_SELECT}}
-  - name: run_gpu
-    run: obr benchmark --folder . --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+  - name: run_gpu_gko
+    run: obr benchmark --folder . --select=Ginkgo_${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
     results:
       - results
-  - name: run_petsc
-    run: obr benchmark --folder . --select=PETSC,${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_PETSC_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_PETSC_${{env.HOSTNAME}}.log
+  - name: run_cpu_petsc
+    run: obr benchmark --folder . --select=PETSC,Default,${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_PETSC_Default_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_PETSC_Default_${{env.HOSTNAME}}.log
     results:
       - results
-  - name: run_cpu
-    run: obr benchmark --folder . --select=OpenFOAM,${{env.OBR_SELECT}} --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_DefaultOF_${{env.HOSTNAME}}.log
+  - name: run_gpu_petsc
+    run: obr benchmark --folder . --select=PETSC,${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_PETSC_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_PETSC_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: run_cpu_foam
+    run: obr benchmark --folder . --select=OpenFOAM,Default,${{env.OBR_SELECT}} --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_DefaultOF_${{env.HOSTNAME}}.log
     results:
       - results
   - name: slurm_run_cpu
