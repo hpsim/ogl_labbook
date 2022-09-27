@@ -98,7 +98,7 @@ pipelines:
     results:
       - results
   - name: slurm_run_cpu
-    run: obr benchmark --partition cpuonly --ntasks_per_node=${{env.NCORES}} ${{env.OBR_SLURM_ARGS}} --time 720 --select=DefaultOF,${{env.OBR_SELECT}} --folder . --runner TemplatedCaseRunner --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
+    run: obr benchmark --partition cpuonly --ntasks_per_node=${{env.NCORES}} ${{env.OBR_SLURM_ARGS}} --time 720 --select=OpenFOAM,Default,${{env.OBR_SELECT}} --folder . --runner TemplatedCaseRunner --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
     results:
       - results
   - name: slurm_run_gpu_gko
