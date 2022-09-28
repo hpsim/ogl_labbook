@@ -2978,3 +2978,599 @@ End
 Finalizing PETSc
 Finalising parallel run
 ================================================================================
+hash: e99d39fafc4ed7b73b14659ebdfb322e
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : f815a12bba-20210902 OPENFOAM=2106
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoFoam -parallel
+Date   : Sep 28 2022
+Time   : 14:07:46
+Host   : nla-gpu2.ianm.kit.edu
+PID    : 1064429
+I/O    : uncollated
+Case   : /home/greole/data/code/ogl_labbook/lidDrivenCavity/single_node/mesh/300/matrix_solver/CG_NoPrecond_PETSC_Default/mpiRank_of/32/base
+nProcs : 32
+Hosts  :
+(
+    (nla-gpu2.ianm.kit.edu 32)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 3.33333e-05
+
+Courant Number mean: 0 max: 0
+DILUPBiCGStab:  Solving for Ux, Initial residual = 1, Final residual = 0.00055784, No Iterations 5
+DILUPBiCGStab:  Solving for Uy:  solution singularity
+DILUPBiCGStab:  Solving for Uz:  solution singularity
+linear solve U 812.027 [ms]
+piso setup 293.595 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+Initializing PETSc
+PETSc-cg:  Solving for p, Initial residual = 1, Final residual = 9.90576e-05, No Iterations 2434
+linear solve p 72442.9 [ms]
+piso step 72557.9 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.65953e-10, global = -2.25163e-22, cumulative = -2.25163e-22
+piso setup 275.505 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.689571, Final residual = 9.98096e-05, No Iterations 2411
+linear solve p 70823.9 [ms]
+piso step 70938.1 [ms]
+ contErrors 
+time step continuity errors : sum local = 5.10404e-10, global = -1.64109e-23, cumulative = -2.41574e-22
+ExecutionTime = 149 s  ClockTime = 150 s
+
+Time = 6.66667e-05
+
+Courant Number mean: 0.00132221 max: 0.0715445
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.172371, Final residual = 0.000360522, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.340821, Final residual = 0.000344801, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.994559, Final residual = 0.00131661, No Iterations 5
+linear solve U 1552.65 [ms]
+piso setup 265.055 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.597092, Final residual = 9.82601e-05, No Iterations 2358
+linear solve p 69330.4 [ms]
+piso step 69438.1 [ms]
+ contErrors 
+time step continuity errors : sum local = 5.1519e-10, global = -3.718e-25, cumulative = -2.41946e-22
+piso setup 252.1 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.517698, Final residual = 9.86682e-05, No Iterations 2353
+linear solve p 69141.6 [ms]
+piso step 69249.8 [ms]
+ contErrors 
+time step continuity errors : sum local = 5.29418e-10, global = -1.50777e-22, cumulative = -3.92722e-22
+ExecutionTime = 289.44 s  ClockTime = 291 s
+
+Time = 0.0001
+
+Courant Number mean: 0.00202508 max: 0.0848304
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0717005, Final residual = 0.000113789, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.137147, Final residual = 8.65348e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.202076, Final residual = 0.000338227, No Iterations 5
+linear solve U 1571.2 [ms]
+piso setup 259.825 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.423612, Final residual = 9.93043e-05, No Iterations 2304
+linear solve p 67768.3 [ms]
+piso step 67874 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.75018e-10, global = -3.63265e-24, cumulative = -3.96355e-22
+piso setup 251.366 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.367959, Final residual = 9.97923e-05, No Iterations 2295
+linear solve p 67439.8 [ms]
+piso step 67537.4 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.69472e-10, global = -5.54292e-23, cumulative = -4.51784e-22
+ExecutionTime = 426.68 s  ClockTime = 429 s
+
+Time = 0.000133333
+
+Courant Number mean: 0.00251196 max: 0.0887239
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.046687, Final residual = 5.06149e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.086216, Final residual = 3.83565e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.114972, Final residual = 0.000133078, No Iterations 5
+linear solve U 1550.15 [ms]
+piso setup 262.979 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.212612, Final residual = 9.75943e-05, No Iterations 2307
+linear solve p 67832 [ms]
+piso step 67932.1 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.30814e-10, global = -1.43893e-22, cumulative = -5.95678e-22
+piso setup 252.637 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.173508, Final residual = 9.95712e-05, No Iterations 1112
+linear solve p 32771.2 [ms]
+piso step 32872.6 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.70274e-10, global = -4.45609e-23, cumulative = -6.40238e-22
+ExecutionTime = 529.49 s  ClockTime = 532 s
+
+Time = 0.000166667
+
+Courant Number mean: 0.00290332 max: 0.0905868
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0352256, Final residual = 2.64213e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0624823, Final residual = 2.67489e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.094758, Final residual = 8.04253e-05, No Iterations 5
+linear solve U 1564.72 [ms]
+piso setup 257.121 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.123131, Final residual = 9.81941e-05, No Iterations 2291
+linear solve p 67333.6 [ms]
+piso step 67431.2 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.09444e-10, global = -1.32834e-22, cumulative = -7.73073e-22
+piso setup 254.522 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.102215, Final residual = 9.96535e-05, No Iterations 1082
+linear solve p 31859 [ms]
+piso step 31956.3 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.39606e-10, global = -2.15553e-22, cumulative = -9.88626e-22
+ExecutionTime = 630.89 s  ClockTime = 634 s
+
+Time = 0.0002
+
+Courant Number mean: 0.00323631 max: 0.0917316
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0285092, Final residual = 2.02756e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0490416, Final residual = 1.85611e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0823337, Final residual = 6.03916e-05, No Iterations 5
+linear solve U 1539.04 [ms]
+piso setup 259.656 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0736926, Final residual = 9.9664e-05, No Iterations 2276
+linear solve p 66921.9 [ms]
+piso step 67021.7 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.08092e-10, global = -1.38336e-22, cumulative = -1.12696e-21
+piso setup 251.673 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0621134, Final residual = 9.91216e-05, No Iterations 2268
+linear solve p 66722.7 [ms]
+piso step 66821.3 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.07411e-10, global = -1.39828e-22, cumulative = -1.26679e-21
+ExecutionTime = 766.57 s  ClockTime = 771 s
+
+Time = 0.000233333
+
+Courant Number mean: 0.00352922 max: 0.0925278
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.024018, Final residual = 1.57188e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0403837, Final residual = 1.61842e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0667795, Final residual = 3.34538e-05, No Iterations 5
+linear solve U 1545.61 [ms]
+piso setup 260.178 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0484759, Final residual = 9.90677e-05, No Iterations 965
+linear solve p 28509.9 [ms]
+piso step 28607.2 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.09351e-10, global = -1.92864e-22, cumulative = -1.45965e-21
+piso setup 252.571 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0417398, Final residual = 9.94267e-05, No Iterations 962
+linear solve p 28377.6 [ms]
+piso step 28478.4 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.08703e-10, global = -1.09087e-23, cumulative = -1.47056e-21
+ExecutionTime = 825.9 s  ClockTime = 830 s
+
+Time = 0.000266667
+
+Courant Number mean: 0.0037923 max: 0.0931232
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0207945, Final residual = 1.24478e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0342907, Final residual = 1.22574e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0587876, Final residual = 2.41324e-05, No Iterations 5
+linear solve U 1552.08 [ms]
+piso setup 255.02 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0332749, Final residual = 9.97694e-05, No Iterations 958
+linear solve p 28231.8 [ms]
+piso step 28328.4 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.12305e-10, global = -1.51822e-22, cumulative = -1.62239e-21
+piso setup 248.089 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0293898, Final residual = 9.98879e-05, No Iterations 946
+linear solve p 27875.1 [ms]
+piso step 27971.1 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.04445e-10, global = -2.85378e-22, cumulative = -1.90776e-21
+ExecutionTime = 884.44 s  ClockTime = 889 s
+
+Time = 0.0003
+
+Courant Number mean: 0.00403212 max: 0.0935901
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0183556, Final residual = 1.00153e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0298011, Final residual = 1.06539e-05, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0521286, Final residual = 1.80298e-05, No Iterations 5
+linear solve U 1555.36 [ms]
+piso setup 254.737 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0262103, Final residual = 9.98722e-05, No Iterations 946
+linear solve p 27923.6 [ms]
+piso step 28023.4 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.09246e-10, global = -2.12693e-22, cumulative = -2.12046e-21
+piso setup 250.609 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.023609, Final residual = 9.79987e-05, No Iterations 937
+linear solve p 27616.7 [ms]
+piso step 27712.9 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.01563e-10, global = -2.7541e-22, cumulative = -2.39587e-21
+ExecutionTime = 942.42 s  ClockTime = 948 s
+
+Time = 0.000333333
+
+Courant Number mean: 0.00425338 max: 0.093969
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0164442, Final residual = 8.26893e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0263239, Final residual = 8.78339e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0472607, Final residual = 1.41625e-05, No Iterations 5
+linear solve U 1554.75 [ms]
+piso setup 256.288 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0203634, Final residual = 9.60386e-05, No Iterations 938
+linear solve p 27659.7 [ms]
+piso step 27757.6 [ms]
+ contErrors 
+time step continuity errors : sum local = 2.99573e-10, global = 1.30022e-24, cumulative = -2.39457e-21
+piso setup 251.141 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0186814, Final residual = 9.95087e-05, No Iterations 913
+linear solve p 26929.7 [ms]
+piso step 27024.9 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.03347e-10, global = -2.07222e-22, cumulative = -2.60179e-21
+ExecutionTime = 999.45 s  ClockTime = 1005 s
+
+Time = 0.000366667
+
+Courant Number mean: 0.00445915 max: 0.0942844
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0148966, Final residual = 7.02896e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0235779, Final residual = 7.6664e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0428561, Final residual = 1.16981e-05, No Iterations 5
+linear solve U 1546.09 [ms]
+piso setup 257.051 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0174336, Final residual = 9.92524e-05, No Iterations 965
+linear solve p 28446.9 [ms]
+piso step 28543.6 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.06896e-10, global = -3.76457e-22, cumulative = -2.97825e-21
+piso setup 251.611 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0160551, Final residual = 9.9969e-05, No Iterations 941
+linear solve p 27750.4 [ms]
+piso step 27845.1 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.06831e-10, global = -3.02997e-23, cumulative = -3.00854e-21
+ExecutionTime = 1058.07 s  ClockTime = 1064 s
+
+Time = 0.0004
+
+Courant Number mean: 0.0046517 max: 0.0945522
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.013623, Final residual = 6.14188e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.021334, Final residual = 6.64309e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0394678, Final residual = 9.55993e-06, No Iterations 5
+linear solve U 1547.67 [ms]
+piso setup 256.089 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0149378, Final residual = 9.91662e-05, No Iterations 941
+linear solve p 27741.4 [ms]
+piso step 27841.7 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.08648e-10, global = -1.09627e-22, cumulative = -3.11817e-21
+piso setup 251.226 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0139121, Final residual = 9.89392e-05, No Iterations 898
+linear solve p 26489.1 [ms]
+piso step 26589.6 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.02226e-10, global = -3.21493e-22, cumulative = -3.43967e-21
+ExecutionTime = 1114.74 s  ClockTime = 1121 s
+
+Time = 0.000433333
+
+Courant Number mean: 0.00483329 max: 0.0947834
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0125491, Final residual = 5.43061e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0194814, Final residual = 5.88914e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.036325, Final residual = 8.32646e-06, No Iterations 5
+linear solve U 1546.36 [ms]
+piso setup 257.898 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0132061, Final residual = 9.97907e-05, No Iterations 977
+linear solve p 28808.8 [ms]
+piso step 28906.9 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.0842e-10, global = -2.60199e-22, cumulative = -3.69986e-21
+piso setup 248.319 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0123164, Final residual = 9.84644e-05, No Iterations 960
+linear solve p 28353.6 [ms]
+piso step 28452.8 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.02037e-10, global = -1.51469e-22, cumulative = -3.85133e-21
+ExecutionTime = 1174.33 s  ClockTime = 1181 s
+
+Time = 0.000466667
+
+Courant Number mean: 0.00500486 max: 0.0949855
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0116359, Final residual = 4.85175e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0179139, Final residual = 5.25151e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0337719, Final residual = 6.98619e-06, No Iterations 5
+linear solve U 1563.39 [ms]
+piso setup 254.313 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0118909, Final residual = 9.94829e-05, No Iterations 888
+linear solve p 26224 [ms]
+piso step 26320.1 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.09445e-10, global = -3.01098e-22, cumulative = -4.15243e-21
+piso setup 250.439 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0111272, Final residual = 9.89525e-05, No Iterations 876
+linear solve p 25834.1 [ms]
+piso step 25931.4 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.02885e-10, global = -1.56138e-22, cumulative = -4.30857e-21
+ExecutionTime = 1228.85 s  ClockTime = 1236 s
+
+Time = 0.0005
+
+Courant Number mean: 0.00516807 max: 0.0951642
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0108445, Final residual = 4.37279e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0165797, Final residual = 4.74186e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0313729, Final residual = 6.31517e-06, No Iterations 5
+linear solve U 1547.71 [ms]
+piso setup 258.889 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0107957, Final residual = 9.77208e-05, No Iterations 961
+linear solve p 28340.2 [ms]
+piso step 28433.9 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.01898e-10, global = -2.24854e-22, cumulative = -4.53342e-21
+piso setup 249.656 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0101043, Final residual = 9.96092e-05, No Iterations 942
+linear solve p 27803.1 [ms]
+piso step 27900.7 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.05408e-10, global = -3.9443e-22, cumulative = -4.92785e-21
+ExecutionTime = 1287.43 s  ClockTime = 1295 s
+
+Time = 0.000533333
+
+Courant Number mean: 0.00532341 max: 0.0953237
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0101558, Final residual = 3.97513e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0154236, Final residual = 4.31191e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0294695, Final residual = 5.46351e-06, No Iterations 5
+linear solve U 1544.51 [ms]
+piso setup 258.202 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00986882, Final residual = 9.95792e-05, No Iterations 879
+linear solve p 25933.2 [ms]
+piso step 26028.7 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.09668e-10, global = -3.49138e-22, cumulative = -5.27699e-21
+piso setup 251.919 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00923967, Final residual = 9.92126e-05, No Iterations 868
+linear solve p 25632.3 [ms]
+piso step 25727 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.04231e-10, global = -2.88088e-22, cumulative = -5.56508e-21
+ExecutionTime = 1341.45 s  ClockTime = 1349 s
+
+Time = 0.000566667
+
+Courant Number mean: 0.00547212 max: 0.0954671
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.00954797, Final residual = 3.63971e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0144178, Final residual = 3.95497e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0276314, Final residual = 5.04234e-06, No Iterations 5
+linear solve U 1547.53 [ms]
+piso setup 254.772 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00914914, Final residual = 9.93026e-05, No Iterations 953
+linear solve p 28071.5 [ms]
+piso step 28166.8 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.06548e-10, global = -1.87658e-22, cumulative = -5.75274e-21
+piso setup 253.101 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00858209, Final residual = 9.99819e-05, No Iterations 938
+linear solve p 27684.2 [ms]
+piso step 27780.1 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.06476e-10, global = -2.394e-22, cumulative = -5.99214e-21
+ExecutionTime = 1399.65 s  ClockTime = 1407 s
+
+Time = 0.0006
+
+Courant Number mean: 0.00561448 max: 0.0955971
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.00900951, Final residual = 3.35595e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0135299, Final residual = 3.64938e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0261088, Final residual = 4.48305e-06, No Iterations 5
+linear solve U 1548.83 [ms]
+piso setup 255.98 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00842759, Final residual = 9.98499e-05, No Iterations 868
+linear solve p 25578.4 [ms]
+piso step 25675.7 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.10484e-10, global = -4.30896e-22, cumulative = -6.42303e-21
+piso setup 250.368 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.0079034, Final residual = 9.90046e-05, No Iterations 857
+linear solve p 25317.2 [ms]
+piso step 25414 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.04087e-10, global = -1.21772e-22, cumulative = -6.5448e-21
+ExecutionTime = 1453.01 s  ClockTime = 1461 s
+
+Time = 0.000633333
+
+Courant Number mean: 0.00575138 max: 0.0957155
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.00852675, Final residual = 3.11244e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0127447, Final residual = 3.39041e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0246421, Final residual = 4.20315e-06, No Iterations 5
+linear solve U 1554.79 [ms]
+piso setup 253.243 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00794471, Final residual = 9.89143e-05, No Iterations 942
+linear solve p 27764.6 [ms]
+piso step 27860.5 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.05172e-10, global = -3.40625e-22, cumulative = -6.88543e-21
+piso setup 245.533 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00744788, Final residual = 9.99745e-05, No Iterations 908
+linear solve p 26817 [ms]
+piso step 26914.3 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.06407e-10, global = -2.88228e-22, cumulative = -7.17366e-21
+ExecutionTime = 1510.01 s  ClockTime = 1518 s
+
+Time = 0.000666667
+
+Courant Number mean: 0.00588313 max: 0.095824
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.00809389, Final residual = 2.90216e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0120416, Final residual = 3.16745e-06, No Iterations 5
+DILUPBiCGStab:  Solving for Uz, Initial residual = 0.0234316, Final residual = 3.85605e-06, No Iterations 5
+linear solve U 1556.65 [ms]
+piso setup 256.333 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00733043, Final residual = 9.99794e-05, No Iterations 869
+linear solve p 25706.1 [ms]
+piso step 25802 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.10919e-10, global = -2.20508e-22, cumulative = -7.39417e-21
+piso setup 256.063 [ms]
+ correctNonOrthogonal 
+ setRef 
+ startSolve 
+PETSc-cg:  Solving for p, Initial residual = 0.00686781, Final residual = 9.81027e-05, No Iterations 856
+linear solve p 25254.6 [ms]
+piso step 25351.9 [ms]
+ contErrors 
+time step continuity errors : sum local = 3.01765e-10, global = -4.6663e-22, cumulative = -7.8608e-21
+ExecutionTime = 1563.42 s  ClockTime = 1572 s
+
+End
+
+Finalizing PETSc
+Finalising parallel run
+================================================================================
