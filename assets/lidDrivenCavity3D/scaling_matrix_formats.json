@@ -16,8 +16,7 @@
       "type": "ReBlockMesh",
       "mapFields": false,
       "dimensions": 3,
-      "variants":{"cells": [150]},
-      "variants.bck":{"cells": [100, 150, 200, 250, 300, 350, 400]},
+      "variants":{"cells": [100, 150, 200, 250, 300, 350, 400, 450, 500]},
       "block": "100 100 100",
       "controlDict": {
         "stationary": false,
@@ -29,7 +28,7 @@
         "name": "matrix_solver",
         "type": "ChangeMatrixSolver",
         "fields": ["p"],
-        "properties": {
+        "defaults": {
           "p" : {
             "minIter": 0,
             "maxIter": 5000,
@@ -53,52 +52,12 @@
 	     "method" : "simple",
              "variants": { "numberOfSubdomains": [1]},
              "variant_of": ["Ginkgo"],
-             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
-          },
-	  {
-             "name": "mpiRank_gko",
-             "type": "ChangeNumberOfSubdomains",
-	     "multiplier": "${{env.NGPUS}}",
-	     "method" : "simple",
-             "variants": { "numberOfSubdomains": [2]},
-             "variant_of": ["Ginkgo"],
-             "properties": {
-               "p" : {
-                 "ranksPerGPU": 2
-                 }
-             },
-             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
-          },
-	  {
-             "name": "mpiRank_gko",
-             "type": "ChangeNumberOfSubdomains",
-	     "multiplier": "${{env.NGPUS}}",
-	     "method" : "simple",
-             "variants": { "numberOfSubdomains": [4]},
-             "variant_of": ["Ginkgo"],
-             "properties": {
-               "p" : {
-                 "ranksPerGPU": 2
-                 }
-             },
-             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
-          },
-	  {
-             "name": "mpiRank_of",
-             "type": "ChangeNumberOfSubdomains",
-	     "multiplier": "1",
-	     "method" : "simple",
-             "variants": { "numberOfSubdomains": [4, 8, 16, 32]},
-             "variant_of": ["PETSC_HIP"],
-             "comment": "creates a subvariation of the CG BJ cases for different max block size values"
-          },
-	  {
-             "name": "mpiRank_of",
-             "type": "ChangeNumberOfSubdomains",
-	     "multiplier": "${{env.NCORES}}",
-	     "method" : "simple",
-             "variants": { "numberOfSubdomains": [1]},
-             "variant_of": ["PETSC_Default"],
+	     "variation": [{
+		     "name": "matrixFormat",
+		     "type": "ChangeMatrixSolverProperties",
+		     "field": "p",
+		     "variants" :  {"matrixFormat": ["Csr", "Ell", "Coo", "Hybrid"]}
+	     }],
              "comment": "creates a subvariation of the CG BJ cases for different max block size values"
           },
 	  {
