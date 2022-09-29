@@ -1,0 +1,1437 @@
+[Labbook] 'executing pipeline run_gpu_gko
+[Labbook] 'Execute: obr benchmark --folder . --select=Ginkgo_HIP,100,single --report=gko_nla-gpu2.ianm.kit.edu_HIP_100,single.csv --results_folder=results --log_name=gko_HIP_nla-gpu2.ianm.kit.edu.log in lidDrivenCavity
+[nla-gpu2:23292:0:23292]        rndv.c:1881 Assertion `sreq->send.rndv.lanes_count > 0' failed
+[nla-gpu2:23296:0:23296]        rndv.c:1881 Assertion `sreq->send.rndv.lanes_count > 0' failed
+[1] #0  Foam::error::printStack(Foam::Ostream&)[2] #0  Foam::error::printStack(Foam::Ostream&)[3] #0  Foam::error::printStack(Foam::Ostream&)==== backtrace (tid:  23296) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f67e2884b74]
+ 1  /lib64/libucs.so.0(ucs_fatal_error_message+0xb0) [0x7f67e2881b60]
+ 2  /lib64/libucs.so.0(+0x28c41) [0x7f67e2881c41]
+ 3  /lib64/libucp.so.0(ucp_rndv_progress_rma_put_zcopy+0xd8) [0x7f67e2d59408]
+ 4  /lib64/libucp.so.0(+0x67374) [0x7f67e2d56374]
+ 5  /lib64/libucp.so.0(ucp_rndv_atp_handler+0x77) [0x7f67e2d5b6a7]
+ 6  /lib64/libuct.so.0(+0x16915) [0x7f67e2acc915]
+ 7  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f67e2d328d2]
+ 8  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f67f390ff4c]
+ 9  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f67f3e9b785]
+10  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f67f3f0315d]
+11  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f67d8285ba2]
+12  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f67f3eb3cdb]
+13  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f67c4df87e1]
+14  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f67c4e14565]
+15  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f67c55c5d6b]
+16  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f67c55d99c0]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f67c55db5bd]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f67c5593d35]
+19  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f67f85f0e58]
+20  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f67f7f110f1]
+21  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f67f7eba7bf]
+22  icoFoam() [0x42595c]
+23  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f67f4df4ca3]
+24  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23296] *** Process received signal ***
+[nla-gpu2:23296] Signal: Aborted (6)
+[nla-gpu2:23296] Signal code:  (-6)
+[nla-gpu2:23296] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f67f5191ce0]
+[nla-gpu2:23296] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7f67f4e08a4f]
+[nla-gpu2:23296] [ 2] ==== backtrace (tid:  23292) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7fcbd840cb74]
+ 1  /lib64/libucs.so.0(ucs_fatal_error_message+0xb0) [0x7fcbd8409b60]
+ 2  /lib64/libucs.so.0(+0x28c41) [0x7fcbd8409c41]
+ 3  /lib64/libucp.so.0(ucp_rndv_progress_rma_put_zcopy+0xd8) [0x7fcbd88e1408]
+ 4  /lib64/libucp.so.0(+0x67374) [0x7fcbd88de374]
+ 5  /lib64/libucp.so.0(ucp_rndv_atp_handler+0x77) [0x7fcbd88e36a7]
+ 6  /lib64/libuct.so.0(+0x16915) [0x7fcbd8654915]
+/lib64/libc.so.6(abort+0x127)[0x7f67f4ddbdb5]
+[nla-gpu2:23296] [ 3]  7  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7fcbd88ba8d2]
+ 8  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7fcbe532bf4c]
+ 9  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7fcbe58b7785]
+10  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7fcbe591f15d]
+/lib64/libucs.so.0(+0x28b65)[0x7f67e2881b65]
+[nla-gpu2:23296] [ 4] /lib64/libucs.so.0(+0x28c41)[0x7f67e2881c41]
+[nla-gpu2:23296] [ 5] 11  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7fcbc9b73ba2]
+12  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7fcbe58cfcdb]
+13  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7fcab5a467e1]
+14  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7fcab5a62565]
+15  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7fcab6213d6b]
+16  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7fcab62279c0]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7fcab62295bd]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7fcab61e1d35]
+19  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7fcbea00ce58]
+20  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7fcbe992d0f1]
+21  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7fcbe98d67bf]
+22  icoFoam() [0x42595c]
+23  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7fcbe6810ca3]
+24  icoFoam() [0x426b8e]
+=================================
+/lib64/libucp.so.0(ucp_rndv_progress_rma_put_zcopy+0xd8)[0x7f67e2d59408]
+[nla-gpu2:23296] [ 6] /lib64/libucp.so.0(+0x67374)[0x7f67e2d56374]
+[nla-gpu2:23296] [ 7] /lib64/libucp.so.0(ucp_rndv_atp_handler+0x77)[0x7f67e2d5b6a7]
+[nla-gpu2:23296] [ 8] /lib64/libuct.so.0(+0x16915)[0x7f67e2acc915]
+[nla-gpu2:23296] [ 9] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f67e2d328d2]
+[nla-gpu2:23296] [10] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f67f390ff4c]
+[nla-gpu2:23296] [11] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f67f3e9b785]
+[nla-gpu2:23296] [12] [nla-gpu2:23292] *** Process received signal ***
+[nla-gpu2:23292] Signal: Aborted (6)
+[nla-gpu2:23292] Signal code:  (-6)
+/usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f67f3f0315d]
+[nla-gpu2:23296] [13] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f67d8285ba2]
+[nla-gpu2:23296] [14] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f67f3eb3cdb]
+[nla-gpu2:23296] [15] [nla-gpu2:23292] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7fcbe6badce0]
+[nla-gpu2:23292] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7fcbe6824a4f]
+[nla-gpu2:23292] [ 2] /lib64/libc.so.6(abort+0x127)[0x7fcbe67f7db5]
+[nla-gpu2:23292] [ 3] /lib64/libucs.so.0(+0x28b65)[0x7fcbd8409b65]
+[nla-gpu2:23292] [ 4] /lib64/libucs.so.0(+0x28c41)[0x7fcbd8409c41]
+[nla-gpu2:23292] [ 5] /lib64/libucp.so.0(ucp_rndv_progress_rma_put_zcopy+0xd8)[0x7fcbd88e1408]
+[nla-gpu2:23292] [ 6] /lib64/libucp.so.0(+0x67374)[0x7fcbd88de374]
+[nla-gpu2:23292] [ 7] /lib64/libucp.so.0(ucp_rndv_atp_handler+0x77)[0x7fcbd88e36a7]
+[nla-gpu2:23292] [ 8] /lib64/libuct.so.0(+0x16915)[0x7fcbd8654915]
+[nla-gpu2:23292] [ 9] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7fcbd88ba8d2]
+[nla-gpu2:23292] [10] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7fcbe532bf4c]
+[nla-gpu2:23292] [11] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7fcbe58b7785]
+[nla-gpu2:23292] [12] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7fcbe591f15d]
+[nla-gpu2:23292] [13] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7fcbc9b73ba2]
+[nla-gpu2:23292] [14] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7fcbe58cfcdb]
+[nla-gpu2:23292] [15] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f67c4df87e1]
+[nla-gpu2:23296] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7fcab5a467e1]
+[nla-gpu2:23292] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f67c4e14565]
+[nla-gpu2:23296] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f67c55c5d6b]
+[nla-gpu2:23296] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f67c55d99c0]
+[nla-gpu2:23296] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f67c55db5bd]
+[nla-gpu2:23296] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f67c5593d35]
+[nla-gpu2:23296] [21] [7] #0  Foam::error::printStack(Foam::Ostream&)/home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7fcab5a62565]
+[nla-gpu2:23292] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7fcab6213d6b]
+[nla-gpu2:23292] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7fcab62279c0]
+[nla-gpu2:23292] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7fcab62295bd]
+[nla-gpu2:23292] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7fcab61e1d35]
+[nla-gpu2:23292] [21] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f67f85f0e58]
+[nla-gpu2:23296] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7fcbea00ce58]
+[nla-gpu2:23292] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f67f7f110f1]
+[nla-gpu2:23296] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7fcbe992d0f1]
+[nla-gpu2:23292] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f67f7eba7bf]
+[nla-gpu2:23296] [24] icoFoam[0x42595c]
+[nla-gpu2:23296] [25] [6] #/lib64/libc.so.6(__libc_start_main+0xf3)[0x7f67f4df4ca3]
+[nla-gpu2:23296] [26] icoFoam[0x426b8e]
+[nla-gpu2:23296] *** End of error message ***
+0  Foam::error::printStack(Foam::Ostream&)/home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7fcbe98d67bf]
+[nla-gpu2:23292] [24] icoFoam[0x42595c]
+[nla-gpu2:23292] [25] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7fcbe6810ca3]
+[nla-gpu2:23292] [26] icoFoam[0x426b8e]
+[nla-gpu2:23292] *** End of error message ***
+[5] #0  Foam::error::printStack(Foam::Ostream&) at ??:?
+[3] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[7] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[2] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[1] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[6] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[5] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[3] #2  ? at ??:?
+[7] #2  ? at ??:?
+[2] #2  ? at ??:?
+[1] #2  ? at ??:?
+[6] #2  ? at ??:?
+[5] #2  ? in /lib64/libpthread.so.0
+[3] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[7] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[2] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[1] #3  uct_rocm_copy_ep_zcopy in /lib64/ucx/libuct_rocm.so.0
+[3] #4  ? in /lib64/ucx/libuct_rocm.so.0
+[7] #4  ? in /lib64/libpthread.so.0
+[6] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[5] #3  uct_rocm_copy_ep_zcopy in /lib64/ucx/libuct_rocm.so.0
+[2] #4  ? in /lib64/ucx/libuct_rocm.so.0
+[1] #4  ? in /lib64/libucp.so.0
+[3] #5  ? in /lib64/ucx/libuct_rocm.so.0
+[6] #4  ? in /lib64/libucp.so.0
+[7] #5  ? in /lib64/ucx/libuct_rocm.so.0
+[5] #4  ? in /lib64/libucp.so.0
+[2] #5  ? in /lib64/libucp.so.0
+[1] #5  ? in /lib64/libucp.so.0
+[3] #6  ? in /lib64/libucp.so.0
+[7] #6  ? in /lib64/libucp.so.0
+[6] #5  ? in /lib64/libucp.so.0
+[5] #5  ? in /lib64/libucp.so.0
+[2] #6  ? in /lib64/libucp.so.0
+[1] #6  ? in /lib64/libucp.so.0
+[3] #7  ? in /lib64/libucp.so.0
+[5] #6  ? in  in /lib64/libucp.so.0
+/lib64/libucp.so.0
+[7] #7  ?[6] #6  ? in /lib64/libucp.so.0
+[1] #7  ? in /lib64/libucp.so.0
+[2] #7  ? in /lib64/libucp.so.0
+[3] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[5] #7  ? in  in /lib64/libucp.so.0
+/lib64/libucp.so.0
+[7] #[6] #7  8  ucp_rndv_rtr_handler? in /lib64/libucp.so.0
+[1] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[2] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[3] #9  ? in /lib64/libucp.so.0
+ in /lib64/libucp.so.0
+ in /lib64/libucp.so.0
+[7] #9  ?[5] #8  [6] #8  ucp_rndv_rtr_handlerucp_rndv_rtr_handler in /lib64/libucp.so.0
+[1] #9  ? in /lib64/libucp.so.0
+[2] #9  ? in /lib64/libuct.so.0
+[3] #10  ucp_worker_progress in /lib64/libuct.so.0
+[7] #10  ucp_worker_progress in /lib64/libucp.so.0
+[6] #9  ? in /lib64/libucp.so.0
+[5] #9  ? in /lib64/libuct.so.0
+[1] #10  ucp_worker_progress in /lib64/libuct.so.0
+[2] #10  ucp_worker_progress in /lib64/libucp.so.0
+[3] #11  opal_progress in /lib64/libuct.so.0
+[6] #10  ucp_worker_progress in /lib64/libuct.so.0
+[5] #10  ucp_worker_progress in /lib64/libucp.so.0
+[7] #11  opal_progress in /lib64/libucp.so.0
+[1] #11  opal_progress in /lib64/libucp.so.0
+[2] #11  opal_progress in /usr/local/lib/libopen-pal.so.40
+[3] #12  ompi_request_default_wait_all in  in /lib64/libucp.so.0
+ in /lib64/libucp.so.0
+/usr/local/lib/libopen-pal.so.40
+[6] #11  opal_progress[5] #11  opal_progress[7] #12  ompi_request_default_wait_all in /usr/local/lib/libopen-pal.so.40
+[1] #12  ompi_request_default_wait_all in /usr/local/lib/libopen-pal.so.40
+[2] #12  ompi_request_default_wait_all in /usr/local/lib/libmpi.so.40
+[3] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libopen-pal.so.40
+[5] #12  ompi_request_default_wait_all in /usr/local/lib/libopen-pal.so.40
+ in /usr/local/lib/libmpi.so.40
+[7] #13  ompi_coll_base_alltoallv_intra_basic_linear[6] #12  ompi_request_default_wait_all in /usr/local/lib/libmpi.so.40
+[1] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+[2] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+[3] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed in /usr/local/lib/libmpi.so.40
+[5] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+[5] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed in /usr/local/lib/libmpi.so.40
+[6] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+[7] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed at ??:?
+[3] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[1] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed in /usr/local/lib/libmpi.so.40
+[2] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed at ??:?
+ at ??:?
+[7] #15  [5] #15  PMPI_AlltoallvPMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[6] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed in /usr/local/lib/libmpi.so.40
+ at ??:?
+[1] #15  PMPI_Alltoallv at ??:?
+[2] #15  PMPI_Alltoallv[3] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in /usr/local/lib/libmpi.so.40
+ in /usr/local/lib/libmpi.so.40
+ at ??:?
+[6] #15  PMPI_Alltoallv[7] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const[5] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in /usr/local/lib/libmpi.so.40
+[1] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in /usr/local/lib/libmpi.so.40
+[2] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in /usr/local/lib/libmpi.so.40
+[6] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[3] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[5] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[7] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[1] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[2] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[6] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[3] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+ in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[5] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const[7] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[1] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[2] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[3] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[6] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+ at ??:?
+[7] #19  [5] #Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[3] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[1] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[2] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+ at ??:?
+[7] #20  [5] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) constFoam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[6] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[3] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[1] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[2] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+ at ??:?
+ at ??:?
+[7] #21  [5] #21  [6] #20  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) constFoam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) constFoam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[3] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[1] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[2] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+ at ??:?
+ at ??:?
+[6] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const[5] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&)[7] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[1] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[2] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[6] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[3] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+ at ??:?
+[5] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&)[7] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[1] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[2] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[6] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[3] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[5] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[1] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[2] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[7] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[6] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[3] #25   at ??:?
+[5] #25  ? at ??:?
+[1] #25   at ??:?
+[2] #25   at ??:?
+[7] #25   at ??:?
+[3] #26  __libc_start_main at ??:?
+[6] #25  ?? in /lib64/libc.so.6
+[3] #27  ?? at ??:?
+[5] #26  __libc_start_main?? at ??:?
+[7] #26  __libc_start_main at ??:?
+ at ??:?
+[2] #26  __libc_start_main[1] #26  __libc_start_main at ??:?
+[6] #26  __libc_start_main in /lib64/libc.so.6
+[5] #27   at ??:?
+[nla-gpu2:23295:0:23295] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005aff)
+ in /lib64/libc.so.6
+[7] #27   in /lib64/libc.so.6
+[1] #27   in /lib64/libc.so.6
+[2] #27  ?==== backtrace (tid:  23295) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f90b2e8fb74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f90b2e8fd34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f90b2e8ffd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f90c58c1b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f90b01337e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f90b3360018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f90b3360bcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f90b3365df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f90b3365fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f90b3366921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f90b30d7915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f90b333d8d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f90c403ff4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f90c45cb785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f90c463315d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f90a89b5ba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f90c45e3cdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f909585c7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f9095878565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f9096029d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f909603d9c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f909603f5bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f9095ff7d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f90c8d20e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f90c86410f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f90c85ea7bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f90c5524ca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23295] *** Process received signal ***
+[nla-gpu2:23295] Signal: Segmentation fault (11)
+[nla-gpu2:23295] Signal code:  (-6)
+[nla-gpu2:23295] Failing at address: 0x271700005aff
+[nla-gpu2:23295] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f90c58c1ce0]
+[nla-gpu2:23295] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f90c58c1b7f]
+[nla-gpu2:23295] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f90c58c1ce0]
+[nla-gpu2:23295] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f90b01337e9]
+[nla-gpu2:23295] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f90b3360018]
+[nla-gpu2:23295] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f90b3360bcd]
+[nla-gpu2:23295] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f90b3365df6]
+[nla-gpu2:23295] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f90b3365fd1]
+[nla-gpu2:23295] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f90b3366921]
+[nla-gpu2:23295] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f90b30d7915]
+[nla-gpu2:23295] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f90b333d8d2]
+[nla-gpu2:23295] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f90c403ff4c]
+[nla-gpu2:23295] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f90c45cb785]
+[nla-gpu2:23295] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f90c463315d]
+[nla-gpu2:23295] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f90a89b5ba2]
+[nla-gpu2:23295] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f90c45e3cdb]
+[nla-gpu2:23295] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f909585c7e1]
+[nla-gpu2:23295] [17]  in /lib64/libc.so.6
+[6] #27  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f9095878565]
+[nla-gpu2:23295] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f9096029d6b]
+[nla-gpu2:23295] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f909603d9c0]
+[nla-gpu2:23295] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f909603f5bd]
+[nla-gpu2:23295] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f9095ff7d35]
+[nla-gpu2:23295] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f90c8d20e58]
+[nla-gpu2:23295] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f90c86410f1]
+[nla-gpu2:23295] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f90c85ea7bf]
+[nla-gpu2:23295] [25] icoFoam[0x42595c]
+[nla-gpu2:23295] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f90c5524ca3]
+[nla-gpu2:23295] [27] icoFoam[0x426b8e]
+[nla-gpu2:23295] *** End of error message ***
+??? at ??:?
+[nla-gpu2:23297:0:23297] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005b01)
+?==== backtrace (tid:  23297) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f537c80db74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f537c80dd34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f537c80dfd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f538b086b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f53758fa7e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f537ccde018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f537ccdebcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f537cce3df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f537cce3fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f537cce4921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f537ca55915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f537ccbb8d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f5389804f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f5389d90785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f5389df815d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f536e17aba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f5389da8cdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f535b05b7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f535b077565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f535b828d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f535b83c9c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f535b83e5bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f535b7f6d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f538e4e5e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f538de060f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f538ddaf7bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f538ace9ca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23297] *** Process received signal ***
+[nla-gpu2:23297] Signal: Segmentation fault (11)
+[nla-gpu2:23297] Signal code:  (-6)
+[nla-gpu2:23297] Failing at address: 0x271700005b01
+[nla-gpu2:23297] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f538b086ce0]
+[nla-gpu2:23297] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f538b086b7f]
+[nla-gpu2:23297] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f538b086ce0]
+[nla-gpu2:23297] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f53758fa7e9]
+[nla-gpu2:23297] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f537ccde018]
+[nla-gpu2:23297] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f537ccdebcd]
+[nla-gpu2:23297] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f537cce3df6]
+[nla-gpu2:23297] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f537cce3fd1]
+[nla-gpu2:23297] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f537cce4921]
+[nla-gpu2:23297] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f537ca55915]
+[nla-gpu2:23297] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f537ccbb8d2]
+[nla-gpu2:23297] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f5389804f4c]
+[nla-gpu2:23297] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f5389d90785]
+[nla-gpu2:23297] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f5389df815d]
+[nla-gpu2:23297] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f536e17aba2]
+[nla-gpu2:23297] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f5389da8cdb]
+[nla-gpu2:23297] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f535b05b7e1]
+[nla-gpu2:23297] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f535b077565]
+[nla-gpu2:23297] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f535b828d6b]
+[nla-gpu2:23297] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f535b83c9c0]
+[nla-gpu2:23297] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f535b83e5bd]
+[nla-gpu2:23297] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f535b7f6d35]
+[nla-gpu2:23297] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f538e4e5e58]
+[nla-gpu2:23297] [23]  at ??:?
+[nla-gpu2:23299:0:23299] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005b03)
+/home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f538de060f1]
+[nla-gpu2:23297] [24]  at ??:?
+[nla-gpu2:23293:0:23293] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005afd)
+/home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f538ddaf7bf]
+[nla-gpu2:23297] [25] icoFoam[0x42595c]
+[nla-gpu2:23297] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f538ace9ca3]
+[nla-gpu2:23297] [27] icoFoam[0x426b8e]
+[nla-gpu2:23297] *** End of error message ***
+ at ??:?
+[nla-gpu2:23294:0:23294] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005afe)
+==== backtrace (tid:  23299) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f901584fb74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f901584fd34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f901584ffd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f90280edb7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f900e9e97e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f9015d20018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f9015d20bcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f9015d25df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f9015d25fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f9015d26921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f9015a97915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f9015cfd8d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f902686bf4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f9026df7785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f9026e5f15d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f90071b3ba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f9026e0fcdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f8ef785c7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f8ef7878565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f8ef8029d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f8ef803d9c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f8ef803f5bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f8ef7ff7d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f902b54ce58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f902ae6d0f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f902ae167bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f9027d50ca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23299] *** Process received signal ***
+[nla-gpu2:23299] Signal: Segmentation fault (11)
+[nla-gpu2:23299] Signal code:  (-6)
+[nla-gpu2:23299] Failing at address: 0x271700005b03
+[nla-gpu2:23299] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f90280edce0]
+[nla-gpu2:23299] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f90280edb7f]
+[nla-gpu2:23299] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f90280edce0]
+[nla-gpu2:23299] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f900e9e97e9]
+[nla-gpu2:23299] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f9015d20018]
+[nla-gpu2:23299] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f9015d20bcd]
+[nla-gpu2:23299] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f9015d25df6]
+[nla-gpu2:23299] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f9015d25fd1]
+[nla-gpu2:23299] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f9015d26921]
+[nla-gpu2:23299] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f9015a97915]
+[nla-gpu2:23299] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f9015cfd8d2]
+[nla-gpu2:23299] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f902686bf4c]
+[nla-gpu2:23299] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f9026df7785]
+[nla-gpu2:23299] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f9026e5f15d]
+[nla-gpu2:23299] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f90071b3ba2]
+[nla-gpu2:23299] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f9026e0fcdb]
+[nla-gpu2:23299] [16]  at ??:?
+==== backtrace (tid:  23293) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f6b3729ab74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f6b3729ad34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f6b3729afd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f6b49d79b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f6b3453e7e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f6b3776b018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f6b3776bbcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f6b37770df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f6b37770fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f6b37771921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f6b374e2915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f6b377488d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f6b484f7f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f6b48a83785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f6b48aeb15d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f6b2ce6dba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f6b48a9bcdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f6b1982b7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f6b19847565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f6b19ff8d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f6b1a00c9c0]
+[nla-gpu2:23298:0:23298] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005b02)
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f6b1a00e5bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f6b19fc6d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f6b4d1d8e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f6b4caf90f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f6b4caa27bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f6b499dcca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23293] *** Process received signal ***
+[nla-gpu2:23293] Signal: Segmentation fault (11)
+[nla-gpu2:23293] Signal code:  (-6)
+[nla-gpu2:23293] Failing at address: 0x271700005afd
+[nla-gpu2:23293] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f6b49d79ce0]
+[nla-gpu2:23293] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f6b49d79b7f]
+[nla-gpu2:23293] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f6b49d79ce0]
+[nla-gpu2:23293] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f6b3453e7e9]
+[nla-gpu2:23293] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f6b3776b018]
+[nla-gpu2:23293] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f6b3776bbcd]
+[nla-gpu2:23293] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f6b37770df6]
+[nla-gpu2:23293] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f6b37770fd1]
+[nla-gpu2:23293] [ 8] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f8ef785c7e1]
+[nla-gpu2:23299] [17] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f6b37771921]
+[nla-gpu2:23293] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f6b374e2915]
+[nla-gpu2:23293] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f6b377488d2]
+[nla-gpu2:23293] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f6b484f7f4c]
+[nla-gpu2:23293] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f6b48a83785]
+[nla-gpu2:23293] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f6b48aeb15d]
+[nla-gpu2:23293] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f6b2ce6dba2]
+[nla-gpu2:23293] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f6b48a9bcdb]
+[nla-gpu2:23293] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f8ef7878565]
+[nla-gpu2:23299] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f8ef8029d6b]
+[nla-gpu2:23299] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f8ef803d9c0]
+[nla-gpu2:23299] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f8ef803f5bd]
+[nla-gpu2:23299] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f6b1982b7e1]
+[nla-gpu2:23293] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f8ef7ff7d35]
+[nla-gpu2:23299] [22] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f6b19847565]
+[nla-gpu2:23293] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f6b19ff8d6b]
+[nla-gpu2:23293] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f6b1a00c9c0]
+[nla-gpu2:23293] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f6b1a00e5bd]
+[nla-gpu2:23293] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f6b19fc6d35]
+[nla-gpu2:23293] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f902b54ce58]
+[nla-gpu2:23299] [23] ==== backtrace (tid:  23294) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f3457093b74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f3457093d34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f3457093fd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f34699a1b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f34543377e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f3457564018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f3457564bcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f3457569df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f3457569fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f345756a921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f34572db915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f34575418d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f346811ff4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f34686ab785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f346871315d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f344ca95ba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f34686c3cdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f33394437e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f333945f565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f3339c10d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f3339c249c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f3339c265bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f3339bded35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f346ce00e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f346c7210f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f346c6ca7bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f3469604ca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23294] *** Process received signal ***
+[nla-gpu2:23294] Signal: Segmentation fault (11)
+[nla-gpu2:23294] Signal code:  (-6)
+[nla-gpu2:23294] Failing at address: 0x271700005afe
+[nla-gpu2:23294] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f34699a1ce0]
+[nla-gpu2:23294] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f34699a1b7f]
+[nla-gpu2:23294] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f34699a1ce0]
+[nla-gpu2:23294] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f34543377e9]
+[nla-gpu2:23294] [ 4] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f902ae6d0f1]
+[nla-gpu2:23299] [24] /lib64/libucp.so.0(+0x66018)[0x7f3457564018]
+[nla-gpu2:23294] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f3457564bcd]
+[nla-gpu2:23294] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f3457569df6]
+[nla-gpu2:23294] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f3457569fd1]
+[nla-gpu2:23294] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f345756a921]
+[nla-gpu2:23294] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f34572db915]
+[nla-gpu2:23294] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f34575418d2]
+[nla-gpu2:23294] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f346811ff4c]
+[nla-gpu2:23294] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f34686ab785]
+[nla-gpu2:23294] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f346871315d]
+[nla-gpu2:23294] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f344ca95ba2]
+[nla-gpu2:23294] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f34686c3cdb]
+[nla-gpu2:23294] [16] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f6b4d1d8e58]
+[nla-gpu2:23293] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f902ae167bf]
+[nla-gpu2:23299] [25] icoFoam[0x42595c]
+[nla-gpu2:23299] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f9027d50ca3]
+[nla-gpu2:23299] [27] icoFoam[0x426b8e]
+[nla-gpu2:23299] *** End of error message ***
+/home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f33394437e1]
+[nla-gpu2:23294] [17] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f6b4caf90f1]
+[nla-gpu2:23293] [24] ==== backtrace (tid:  23298) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f131d64bb74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f131d64bd34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f131d64bfd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f1330087b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f13167c97e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f131db1c018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f131db1cbcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f131db21df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f131db21fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f131db22921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f131d893915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f131daf98d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f132e805f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f132ed91785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f132edf915d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f130ef98ba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f132eda9cdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f11ff92e7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f11ff94a565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f130ca24d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f130ca389c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f130ca3a5bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f130c9f2d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f13334e6e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f1332e070f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f1332db07bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f132fceaca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23298] *** Process received signal ***
+[nla-gpu2:23298] Signal: Segmentation fault (11)
+[nla-gpu2:23298] Signal code:  (-6)
+[nla-gpu2:23298] Failing at address: 0x271700005b02
+/home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f6b4caa27bf]
+[nla-gpu2:23293] [25] icoFoam[0x42595c]
+[nla-gpu2:23293] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f6b499dcca3]
+[nla-gpu2:23293] [27] icoFoam[0x426b8e]
+[nla-gpu2:23293] *** End of error message ***
+/home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f333945f565]
+[nla-gpu2:23294] [18] [nla-gpu2:23298] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f1330087ce0]
+[nla-gpu2:23298] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f1330087b7f]
+[nla-gpu2:23298] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f1330087ce0]
+[nla-gpu2:23298] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f13167c97e9]
+[nla-gpu2:23298] [ 4] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f3339c10d6b]
+[nla-gpu2:23294] [19] /lib64/libucp.so.0(+0x66018)[0x7f131db1c018]
+[nla-gpu2:23298] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f131db1cbcd]
+[nla-gpu2:23298] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f131db21df6]
+[nla-gpu2:23298] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f131db21fd1]
+[nla-gpu2:23298] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f131db22921]
+[nla-gpu2:23298] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f131d893915]
+[nla-gpu2:23298] [10] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f3339c249c0]
+[nla-gpu2:23294] [20] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f131daf98d2]
+[nla-gpu2:23298] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f132e805f4c]
+[nla-gpu2:23298] [12] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f3339c265bd]
+[nla-gpu2:23294] [21] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f132ed91785]
+[nla-gpu2:23298] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f132edf915d]
+[nla-gpu2:23298] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f130ef98ba2]
+[nla-gpu2:23298] [15] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f3339bded35]
+[nla-gpu2:23294] [22] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f132eda9cdb]
+[nla-gpu2:23298] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f11ff92e7e1]
+[nla-gpu2:23298] [17] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f346ce00e58]
+[nla-gpu2:23294] [23] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f11ff94a565]
+[nla-gpu2:23298] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f130ca24d6b]
+[nla-gpu2:23298] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f130ca389c0]
+[nla-gpu2:23298] [20] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f346c7210f1]
+[nla-gpu2:23294] [24] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f130ca3a5bd]
+[nla-gpu2:23298] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f130c9f2d35]
+[nla-gpu2:23298] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f346c6ca7bf]
+[nla-gpu2:23294] [25] icoFoam[0x42595c]
+[nla-gpu2:23294] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f3469604ca3]
+[nla-gpu2:23294] [27] icoFoam[0x426b8e]
+[nla-gpu2:23294] *** End of error message ***
+/home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f13334e6e58]
+[nla-gpu2:23298] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f1332e070f1]
+[nla-gpu2:23298] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f1332db07bf]
+[nla-gpu2:23298] [25] icoFoam[0x42595c]
+[nla-gpu2:23298] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f132fceaca3]
+[nla-gpu2:23298] [27] icoFoam[0x426b8e]
+[nla-gpu2:23298] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 4 with PID 0 on node nla-gpu2 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+[Labbook] 'storing result folders ['Logs'] under results/multi_gpu/5711547e/lidDrivenCavity
+running ['mpirun', '--bind-to', 'core', '-np', '8', 'icoFoam', '-parallel'] single_node/mesh/100/matrix_solver/CG_NoPrecond_Ginkgo_HIP/mpiRank_gko/8/base
+Command '['mpirun', '--bind-to', 'core', '-np', '8', 'icoFoam', '-parallel']' returned non-zero exit status 134.
+Exception running while running the case Command '['mpirun', '--bind-to', 'core', '-np', '8', 'icoFoam', '-parallel']' returned non-zero exit status 134.
+[Labbook] 'executing pipeline run_gpu_gko
+[Labbook] 'Execute: obr benchmark --folder . --select=Ginkgo_HIP,200,single --report=gko_nla-gpu2.ianm.kit.edu_HIP_200,single.csv --results_folder=results --log_name=gko_HIP_nla-gpu2.ianm.kit.edu.log in lidDrivenCavity
+mpirun: Forwarding signal 20 to job
+mpirun: Forwarding signal 18 to job
+[4] #0  Foam::error::printStack(Foam::Ostream&)[0] #0  Foam::error::printStack(Foam::Ostream&)[1] #0  Foam::error::printStack(Foam::Ostream&)[3] #0  Foam::error::printStack(Foam::Ostream&)[2] #0  Foam::error::printStack(Foam::Ostream&)[7] #0  Foam::error::printStack(Foam::Ostream&)[5] #0  Foam::error::printStack(Foam::Ostream&)[6] #0  Foam::error::printStack(Foam::Ostream&) at ??:?
+[4] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[3] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[0] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[7] #1  Foam::sigSegv::sigHandler(int) at ??:?
+ at ??:?
+[5] #1  Foam::sigSegv::sigHandler(int)[1] #1  Foam::sigSegv::sigHandler(int) at ??:?
+ at ??:?
+[2] #1  Foam::sigSegv::sigHandler(int)[6] #1  Foam::sigSegv::sigHandler(int) at ??:?
+[4] #2  ? at ??:?
+[3] #2  ? at ??:?
+[0] #2  ? at ??:?
+[7] #2  ? at ??:?
+[1] #2  ? at ??:?
+[6] #2  ? at ??:?
+[5] #2  ? at ??:?
+[2] #2  ? in /lib64/libpthread.so.0
+[4] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[3] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[7] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[0] #3  uct_rocm_copy_ep_zcopy in /lib64/ucx/libuct_rocm.so.0
+[4] #4  ? in /lib64/libpthread.so.0
+[6] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[1] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[5] #3  uct_rocm_copy_ep_zcopy in /lib64/libpthread.so.0
+[2] #3  uct_rocm_copy_ep_zcopy in /lib64/ucx/libuct_rocm.so.0
+[3] #4  ? in /lib64/ucx/libuct_rocm.so.0
+[7] #4  ? in /lib64/ucx/libuct_rocm.so.0
+[0] #4  ? in /lib64/libucp.so.0
+[4] #5  ? in /lib64/ucx/libuct_rocm.so.0
+[6] #4  ? in /lib64/ucx/libuct_rocm.so.0
+[1] #4  ? in /lib64/ucx/libuct_rocm.so.0
+[5] #4  ? in /lib64/ucx/libuct_rocm.so.0
+[2] #4  ? in /lib64/libucp.so.0
+[3] #5  ? in /lib64/libucp.so.0
+[7] #5  ? in /lib64/libucp.so.0
+[0] #5  ? in /lib64/libucp.so.0
+[4] #6  ? in /lib64/libucp.so.0
+[6] #5  ? in /lib64/libucp.so.0
+[1] #5  ? in /lib64/libucp.so.0
+[5] #5  ? in /lib64/libucp.so.0
+[2] #5  ? in /lib64/libucp.so.0
+[3] #6  ? in /lib64/libucp.so.0
+[7] #6  ? in /lib64/libucp.so.0
+[0] #6  ? in /lib64/libucp.so.0
+[4] #7  ? in /lib64/libucp.so.0
+[6] #6  ? in /lib64/libucp.so.0
+[1] #6  ? in /lib64/libucp.so.0
+[5] #6  ? in /lib64/libucp.so.0
+[3] #7  ? in /lib64/libucp.so.0
+[2] #6  ? in /lib64/libucp.so.0
+[7] #7  ? in /lib64/libucp.so.0
+[4] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[0] #7  ? in /lib64/libucp.so.0
+[6] #7  ? in /lib64/libucp.so.0
+[1] #7  ? in /lib64/libucp.so.0
+[5] #7  ? in /lib64/libucp.so.0
+[3] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[2] #7  ? in /lib64/libucp.so.0
+[7] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[4] #9  ? in /lib64/libucp.so.0
+[0] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[6] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[1] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[3] #9  ? in /lib64/libucp.so.0
+[5] #8  ucp_rndv_rtr_handler in /lib64/libuct.so.0
+[4] #10  ucp_worker_progress in /lib64/libucp.so.0
+[7] #9  ? in /lib64/libucp.so.0
+[2] #8  ucp_rndv_rtr_handler in /lib64/libucp.so.0
+[0] #9  ? in /lib64/libucp.so.0
+[6] #9  ? in /lib64/libucp.so.0
+[1] #9  ? in /lib64/libucp.so.0
+[5] #9  ? in /lib64/libucp.so.0
+[2] #9  ? in /lib64/libuct.so.0
+[3] #10  ucp_worker_progress in /lib64/libucp.so.0
+[4] #11  opal_progress in /lib64/libuct.so.0
+[0] #10  ucp_worker_progress in /lib64/libuct.so.0
+[7] #10  ucp_worker_progress in /lib64/libuct.so.0
+[6] #10  ucp_worker_progress in  in /lib64/libuct.so.0
+/lib64/libuct.so.0
+[1] #10  [2] #10  ucp_worker_progressucp_worker_progress in /lib64/libuct.so.0
+[5] #10  ucp_worker_progress in /lib64/libucp.so.0
+[3] #11  opal_progress in /usr/local/lib/libopen-pal.so.40
+[4] #12  ompi_request_default_wait_all in /lib64/libucp.so.0
+[7] #11  opal_progress in /lib64/libucp.so.0
+[0] #11  opal_progress in /lib64/libucp.so.0
+[1] #11  opal_progress in  in /usr/local/lib/libmpi.so.40
+ in /lib64/libucp.so.0
+/lib64/libucp.so.0
+[4] #13  [6] #11  opal_progressompi_coll_base_alltoallv_intra_basic_linear[5] #11  opal_progress in /lib64/libucp.so.0
+[2] #11  opal_progress in /usr/local/lib/libopen-pal.so.40
+[3] #12  ompi_request_default_wait_all in /usr/local/lib/libopen-pal.so.40
+[7] #12  ompi_request_default_wait_all in /usr/local/lib/libopen-pal.so.40
+[0] #12  ompi_request_default_wait_all in /usr/local/lib/libmpi.so.40
+[4] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed in /usr/local/lib/libopen-pal.so.40
+[1] #12  ompi_request_default_wait_all in /usr/local/lib/libopen-pal.so.40
+[6] #12  ompi_request_default_wait_all in /usr/local/lib/libopen-pal.so.40
+[5] #12  ompi_request_default_wait_all in /usr/local/lib/libmpi.so.40
+[3] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+[7] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libopen-pal.so.40
+[2] #12  ompi_request_default_wait_all in /usr/local/lib/libmpi.so.40
+[0] #13  ompi_coll_base_alltoallv_intra_basic_linear at ??:?
+[4] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[1] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+[7] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed in /usr/local/lib/libmpi.so.40
+[6] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+ in /usr/local/lib/libmpi.so.40
+[3] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed[5] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+[2] #13  ompi_coll_base_alltoallv_intra_basic_linear in /usr/local/lib/libmpi.so.40
+[0] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed in /usr/local/lib/libmpi.so.40
+[4] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const at  in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[4] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[4] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[4] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[4] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[4] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[4] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[4] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[4] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[4] #25  ? at ??:?
+[4] #26  __libc_start_main in /lib64/libc.so.6
+[4] #27  ? at ??:?
+[nla-gpu2:23656:0:23656] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005c68)
+==== backtrace (tid:  23656) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7fd63a884b74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7fd63a884d34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7fd63a884fd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7fd64d29bb7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7fd6339d17e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7fd63ad55018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7fd63ad55bcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7fd63ad5adf6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7fd63ad5afd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7fd63ad5b921]
+10  /lib64/libuct.so.0(+0x16915) [0x7fd63aacc915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7fd63ad328d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7fd64ba19f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7fd64bfa5785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7fd64c00d15d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7fd63038fba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7fd64bfbdcdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7fd61d2fc7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7fd61d318565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7fd61dac9d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7fd61dadd9c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7fd61dadf5bd]
+22  /home/greole/OpenFOAM/gre at ??:?
+[3] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[3] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[3] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[3] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[3] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[3] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[3] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[3] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[3] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[3] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[3] #25  ? at ??:?
+[3] #26  __libc_start_main in /lib64/libc.so.6
+[3] #27  ? at ??:?
+[nla-gpu2:23655:0:23655] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005c67)
+==== backtrace (tid:  23655) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f1d17dceb74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f1d17dced34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f1d17dcefd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f1d2a977b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f1d1527e7e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f1d1c4dd018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f1d1c4ddbcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f1d1c4e2df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f1d1c4e2fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f1d1c4e3921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f1d1c254915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f1d1c4ba8d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f1d290f5f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f1d29681785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f1d296e915d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f1d0da6bba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f1d29699cdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f1bfa4767e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f1bfa492565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f1bfac43d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f1bfac579c0]
+21  /home/greole/OpenFOAM/greol??:?
+[7] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[7] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[7] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[7] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[7] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[7] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[7] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[7] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[7] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[7] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[7] #25  ? at ??:?
+[7] #26  __libc_start_main in /lib64/libc.so.6
+[7] #27  ? at ??:?
+[nla-gpu2:23659:0:23659] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005c6b)
+==== backtrace (tid:  23659) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f700100db74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f700100dd34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f700100dfd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f700f7f0b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f6ffa1e87e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f70014de018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f70014debcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f70014e3df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f70014e3fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f70014e4921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f7001255915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f70014bb8d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f700df6ef4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f700e4fa785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f700e56215d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f6fea8e4ba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f700e512cdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f6fdf0467e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f6fdf062565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f6fdf813d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f6fdf8279c0]
+21  /home/greole/OpenFOAM/greole-v2 in /usr/local/lib/libmpi.so.40
+[5] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed at ??:?
+[5] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[5] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[5] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[5] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[5] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[5] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[5] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[5] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[5] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[5] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[5] #25  ? at ??:?
+[5] #26  __libc_start_main in /lib64/libc.so.6
+[5] #27  ? at ??:?
+[nla-gpu2:23657:0:23657] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005c69)
+==== backtrace (tid:  23657) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7ff683093b74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7ff683093d34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7ff683093fd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7ff695a47b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7ff6803377e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7ff683564018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7ff683564bcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7ff683569df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7ff683569fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7ff68356a921]
+10  /lib64/libuct.so.0(+0x16915) [0x7ff6832db915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7ff6835418d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7ff6941c5f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7ff694751785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7ff6947b915d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7ff678b3bba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7ff694769cdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7ff6654437e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7ff66545f565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7ff665c10d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_R in /usr/local/lib/libmpi.so.40
+[6] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed at ??:?
+[6] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[6] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[6] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[6] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[6] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[6] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[6] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[6] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[6] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[6] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[6] #25  ? at ??:?
+[6] #26  __libc_start_main in /lib64/libc.so.6
+[6] #27  ? at ??:?
+[nla-gpu2:23658:0:23658] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005c6a)
+==== backtrace (tid:  23658) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f0037093b74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f0037093d34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f0037093fd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f00499eab7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f00343377e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f0037564018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f0037564bcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f0037569df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f0037569fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f003756a921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f00372db915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f00375418d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f0048168f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f00486f4785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f004875c15d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f002cadeba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f004870ccdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f001902a7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f0019046565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f00197f7d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_R in /usr/local/lib/libmpi.so.40
+[2] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed at ??:?
+[2] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[2] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[2] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[2] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[2] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[2] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[2] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[2] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[2] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[2] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[2] #25  ? at ??:?
+[2] #26  __libc_start_main in /lib64/libc.so.6
+[2] #27  ? at ??:?
+[nla-gpu2:23654:0:23654] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005c66)
+==== backtrace (tid:  23654) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f4eefb95b74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f4eefb95d34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f4eefb95fd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f4f024dab7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f4eece397e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f4ef40d8018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f4ef40d8bcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f4ef40dddf6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f4ef40ddfd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f4ef40de921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f4eefddd915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f4ef40b58d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f4f00c58f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f4f011e4785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f4f0124c15d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f4ee55ceba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f4f011fccdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f4ed24767e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f4ed2492565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f4ed2c43d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_R in /usr/local/lib/libmpi.so.40
+[1] #14  ompi_coll_tuned_alltoallv_intra_dec_fixed at ??:?
+[1] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[1] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[1] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[1] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[1] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[1] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[1] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[1] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[1] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[1] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[1] #25  ? at ??:?
+[1] #26  __libc_start_main in /lib64/libc.so.6
+[1] #27  ? at ??:?
+[nla-gpu2:23653:0:23653] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005c65)
+==== backtrace (tid:  23653) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f0b48a10b74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f0b48a10d34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f0b48a10fd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f0b57339b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f0b41b377e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f0b48ee1018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f0b48ee1bcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f0b48ee6df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f0b48ee6fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f0b48ee7921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f0b48c58915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f0b48ebe8d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f0b55ab7f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f0b56043785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f0b560ab15d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f0b3a374ba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f0b5605bcdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f0b2705b7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f0b27077565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f0b27828d6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_R at ??:?
+[0] #15  PMPI_Alltoallv in /usr/local/lib/libmpi.so.40
+[0] #16  void gko::mpi::communicator::all_to_all_v<int, int>(int const*, int const*, int const*, int*, int const*, int const*) const in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[0] #17  gko::distributed::Matrix<double, int, int>::read_distributed(gko::device_matrix_data<double, int> const&, gko::distributed::Partition<int, int> const*, gko::distributed::Partition<int, int> const*) in ~/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0
+[0] #18  std::shared_ptr<gko::distributed::Matrix<double, int, int> > Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::init_distributed_matrix<Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> >(Foam::PersistentBase<gko::matrix::Csr<double, int>, Foam::CsrInitFunctor> const&, std::shared_ptr<gko::mpi::communicator const>, std::shared_ptr<gko::distributed::Partition<int, int> const>, int) const at ??:?
+[0] #19  Foam::lduLduBase<Foam::lduMatrix, Foam::GKOCGFactory>::solve_multi_gpu_impl(Foam::Field<double>&, Foam::Field<double> const&, Foam::SolverPerformance<double>&) const at ??:?
+[0] #20  Foam::GKOlduBaseSolver<Foam::GKOCGFactory>::solve_impl(Foam::word, Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[0] #21  Foam::GKOCG::solve(Foam::Field<double>&, Foam::Field<double> const&, unsigned char) const at ??:?
+[0] #22  Foam::fvMatrix<double>::solveSegregated(Foam::dictionary const&) at ??:?
+[0] #23  Foam::fvMatrix<double>::solveSegregatedOrCoupled(Foam::dictionary const&) at ??:?
+[0] #24  Foam::fvMesh::solve(Foam::fvMatrix<double>&, Foam::dictionary const&) const at ??:?
+[0] #25  ? at ??:?
+[0] #26  __libc_start_main in /lib64/libc.so.6
+[0] #27  ? at ??:?
+[nla-gpu2:23652:0:23652] Caught signal 11 (Segmentation fault: tkill(2) or tgkill(2) at address 0x271700005c64)
+==== backtrace (tid:  23652) ====
+ 0  /lib64/libucs.so.0(ucs_handle_error+0x294) [0x7f31a76cdb74]
+ 1  /lib64/libucs.so.0(+0x2bd34) [0x7f31a76cdd34]
+ 2  /lib64/libucs.so.0(+0x2bfd8) [0x7f31a76cdfd8]
+ 3  /lib64/libpthread.so.0(raise+0x10f) [0x7f31ba146b7f]
+ 4  /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29) [0x7f31a49717e9]
+ 5  /lib64/libucp.so.0(+0x66018) [0x7f31a7b9e018]
+ 6  /lib64/libucp.so.0(+0x66bcd) [0x7f31a7b9ebcd]
+ 7  /lib64/libucp.so.0(+0x6bdf6) [0x7f31a7ba3df6]
+ 8  /lib64/libucp.so.0(+0x6bfd1) [0x7f31a7ba3fd1]
+ 9  /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151) [0x7f31a7ba4921]
+10  /lib64/libuct.so.0(+0x16915) [0x7f31a7915915]
+11  /lib64/libucp.so.0(ucp_worker_progress+0x22) [0x7f31a7b7b8d2]
+12  /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c) [0x7f31b88c4f4c]
+13  /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5) [0x7f31b8e50785]
+14  /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed) [0x7f31b8eb815d]
+15  /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42) [0x7f319d23aba2]
+16  /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b) [0x7f31b8e68cdb]
+17  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61) [0x7f318a05d7e1]
+18  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5) [0x7f318a079565]
+19  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b) [0x7f318a82ad6b]
+20  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970) [0x7f318a83e9c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f1bfac595bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f1bfac11d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f1d2ddd6e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f1d2d6f70f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f1d2d6a07bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f1d2a5daca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23655] *** Process received signal ***
+[nla-gpu2:23655] Signal: Segmentation fault (11)
+[nla-gpu2:23655] Signal code:  (-6)
+[nla-gpu2:23655] Failing at address: 0x271700005c67
+[nla-gpu2:23655] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f1d2a977ce0]
+[nla-gpu2:23655] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f1d2a977b7f]
+[nla-gpu2:23655] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f1d2a977ce0]
+[nla-gpu2:23655] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f1d1527e7e9]
+[nla-gpu2:23655] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f1d1c4dd018]
+[nla-gpu2:23655] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f1d1c4ddbcd]
+[nla-gpu2:23655] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f1d1c4e2df6]
+[nla-gpu2:23655] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f1d1c4e2fd1]
+[nla-gpu2:23655] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f1d1c4e3921]
+[nla-gpu2:23655] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f1d1c254915]
+[nla-gpu2:23655] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f1d1c4ba8d2]
+[nla-gpu2:23655] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f1d290f5f4c]
+[nla-gpu2:23655] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f1d29681785]
+[nla-gpu2:23655] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f1d296e915d]
+[nla-gpu2:23655] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f1d0da6bba2]
+[nla-gpu2:23655] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f1d29699cdb]
+[nla-gpu2:23655] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f1bfa4767e1]
+[nla-gpu2:23655] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f1bfa492565]
+[nla-gpu2:23655] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f1bfac43d6b]
+[nla-gpu2:23655] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f1bfac579c0]
+[nla-gpu2:23655] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f1bfac595bd]
+[nla-gpu2:23655] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f1bfac11d35]
+[nla-gpu2:23655] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7fd61da97d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7fd6506fae58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7fd65001b0f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7fd64ffc47bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7fd64cefeca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23656] *** Process received signal ***
+[nla-gpu2:23656] Signal: Segmentation fault (11)
+[nla-gpu2:23656] Signal code:  (-6)
+[nla-gpu2:23656] Failing at address: 0x271700005c68
+[nla-gpu2:23656] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7fd64d29bce0]
+[nla-gpu2:23656] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7fd64d29bb7f]
+[nla-gpu2:23656] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7fd64d29bce0]
+[nla-gpu2:23656] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7fd6339d17e9]
+[nla-gpu2:23656] [ 4] /lib64/libucp.so.0(+0x66018)[0x7fd63ad55018]
+[nla-gpu2:23656] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7fd63ad55bcd]
+[nla-gpu2:23656] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7fd63ad5adf6]
+[nla-gpu2:23656] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7fd63ad5afd1]
+[nla-gpu2:23656] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7fd63ad5b921]
+[nla-gpu2:23656] [ 9] /lib64/libuct.so.0(+0x16915)[0x7fd63aacc915]
+[nla-gpu2:23656] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7fd63ad328d2]
+[nla-gpu2:23656] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7fd64ba19f4c]
+[nla-gpu2:23656] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7fd64bfa5785]
+[nla-gpu2:23656] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7fd64c00d15d]
+[nla-gpu2:23656] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7fd63038fba2]
+[nla-gpu2:23656] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7fd64bfbdcdb]
+[nla-gpu2:23656] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7fd61d2fc7e1]
+[nla-gpu2:23656] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7fd61d318565]
+[nla-gpu2:23656] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7fd61dac9d6b]
+[nla-gpu2:23656] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7fd61dadd9c0]
+[nla-gpu2:23656] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7fd61dadf5bd]
+[nla-gpu2:23656] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7fd61da97d35]
+[nla-gpu2:23656] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7fd6506fae58]
+[nla-gpu2:23656] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCou106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f6fdf8295bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f6fdf7e1d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f7012c4fe58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f70125700f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f70125197bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f700f453ca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23659] *** Process received signal ***
+[nla-gpu2:23659] Signal: Segmentation fault (11)
+[nla-gpu2:23659] Signal code:  (-6)
+[nla-gpu2:23659] Failing at address: 0x271700005c6b
+[nla-gpu2:23659] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f700f7f0ce0]
+[nla-gpu2:23659] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f700f7f0b7f]
+[nla-gpu2:23659] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f700f7f0ce0]
+[nla-gpu2:23659] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f6ffa1e87e9]
+[nla-gpu2:23659] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f70014de018]
+[nla-gpu2:23659] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f70014debcd]
+[nla-gpu2:23659] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f70014e3df6]
+[nla-gpu2:23659] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f70014e3fd1]
+[nla-gpu2:23659] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f70014e4921]
+[nla-gpu2:23659] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f7001255915]
+[nla-gpu2:23659] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f70014bb8d2]
+[nla-gpu2:23659] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f700df6ef4c]
+[nla-gpu2:23659] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f700e4fa785]
+[nla-gpu2:23659] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f700e56215d]
+[nla-gpu2:23659] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f6fea8e4ba2]
+[nla-gpu2:23659] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f700e512cdb]
+[nla-gpu2:23659] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f6fdf0467e1]
+[nla-gpu2:23659] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f6fdf062565]
+[nla-gpu2:23659] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f6fdf813d6b]
+[nla-gpu2:23659] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f6fdf8279c0]
+[nla-gpu2:23659] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f6fdf8295bd]
+[nla-gpu2:23659] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f6fdf7e1d35]
+[nla-gpu2:23659] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedNS_17SolverPerformanceIdEE+0x970) [0x7ff665c249c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7ff665c265bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7ff665bded35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7ff698ea6e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7ff6987c70f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7ff6987707bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7ff6956aaca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23657] *** Process received signal ***
+[nla-gpu2:23657] Signal: Segmentation fault (11)
+[nla-gpu2:23657] Signal code:  (-6)
+[nla-gpu2:23657] Failing at address: 0x271700005c69
+[nla-gpu2:23657] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7ff695a47ce0]
+[nla-gpu2:23657] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7ff695a47b7f]
+[nla-gpu2:23657] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7ff695a47ce0]
+[nla-gpu2:23657] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7ff6803377e9]
+[nla-gpu2:23657] [ 4] /lib64/libucp.so.0(+0x66018)[0x7ff683564018]
+[nla-gpu2:23657] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7ff683564bcd]
+[nla-gpu2:23657] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7ff683569df6]
+[nla-gpu2:23657] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7ff683569fd1]
+[nla-gpu2:23657] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7ff68356a921]
+[nla-gpu2:23657] [ 9] /lib64/libuct.so.0(+0x16915)[0x7ff6832db915]
+[nla-gpu2:23657] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7ff6835418d2]
+[nla-gpu2:23657] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7ff6941c5f4c]
+[nla-gpu2:23657] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7ff694751785]
+[nla-gpu2:23657] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7ff6947b915d]
+[nla-gpu2:23657] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7ff678b3bba2]
+[nla-gpu2:23657] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7ff694769cdb]
+[nla-gpu2:23657] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7ff6654437e1]
+[nla-gpu2:23657] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7ff66545f565]
+[nla-gpu2:23657] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7ff665c10d6b]
+[nla-gpu2:23657] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7ff665c249c0]
+[nla-gpu2:23657] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7ff665c265bd]
+[nla-gpu2:23657] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7ff665bded35]
+[nla-gpu2:23657] [22] /home/greole/OpenFOAM/openfoam/platfe-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f318a8405bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f318a7f8d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f31bd5a5e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f31bcec60f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f31bce6f7bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f31b9da9ca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23652] *** Process received signal ***
+[nla-gpu2:23652] Signal: Segmentation fault (11)
+[nla-gpu2:23652] Signal code:  (-6)
+[nla-gpu2:23652] Failing at address: 0x271700005c64
+[nla-gpu2:23652] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f31ba146ce0]
+[nla-gpu2:23652] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f31ba146b7f]
+[nla-gpu2:23652] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f31ba146ce0]
+[nla-gpu2:23652] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f31a49717e9]
+[nla-gpu2:23652] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f31a7b9e018]
+[nla-gpu2:23652] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f31a7b9ebcd]
+[nla-gpu2:23652] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f31a7ba3df6]
+[nla-gpu2:23652] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f31a7ba3fd1]
+[nla-gpu2:23652] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f31a7ba4921]
+[nla-gpu2:23652] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f31a7915915]
+[nla-gpu2:23652] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f31a7b7b8d2]
+[nla-gpu2:23652] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f31b88c4f4c]
+[nla-gpu2:23652] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f31b8e50785]
+[nla-gpu2:23652] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f31b8eb815d]
+[nla-gpu2:23652] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f319d23aba2]
+[nla-gpu2:23652] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f31b8e68cdb]
+[nla-gpu2:23652] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f318a05d7e1]
+[nla-gpu2:23652] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f318a079565]
+[nla-gpu2:23652] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f318a82ad6b]
+[nla-gpu2:23652] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f318a83e9c0]
+[nla-gpu2:23652] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f318a8405bd]
+[nla-gpu2:23652] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f318a7f8d35]
+[nla-gpu2:23652] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregNS_17SolverPerformanceIdEE+0x970) [0x7f001980b9c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f001980d5bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f00197c5d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f004ce49e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f004c76a0f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f004c7137bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f004964dca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23658] *** Process received signal ***
+[nla-gpu2:23658] Signal: Segmentation fault (11)
+[nla-gpu2:23658] Signal code:  (-6)
+[nla-gpu2:23658] Failing at address: 0x271700005c6a
+[nla-gpu2:23658] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f00499eace0]
+[nla-gpu2:23658] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f00499eab7f]
+[nla-gpu2:23658] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f00499eace0]
+[nla-gpu2:23658] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f00343377e9]
+[nla-gpu2:23658] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f0037564018]
+[nla-gpu2:23658] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f0037564bcd]
+[nla-gpu2:23658] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f0037569df6]
+[nla-gpu2:23658] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f0037569fd1]
+[nla-gpu2:23658] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f003756a921]
+[nla-gpu2:23658] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f00372db915]
+[nla-gpu2:23658] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f00375418d2]
+[nla-gpu2:23658] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f0048168f4c]
+[nla-gpu2:23658] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f00486f4785]
+[nla-gpu2:23658] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f004875c15d]
+[nla-gpu2:23658] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f002cadeba2]
+[nla-gpu2:23658] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f004870ccdb]
+[nla-gpu2:23658] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f001902a7e1]
+[nla-gpu2:23658] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f0019046565]
+[nla-gpu2:23658] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f00197f7d6b]
+[nla-gpu2:23658] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f001980b9c0]
+[nla-gpu2:23658] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f001980d5bd]
+[nla-gpu2:23658] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f00197c5d35]
+[nla-gpu2:23658] [22] /home/greole/OpenFOAM/openfoam/platfNS_17SolverPerformanceIdEE+0x970) [0x7f0b2783c9c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f0b2783e5bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f0b277f6d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f0b5a798e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f0b5a0b90f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f0b5a0627bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f0b56f9cca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23653] *** Process received signal ***
+[nla-gpu2:23653] Signal: Segmentation fault (11)
+[nla-gpu2:23653] Signal code:  (-6)
+[nla-gpu2:23653] Failing at address: 0x271700005c65
+[nla-gpu2:23653] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f0b57339ce0]
+[nla-gpu2:23653] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f0b57339b7f]
+[nla-gpu2:23653] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f0b57339ce0]
+[nla-gpu2:23653] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f0b41b377e9]
+[nla-gpu2:23653] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f0b48ee1018]
+[nla-gpu2:23653] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f0b48ee1bcd]
+[nla-gpu2:23653] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f0b48ee6df6]
+[nla-gpu2:23653] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f0b48ee6fd1]
+[nla-gpu2:23653] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f0b48ee7921]
+[nla-gpu2:23653] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f0b48c58915]
+[nla-gpu2:23653] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f0b48ebe8d2]
+[nla-gpu2:23653] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f0b55ab7f4c]
+[nla-gpu2:23653] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f0b56043785]
+[nla-gpu2:23653] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f0b560ab15d]
+[nla-gpu2:23653] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f0b3a374ba2]
+[nla-gpu2:23653] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f0b5605bcdb]
+[nla-gpu2:23653] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f0b2705b7e1]
+[nla-gpu2:23653] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f0b27077565]
+[nla-gpu2:23653] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f0b27828d6b]
+[nla-gpu2:23653] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f0b2783c9c0]
+[nla-gpu2:23653] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f0b2783e5bd]
+[nla-gpu2:23653] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f0b277f6d35]
+[nla-gpu2:23653] [22] /home/greole/OpenFOAM/openfoam/platfNS_17SolverPerformanceIdEE+0x970) [0x7f4ed2c579c0]
+21  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d) [0x7f4ed2c595bd]
+22  /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65) [0x7f4ed2c11d35]
+23  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178) [0x7f4f05939e58]
+24  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361) [0x7f4f0525a0f1]
+25  /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf) [0x7f4f052037bf]
+26  icoFoam() [0x42595c]
+27  /lib64/libc.so.6(__libc_start_main+0xf3) [0x7f4f0213dca3]
+28  icoFoam() [0x426b8e]
+=================================
+[nla-gpu2:23654] *** Process received signal ***
+[nla-gpu2:23654] Signal: Segmentation fault (11)
+[nla-gpu2:23654] Signal code:  (-6)
+[nla-gpu2:23654] Failing at address: 0x271700005c66
+[nla-gpu2:23654] [ 0] /lib64/libpthread.so.0(+0x12ce0)[0x7f4f024dace0]
+[nla-gpu2:23654] [ 1] /lib64/libpthread.so.0(raise+0x10f)[0x7f4f024dab7f]
+[nla-gpu2:23654] [ 2] /lib64/libpthread.so.0(+0x12ce0)[0x7f4f024dace0]
+[nla-gpu2:23654] [ 3] /lib64/ucx/libuct_rocm.so.0(uct_rocm_copy_ep_zcopy+0x29)[0x7f4eece397e9]
+[nla-gpu2:23654] [ 4] /lib64/libucp.so.0(+0x66018)[0x7f4ef40d8018]
+[nla-gpu2:23654] [ 5] /lib64/libucp.so.0(+0x66bcd)[0x7f4ef40d8bcd]
+[nla-gpu2:23654] [ 6] /lib64/libucp.so.0(+0x6bdf6)[0x7f4ef40dddf6]
+[nla-gpu2:23654] [ 7] /lib64/libucp.so.0(+0x6bfd1)[0x7f4ef40ddfd1]
+[nla-gpu2:23654] [ 8] /lib64/libucp.so.0(ucp_rndv_rtr_handler+0x151)[0x7f4ef40de921]
+[nla-gpu2:23654] [ 9] /lib64/libuct.so.0(+0x16915)[0x7f4eefddd915]
+[nla-gpu2:23654] [10] /lib64/libucp.so.0(ucp_worker_progress+0x22)[0x7f4ef40b58d2]
+[nla-gpu2:23654] [11] /usr/local/lib/libopen-pal.so.40(opal_progress+0x2c)[0x7f4f00c58f4c]
+[nla-gpu2:23654] [12] /usr/local/lib/libmpi.so.40(ompi_request_default_wait_all+0xd5)[0x7f4f011e4785]
+[nla-gpu2:23654] [13] /usr/local/lib/libmpi.so.40(ompi_coll_base_alltoallv_intra_basic_linear+0x1ed)[0x7f4f0124c15d]
+[nla-gpu2:23654] [14] /usr/local/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_alltoallv_intra_dec_fixed+0x42)[0x7f4ee55ceba2]
+[nla-gpu2:23654] [15] /usr/local/lib/libmpi.so.40(PMPI_Alltoallv+0x19b)[0x7f4f011fccdb]
+[nla-gpu2:23654] [16] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZNK3gko3mpi12communicator12all_to_all_vIiiEEvPKT_PKiS7_PT0_S7_S7_+0x61)[0x7f4ed24767e1]
+[nla-gpu2:23654] [17] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libginkgo.so.1.5.0(_ZN3gko11distributed6MatrixIdiiE16read_distributedERKNS_18device_matrix_dataIdiEEPKNS0_9PartitionIiiEESA_+0x8a5)[0x7f4ed2492565]
+[nla-gpu2:23654] [18] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE23init_distributed_matrixINS_14PersistentBaseIN3gko6matrix3CsrIdiEENS_14CsrInitFunctorEEEEESt10shared_ptrINS6_11distributed6MatrixIdiiEEERKT_SC_IKNS6_3mpi12communicatorEESC_IKNSD_9PartitionIiiEEEi+0x58b)[0x7f4ed2c43d6b]
+[nla-gpu2:23654] [19] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam10lduLduBaseINS_9lduMatrixENS_12GKOCGFactoryEE20solve_multi_gpu_implERNS_5FieldIdEERKS5_RNS_17SolverPerformanceIdEE+0x970)[0x7f4ed2c579c0]
+[nla-gpu2:23654] [20] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam16GKOlduBaseSolverINS_12GKOCGFactoryEE10solve_implENS_4wordERNS_5FieldIdEERKS5_h+0x22d)[0x7f4ed2c595bd]
+[nla-gpu2:23654] [21] /home/greole/OpenFOAM/greole-v2106/platforms/linux64GccDPInt32Opt/lib/libOGL.so(_ZNK4Foam5GKOCG5solveERNS_5FieldIdEERKS2_h+0x65)[0x7f4ed2c11d35]
+[nla-gpu2:23654] [22] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f004ce49e58]
+[nla-gpu2:23658] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f004c76a0f1]
+[nla-gpu2:23658] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f004c7137bf]
+[nla-gpu2:23658] [25] icoFoam[0x42595c]
+[nla-gpu2:23658] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f004964dca3]
+[nla-gpu2:23658] [27] icoFoam[0x426b8e]
+[nla-gpu2:23658] *** End of error message ***
+orms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f4f05939e58]
+[nla-gpu2:23654] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f4f0525a0f1]
+[nla-gpu2:23654] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f4f052037bf]
+[nla-gpu2:23654] [25] icoFoam[0x42595c]
+[nla-gpu2:23654] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f4f0213dca3]
+[nla-gpu2:23654] [27] icoFoam[0x426b8e]
+[nla-gpu2:23654] *** End of error message ***
+orms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7f0b5a798e58]
+[nla-gpu2:23653] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f0b5a0b90f1]
+[nla-gpu2:23653] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f0b5a0627bf]
+[nla-gpu2:23653] [25] icoFoam[0x42595c]
+[nla-gpu2:23653] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f0b56f9cca3]
+[nla-gpu2:23653] [27] icoFoam[0x426b8e]
+[nla-gpu2:23653] *** End of error message ***
+atedERKNS_10dictionaryE+0x178)[0x7f1d2ddd6e58]
+[nla-gpu2:23655] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f1d2d6f70f1]
+[nla-gpu2:23655] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f1d2d6a07bf]
+[nla-gpu2:23655] [25] icoFoam[0x42595c]
+[nla-gpu2:23655] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f1d2a5daca3]
+[nla-gpu2:23655] [27] icoFoam[0x426b8e]
+[nla-gpu2:23655] *** End of error message ***
+pledERKNS_10dictionaryE+0x361)[0x7fd65001b0f1]
+[nla-gpu2:23656] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7fd64ffc47bf]
+[nla-gpu2:23656] [25] icoFoam[0x42595c]
+[nla-gpu2:23656] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7fd64cefeca3]
+[nla-gpu2:23656] [27] icoFoam[0x426b8e]
+[nla-gpu2:23656] *** End of error message ***
+ERKNS_10dictionaryE+0x178)[0x7f7012c4fe58]
+[nla-gpu2:23659] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f70125700f1]
+[nla-gpu2:23659] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f70125197bf]
+[nla-gpu2:23659] [25] icoFoam[0x42595c]
+[nla-gpu2:23659] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f700f453ca3]
+[nla-gpu2:23659] [27] icoFoam[0x426b8e]
+[nla-gpu2:23659] *** End of error message ***
+orms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE15solveSegregatedERKNS_10dictionaryE+0x178)[0x7ff698ea6e58]
+[nla-gpu2:23657] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7ff6987c70f1]
+[nla-gpu2:23657] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7ff6987707bf]
+[nla-gpu2:23657] [25] icoFoam[0x42595c]
+[nla-gpu2:23657] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7ff6956aaca3]
+[nla-gpu2:23657] [27] icoFoam[0x426b8e]
+[nla-gpu2:23657] *** End of error message ***
+atedERKNS_10dictionaryE+0x178)[0x7f31bd5a5e58]
+[nla-gpu2:23652] [23] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZN4Foam8fvMatrixIdE24solveSegregatedOrCoupledERKNS_10dictionaryE+0x361)[0x7f31bcec60f1]
+[nla-gpu2:23652] [24] /home/greole/OpenFOAM/openfoam/platforms/linux64GccDPInt32Opt/lib/libfiniteVolume.so(_ZNK4Foam6fvMesh5solveERNS_8fvMatrixIdEERKNS_10dictionaryE+0xf)[0x7f31bce6f7bf]
+[nla-gpu2:23652] [25] icoFoam[0x42595c]
+[nla-gpu2:23652] [26] /lib64/libc.so.6(__libc_start_main+0xf3)[0x7f31b9da9ca3]
+[nla-gpu2:23652] [27] icoFoam[0x426b8e]
+[nla-gpu2:23652] *** End of error message ***
