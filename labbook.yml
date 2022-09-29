@@ -31,11 +31,13 @@ submodules:
 
 cases:
   - name: motorcycle
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/motorcycle/${{matrix.file}} --folder ${{matrix.name}} --filter ${{env.OBR_FILTER}}
-    path: motorcycle_local
+    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/motorcycle/${{matrix.file}} --folder ${{matrix.folder}} --filter ${{env.OBR_FILTER}}
+    path: motorcycle
     matrix:
       - file: scaling.json
         folder: scaling
+      - file: matrix_formats.json
+        folder: matrix_formats
   - name: lidDrivenCavity
     run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/lidDrivenCavity3D/${{matrix.file}} --folder ${{matrix.folder}} --filter ${{env.OBR_FILTER}}
     path: lidDrivenCavity
