@@ -1,0 +1,24 @@
+executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,backend_p,processes,mpiRank_gko,mpiRank_of,timestamp,log_id,run_time
+#{'node_data': {'host': 'hkn1991.localdomain\n', 'top': ['top - 16:20:16 up 164 days,  1:17,  0 users,  load average: 2.26, 2.58, 2.62', 'Tasks: 2183 total,   1 running, 2182 sleeping,   0 stopped,   0 zombie', '%Cpu(s):  0.2 us,  0.6 sy,  0.0 ni, 98.9 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st', 'MiB Mem : 514459.2 total, 462812.8 free,  38869.9 used,  12776.6 buff/cache', 'MiB Swap:  15258.7 total,  15248.5 free,     10.2 used. 472241.6 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', '1988270 lo6833    20   0  178420   8940   4132 S  40.0   0.0  11:29.56 sshd', '2030640 eq4036    20   0   56120   6672   3648 R  35.0   0.0   0:00.13 top', '2717515 root       0 -20  101.9g  26.7g  19.6g S  30.0   5.3  21853:37 mmfsd', '1988271 lo6833    20   0   34864   5104   4332 S  20.0   0.0   6:49.22 sftp-server', '      1 root      20   0  235540  12676   8464 S   0.0   0.0  61:32.31 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   1:16.18 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp', '      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp'], 'uptime': ' 16:20:16 up 164 days,  1:17,  0 users,  load average: 2.26, 2.58, 2.62\n', 'libOGL.so': '967bb70757f46daaa43e7317a6feb946  /home/hk-project-test-fine/eq4036/OpenFOAM/eq4036-v2112/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.1', 'OBR_VERSION': '0.5.0'}
+CUDA,CG,NoPrecond,400,1,4,hkn1991.localdomain,PETSC,1,0,4,2022-10-06 14:20:16.266814,ac045a42ca661ee7e599001265c691b6,0
+CUDA,CG,NoPrecond,400,1,4,hkn1991.localdomain,Ginkgo,1,1,0,2022-10-06 14:20:16.303363,c526ae805fdd8351e5e649938d09a152,0
+Default,CG,NoPrecond,400,1,0,hkn1991.localdomain,OpenFOAM,1,0,1,2022-10-06 14:20:16.309871,887cafaaaa93824e300d3fdd867c02fe,0
+CUDA,CG,NoPrecond,300,1,4,hkn1991.localdomain,PETSC,1,0,4,2022-10-06 14:20:16.331144,5924fc13a1b072834c2a48bf8520eb71,0
+CUDA,CG,NoPrecond,300,1,4,hkn1991.localdomain,Ginkgo,1,1,0,2022-10-06 14:20:16.352609,ecac097457896c43387657cb2fb620cb,0
+Default,CG,NoPrecond,300,1,76,hkn1991.localdomain,OpenFOAM,1,0,1,2022-10-06 14:20:16.363497,14622ad8bde0fff4cee2d1269fd89498,0
+CUDA,CG,NoPrecond,200,1,4,hkn1991.localdomain,PETSC,1,0,4,2022-10-06 14:20:16.419130,405e8839d460a477a5d07b90c27463d4,0
+CUDA,CG,NoPrecond,200,1,4,hkn1991.localdomain,Ginkgo,1,1,0,2022-10-06 14:20:16.449668,c38609639c67fa13c8fde3fd2a778c67,0
+CUDA,CG,NoPrecond,200,1,40,hkn1991.localdomain,Ginkgo,1,1,0,2022-10-06 14:20:16.491910,531878e4ddc35c42e22925b9c4cfd373,0
+Default,CG,NoPrecond,200,1,76,hkn1991.localdomain,OpenFOAM,1,0,1,2022-10-06 14:20:16.503602,5677dbb78121b89b61784fd60702cdc1,0
+CUDA,CG,NoPrecond,150,1,4,hkn1991.localdomain,PETSC,1,0,4,2022-10-06 14:20:16.533774,7f544e165d69e51e0c5262f877848c26,0
+CUDA,CG,NoPrecond,150,1,4,hkn1991.localdomain,Ginkgo,1,1,0,2022-10-06 14:20:16.571160,b18f4d200481bb1d81117ecdbb74215a,0
+Default,CG,NoPrecond,150,1,76,hkn1991.localdomain,OpenFOAM,1,0,1,2022-10-06 14:20:16.594263,0992bd017be38a29e023a909370f668e,0
+CUDA,CG,NoPrecond,100,1,4,hkn1991.localdomain,PETSC,1,0,4,2022-10-06 14:20:16.655291,b1718a128cc1170436a6389bd173c12e,0
+CUDA,CG,NoPrecond,100,1,4,hkn1991.localdomain,Ginkgo,1,1,0,2022-10-06 14:20:16.705319,8d1895cd0d0c04463010e6c553e76cb9,0
+Default,CG,NoPrecond,100,1,76,hkn1991.localdomain,OpenFOAM,1,0,1,2022-10-06 14:20:16.716546,d9d5fb0ffbcd02211d93bc56e75de7ab,0
+CUDA,CG,NoPrecond,350,1,4,hkn1991.localdomain,PETSC,1,0,4,2022-10-06 14:20:16.759246,587e9a2227d06986393d80d7c91c4907,0
+CUDA,CG,NoPrecond,350,1,4,hkn1991.localdomain,Ginkgo,1,1,0,2022-10-06 14:20:16.795128,48a1fe59d7c151f643cae5521b90c69a,0
+Default,CG,NoPrecond,350,1,76,hkn1991.localdomain,OpenFOAM,1,0,1,2022-10-06 14:20:16.821786,c7a694b2a09441e02ed7ed098e627f88,0
+CUDA,CG,NoPrecond,250,1,4,hkn1991.localdomain,PETSC,1,0,4,2022-10-06 14:20:16.873858,8b25aaa654f8441eb059b71018ec5738,0
+CUDA,CG,NoPrecond,250,1,4,hkn1991.localdomain,Ginkgo,1,1,0,2022-10-06 14:20:16.932609,4e233fabf55dc8881bcf788e8469cd3e,0
+Default,CG,NoPrecond,250,1,76,hkn1991.localdomain,OpenFOAM,1,0,1,2022-10-06 14:20:16.972877,8a9745bb308f35bef940e710ecc6bbd6,0
