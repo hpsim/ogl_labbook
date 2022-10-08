@@ -1,18 +1,18 @@
-backend,executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,mpiRank_of,backend_p,processes,mpiRank_gko,timestamp,log_id,run_time
-#{'node_data': {'host': 'hkn1993.localdomain\n', 'top': ['top - 14:47:55 up 65 days,  8:32,  0 users,  load average: 0.33, 0.51, 0.48', 'Tasks: 2224 total,   1 running, 2223 sleeping,   0 stopped,   0 zombie', '%Cpu(s):  0.2 us,  0.3 sy,  0.0 ni, 99.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st', 'MiB Mem : 514459.2 total, 434250.8 free,  65971.4 used,  14237.1 buff/cache', 'MiB Swap:  15258.7 total,  14375.8 free,    882.9 used. 444818.8 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', '  65888 ianm-mp+  20   0  760132  27024   7288 S  35.0   0.0  13937:21 gitlab-runner', '4165786 eq4036    20   0   56120   6696   3680 R  35.0   0.0   0:00.14 top', '3992317 xo9911    20   0  943248 111472  23772 S   5.0   0.0   2:34.64 node', '3993169 tp9819    20   0  257580   8340   4708 S   5.0   0.0   1:49.79 srun', '4165758 root      20   0       0      0      0 I   5.0   0.0   0:00.02 kworker/u304:3-bond0', '      1 root      20   0  244292   8596   4612 S   0.0   0.0  16:31.97 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   0:55.00 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp'], 'uptime': ' 14:47:55 up 65 days,  8:32,  0 users,  load average: 0.33, 0.51, 0.48\n', 'libOGL.so': 'dd4aa9cc72927bea77af730b232e02fc  /home/hk-project-test-fine/eq4036/OpenFOAM/eq4036-v2112/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.1', 'OBR_VERSION': '0.5.0'}
-0,CUDA,CG,NoPrecond,400,1,4,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.170790,d42e8cb22f5583d71425bfe40e8df2fa,0
-0,CUDA,CG,NoPrecond,400,1,40,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.220254,5e342516478c592cea8b5b0ca1799be1,0
-0,CUDA,CG,NoPrecond,400,1,20,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.264770,4d3c334a9080dcee191571634d4d080b,0
-0,Default,CG,NoPrecond,400,1,76,hkn1993.localdomain,1,OpenFOAM,1,0,2022-10-08 12:47:55.302789,b6f39cacbdf9ef5a0c2e3597c026821e,0
-0,CUDA,CG,NoPrecond,300,1,4,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.377793,600bc0e5b414a995b41d73636bc8f45b,0
-0,CUDA,CG,NoPrecond,300,1,40,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.428331,af2f25f1239dff4867430e2bb84b6806,0
-0,CUDA,CG,NoPrecond,300,1,20,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.464664,a9d5889c5b75b8e4caf062c2570c1f3c,0
-0,Default,CG,NoPrecond,300,1,76,hkn1993.localdomain,1,OpenFOAM,1,0,2022-10-08 12:47:55.504277,14622ad8bde0fff4cee2d1269fd89498,0
-0,CUDA,CG,NoPrecond,200,1,4,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.538426,5bb5f4f141555d257ca60003f054e9bf,0
-0,CUDA,CG,NoPrecond,200,1,40,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.582825,19c58f25b891e0fb7588b22d14bb852c,0
-0,CUDA,CG,NoPrecond,200,1,20,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.616112,c24901f622566dc17e3d8f4e9c297fd6,0
-0,Default,CG,NoPrecond,200,1,76,hkn1993.localdomain,1,OpenFOAM,1,0,2022-10-08 12:47:55.656213,5677dbb78121b89b61784fd60702cdc1,0
-0,CUDA,CG,NoPrecond,100,1,4,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.694629,593e3211ef4c8ffcc8e94da1514180d3,0
-0,CUDA,CG,NoPrecond,100,1,40,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.703716,7cd3ed1cb57d25ffb2ffe327cecd1bd0,0
-0,CUDA,CG,NoPrecond,100,1,20,hkn1993.localdomain,0,Ginkgo,1,1,2022-10-08 12:47:55.731119,5ad5a93d850f4916e494a88c277925db,0
-0,Default,CG,NoPrecond,100,1,76,hkn1993.localdomain,1,OpenFOAM,1,0,2022-10-08 12:47:55.771688,d9d5fb0ffbcd02211d93bc56e75de7ab,0
+backend,executor_p,solver_p,preconditioner_p,resolution,omp_threads,mpi_ranks,node,mpiRank_of,backend_p,mpiRank_gko,processes,timestamp,log_id,run_time
+#{'node_data': {'host': 'hkn1990.localdomain\n', 'top': ['top - 21:20:19 up 166 days,  6:17,  0 users,  load average: 0.12, 0.76, 0.90', 'Tasks: 2801 total,   1 running, 2717 sleeping,   0 stopped,  83 zombie', '%Cpu(s):  0.1 us,  0.3 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st', 'MiB Mem : 514459.2 total, 357982.8 free, 124603.1 used,  31873.3 buff/cache', 'MiB Swap:  15258.7 total,  15258.7 free,      0.0 used. 386541.8 avail Mem ', '', '    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND', '1182457 eq4036    20   0   56860   7384   3588 R  32.0   0.0   0:00.18 top', '1084240 tp9819    20   0  170872   5552   4064 S   4.0   0.0   2:33.81 sshd', '1178192 root      20   0       0      0      0 I   4.0   0.0   0:10.12 kworker/u305:0-events_unbound', '      1 root      20   0  235944  12860   8412 S   0.0   0.0 243:17.71 systemd', '      2 root      20   0       0      0      0 S   0.0   0.0   2:06.01 kthreadd', '      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp', '      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp', '      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri'], 'uptime': ' 21:20:19 up 166 days,  6:17,  0 users,  load average: 0.12, 0.76, 0.90\n', 'libOGL.so': 'dd4aa9cc72927bea77af730b232e02fc  /home/hk-project-test-fine/eq4036/OpenFOAM/eq4036-v2112/platforms/linux64GccDPInt32Opt/lib/libOGL.so\n'}, 'OBR_REPORT_VERSION': '0.4.1', 'OBR_VERSION': '0.5.0'}
+0,CUDA,CG,NoPrecond,400,1,4,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.441122,d42e8cb22f5583d71425bfe40e8df2fa,0
+0,CUDA,CG,NoPrecond,400,1,40,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.486836,5e342516478c592cea8b5b0ca1799be1,0
+0,CUDA,CG,NoPrecond,400,1,20,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.495298,9167c8f994dc7492a309db42474c55fa,0
+0,Default,CG,NoPrecond,400,1,76,hkn1990.localdomain,1,OpenFOAM,0,1,2022-10-08 19:20:19.514449,b6f39cacbdf9ef5a0c2e3597c026821e,0
+0,CUDA,CG,NoPrecond,300,1,4,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.524372,600bc0e5b414a995b41d73636bc8f45b,0
+0,CUDA,CG,NoPrecond,300,1,40,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.547120,af2f25f1239dff4867430e2bb84b6806,0
+0,CUDA,CG,NoPrecond,300,1,20,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.559231,fd502d2b14f9c82dd2688cc443058c04,0
+0,Default,CG,NoPrecond,300,1,76,hkn1990.localdomain,1,OpenFOAM,0,1,2022-10-08 19:20:19.596133,14622ad8bde0fff4cee2d1269fd89498,0
+0,CUDA,CG,NoPrecond,200,1,4,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.616286,4b0764fc8e3860b9117559f21727005b,0
+0,CUDA,CG,NoPrecond,200,1,40,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.629424,a3ccbc122796b7f5894c9e1e773e0f55,0
+0,CUDA,CG,NoPrecond,200,1,20,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.646807,107ed592045e750b1e89208e1abef610,0
+0,Default,CG,NoPrecond,200,1,76,hkn1990.localdomain,1,OpenFOAM,0,1,2022-10-08 19:20:19.676438,5677dbb78121b89b61784fd60702cdc1,0
+0,CUDA,CG,NoPrecond,100,1,4,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.708669,593e3211ef4c8ffcc8e94da1514180d3,0
+0,CUDA,CG,NoPrecond,100,1,40,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.745477,7cd3ed1cb57d25ffb2ffe327cecd1bd0,0
+0,CUDA,CG,NoPrecond,100,1,20,hkn1990.localdomain,0,Ginkgo,1,1,2022-10-08 19:20:19.754320,085da813555fb1dbe82e60bfb3b43ffd,0
+0,Default,CG,NoPrecond,100,1,76,hkn1990.localdomain,1,OpenFOAM,0,1,2022-10-08 19:20:19.783898,d9d5fb0ffbcd02211d93bc56e75de7ab,0
