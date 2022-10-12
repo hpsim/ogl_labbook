@@ -17,7 +17,10 @@ submodules:
     repo: https://github.com/hpsim/OGL.git
     run: |
       mkdir -p builds/${{env.OGL_BUILD_TYPE}}
-      cmake -G ${{env.OGL_MAKE_GENERATOR}} -B builds/${{env.OGL_BUILD_TYPE}} -S . -DCMAKE_BUILD_TYPE=${{env.OGL_BUILD_TYPE}} ${{env.OGL_CMAKE_FLAGS}}
+      cmake -G ${{env.OGL_MAKE_GENERATOR}} \
+         -B builds/${{env.OGL_BUILD_TYPE}} \
+         -DCMAKE_BUILD_TYPE=${{env.OGL_BUILD_TYPE}} ${{env.OGL_CMAKE_FLAGS}} \
+         -S . 
       cmake --build ./builds/${{env.OGL_BUILD_TYPE}} --config ${{env.OGL_BUILD_TYPE}}
       cmake --install ./builds/${{env.OGL_BUILD_TYPE}}
   - name: obr
@@ -31,7 +34,11 @@ submodules:
 
 cases:
   - name: motorcycle
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/motorcycle/${{matrix.file}} --folder ${{matrix.folder}} --filter ${{env.OBR_FILTER}}
+    run: |
+        obr create \
+            --parameters ${{env.OGL_LABBOOK}}/assets/motorcycle/${{matrix.file}} \
+            --folder ${{matrix.folder}} \
+            --filter ${{env.OBR_FILTER}}
     path: motorcycle
     matrix:
       - file: scaling.json
@@ -39,84 +46,136 @@ cases:
       - file: matrix_formats.json
         folder: matrix_formats
   - name: lidDrivenCavity
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/lidDrivenCavity3D/${{matrix.file}} --folder ${{matrix.folder}} --filter ${{env.OBR_FILTER}}
+    run: |
+        obr create \
+            --parameters ${{env.OGL_LABBOOK}}/assets/lidDrivenCavity3D/${{matrix.file}} \
+            --folder ${{matrix.folder}} \
+            --filter ${{env.OBR_FILTER}}
     path: lidDrivenCavity
     matrix:
-      - file: scaling.json
-        folder: scaling
-      - file: scaling_simple_single_node.json
-        folder: single_node
-      - file: scaling_matrix_formats.json
-        folder: matrix_formats
-  - name: lidDrivenCavity3D_tolerance
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
-    path: lidDrivenCavity
-    matrix:
-      - file: lidDrivenCavity3D_tolerance.json
-        folder: tolerance
-  - name: lidDrivenCavity3D_solver
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.folder}}
-    path: lidDrivenCavity
-    matrix:
-      - file: lidDrivenCavity3D_solver.json
-        folder: solver
-  - name: motorcycle_resolution
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
-    path: motorcycle
-    matrix:
-      - file: motorcycle_resolution.json
-        name: resolution
-  - name: motorcycle_solver
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
-    path: motorcycle
-    matrix:
-      - file: motorcycle_solver.json
-        name: solver
-  - name: motorcycle_fullRun
-    run: obr create --parameters ${{env.OGL_LABBOOK}}/assets/${{matrix.file}} --folder ${{matrix.name}}
-    path: motorcycle
-    matrix:
-      - file: motorcycle_full.json
-        name: fullRun
-
+      - file: ${{env.OBR_CASE}}.json
+        folder: ${{env.OBR_CASE}}
 
 pipelines:
   - name: decompose
     run: obr decompose --folder . --select=${{env.OBR_SELECT}}
-  - name: run_gpu_gko
-    run: obr benchmark --folder . --select=Ginkgo_${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+  - name: run
+    run: |
+        obr benchmark \
+            --folder . \
+            --select=${{env.OBR_SELECT}} \
+            --filter=${{env.OBR_FILTER}} \
+            --report=${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv \
+            --log_name=${{env.HOSTNAME}}_${{env.OBR_SELECT}}.log \
+            --results_folder=results 
     results:
       - results
-  - name: run_cpu_petsc
-    run: obr benchmark --folder . --select=PETSC,Default,${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_PETSC_Default_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_PETSC_Default_${{env.HOSTNAME}}.log
-    results:
-      - results
-  - name: run_gpu_petsc
-    run: obr benchmark --folder . --select=PETSC,${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --report=gko_${{env.HOSTNAME}}_PETSC_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=gko_PETSC_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
-    results:
-      - results
-  - name: run_cpu_foam
-    run: obr benchmark --folder . --select=OpenFOAM,Default,${{env.OBR_SELECT}} --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_DefaultOF_${{env.HOSTNAME}}.log
-    results:
-      - results
-  - name: slurm_run_cpu
-    run: obr benchmark --partition cpuonly --ntasks_per_node=${{env.NCORES}} ${{env.OBR_SLURM_ARGS}} --time 720 --select=OpenFOAM,Default,${{env.OBR_SELECT}} --folder . --runner TemplatedCaseRunner --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
-    results:
-      - results
-  - name: slurm_run_gpu_gko
-    run: obr benchmark --partition accelerated --ntasks_per_node=${{env.NGPUS}} --time 720 --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} --folder . --runner TemplatedCaseRunner --report=gko_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_GKO_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
-    results:
-      - results
-  - name: slurm_run_gpu_petsc
-    run: obr benchmark --partition accelerated --ntasks_per_node=${{env.NGPUS}} --time 720 --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}},PETSC --folder . --runner TemplatedCaseRunner --report=PETSC_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_PETSC_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
-    results:
-      - results
-  - name: slurm_run_cpu_petsc
-    run: obr benchmark --partition cpuonly --ntasks_per_node=${{env.NCORES}} --time 720 --select=Default,${{env.OBR_SELECT}},PETSC --folder . --runner TemplatedCaseRunner --report=PETSC_Default_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_PETSC_Default_${{env.HOSTNAME}}.log
+  - name: slurm_run
+    run: |
+        obr benchmark \
+            --folder . \
+            --select=${{env.OBR_SELECT}} \
+            --report=${{env.OBR_HOSTNAME}}_${{env.OBR_SELECT}}.csv \
+            --results_folder=results \
+            --log_name=${{env.OBR_SELECT}}_${{env.OBR_HOSTNAME}}.log \
+            --partition=${{env.OBR_PARTITION}} \
+            --ntasks_per_node=${{env.NGPUS}} \
+            --time=720 \
+            --runner TemplatedCaseRunner
     results:
       - results
   - name: collect
-    run: obr benchmark --select=${{env.OBR_SELECT}} --folder . --runner ResultsCollector --report=of_${{env.HOSTNAME}}${{env.OBR_SELECT}}.csv --results_folder=results --log_name=of_${{env.HOSTNAME}}.log
+    run: | 
+        obr benchmark \
+             --folder . \
+             --select=${{env.OBR_SELECT}} \
+             --runner=ResultsCollector \
+             --report=${{env.OBR_HOSTNAME}}_${{env.OBR_SELECT}}.csv \
+             --results_folder=results \
+             --log_name=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.log
+    results:
+      - results
+  - name: run_gpu_gko
+    run: |
+        obr benchmark \
+            --folder . \
+            --select=Ginkgo_${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} \
+            --filter=${{env.OBR_FILTER}} \
+            --report=gko_${{env.HOSTNAME}}_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv \
+            --results_folder=results \
+            --log_name=gko_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: run_cpu_petsc
+    run: |
+        obr benchmark \
+            --folder . \
+            --select=PETSC,Default,${{env.OBR_SELECT}} \
+            --report=gko_${{env.HOSTNAME}}_PETSC_Default_${{env.OBR_SELECT}}.csv \
+            --results_folder=results \
+            --log_name=gko_PETSC_Default_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: run_gpu_petsc
+    run: |
+        obr benchmark \
+            --folder . \
+            --filter=${{env.OBR_FILTER}}  \
+            --select=PETSC,${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}} \
+            --report=gko_${{env.HOSTNAME}}_PETSC_${{env.GINKGO_EXECUTOR}}_${{env.OBR_SELECT}}.csv  \
+            --results_folder=results  \
+            --log_name=gko_PETSC_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: run_cpu_foam
+    run: |
+        obr benchmark \
+            --folder . \
+            --select=OpenFOAM,Default,${{env.OBR_SELECT}} \
+            --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv \
+            --results_folder=results \
+            --log_name=of_DefaultOF_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: slurm_run_cpu
+    run: |
+        obr benchmark 
+            --partition cpuonly \
+            --ntasks_per_node=${{env.NCORES}} ${{env.OBR_SLURM_ARGS}}\
+            --time 720 \
+            --select=OpenFOAM,Default,${{env.OBR_SELECT}} \
+            --folder . \
+            --runner TemplatedCaseRunner \
+            --report=of_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv \
+            --results_folder=results \
+            --log_name=of_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: slurm_run_gpu_petsc
+    run: |
+        obr benchmark \
+            --partition accelerated \
+            --ntasks_per_node=${{env.NGPUS}} \
+            --time 720 \
+            --select=${{env.GINKGO_EXECUTOR}},${{env.OBR_SELECT}},PETSC \
+            --folder . \
+            --runner TemplatedCaseRunner \
+            --report=PETSC_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv \
+            --results_folder=results \
+            --log_name=of_PETSC_${{env.GINKGO_EXECUTOR}}_${{env.HOSTNAME}}.log
+    results:
+      - results
+  - name: slurm_run_cpu_petsc
+    run: | 
+        obr benchmark \
+            --partition cpuonly \
+            --ntasks_per_node=${{env.NCORES}} \
+            --time 720 \
+            --select=Default,${{env.OBR_SELECT}},PETSC \
+            --folder . --runner TemplatedCaseRunner \
+            --report=PETSC_Default_${{env.HOSTNAME}}_${{env.OBR_SELECT}}.csv \
+            --results_folder=results \
+            --log_name=of_PETSC_Default_${{env.HOSTNAME}}.log
     results:
       - results
 
